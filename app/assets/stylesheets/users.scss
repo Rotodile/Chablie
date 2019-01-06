@@ -1,3 +1,42 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.profile-cover {
+    width: 100%;
+    height: 40vh;
+    background-color: rgb(235, 234, 234);
+}
+
+.second-nav {
+    width: 100%;
+    height: 8vh;
+    border-top: 1px solid gray;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25);
+    position: absolute;
+}
+
+.profile-photo {
+    top: -110px;
+    left: 150px;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 100%;
+    margin: 0;
+}
+
+.profile-name {
+    font-size: 22px !important;
+    position: relative !important;
+    top: -100px;
+    left: 160px;
+}
+
+.profile-username, .profile-email, .profile-phone_number, .profile-bio, .profile-birthday, .profile-location {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 17px;
+    position: relative;
+    top: -120px;
+    left: 160px;
+}  

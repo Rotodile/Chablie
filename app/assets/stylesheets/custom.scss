@@ -1,0 +1,8 @@
+.navbar-link:not(.is-arrowless)::after {
+    border-color: #00d1b2 !important;
+}
+
+.navbar-link.is-active, .navbar-link:hover, a.navbar-item.is-active, a.navbar-item:hover {
+    background-color: #fafafa;
+    color: #00d1b2 !important;
+}

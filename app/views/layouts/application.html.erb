@@ -61,7 +61,7 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
+          <a id="signupFormBtn" class="button is-primary">
             <strong>Sign up</strong>
           </a>
           <a class="button is-light">
@@ -72,6 +72,9 @@
     </div>
   </div>
 </nav>
+<% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
     <%= yield %>
   </body>
 </html>

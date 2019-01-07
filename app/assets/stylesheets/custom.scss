@@ -6,3 +6,13 @@
     background-color: #fafafa;
     color: #00d1b2 !important;
 }
+
+.alert.alert-notice {
+    position: absolute;
+    display: flex !important;
+    justify-content: center;
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+    width: 100%;
+    background-color: white;
+}

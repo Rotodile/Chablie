@@ -39,4 +39,40 @@
     position: relative;
     top: -120px;
     left: 160px;
-}  
+} 
+
+.signup-heading {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    margin-left: -50px;
+}
+
+.new-user-container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    width: 30%;
+    padding: 20px;
+    border-radius: 7%;
+    .input {
+        margin: 5px;
+    }
+
+    .button {
+        margin: 5px;
+    }
+
+    .signup-btn {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .name-label {
+        margin-bottom: -50px;
+    }
+}
+
+.new_user {
+    padding: 10px;
+}

@@ -1,4 +1,4 @@
-var form = document.getElementById('signupForm');
+/* var form = document.getElementById('signupForm');
 var btn = document.getElementById("signupFormBtn");
 var span = document.getElementsByClassName("close")[0];
 
@@ -14,4 +14,4 @@ window.onclick = function(event) {
   if (event.target == form) {
     form.style.display = "none";
   }
-}
+} */

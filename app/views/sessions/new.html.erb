@@ -1,0 +1,17 @@
+<div class="login-container">
+<div>
+<h1 class="title">Log in</h1>
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :email %>:
+      <%= f.email_field :email, class: 'input is-primary logininput' %>
+
+      <%= f.label :password %>:
+      <%= f.password_field :password, class: 'input is-primary logininput' %>
+        <br>
+      <%= f.submit "Log in", class: "button is-primary loginbtn" %>
+    <% end %>
+
+    <p>New user? <%= link_to "Sign up now!", signup_path, class: "signuplink" %></p>
+    </div>
+</div>

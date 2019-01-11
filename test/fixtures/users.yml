@@ -1,4 +1,5 @@
 admin:
   name: Admin
   email: admin@chablie.com
+  username: admin
   password_digest: <%= User.digest('password') %>

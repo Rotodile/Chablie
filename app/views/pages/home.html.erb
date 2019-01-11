@@ -23,6 +23,7 @@
       <div id="signupForm" class="signup-div">
         <div class="new-user-container">
           <span class="close">&times;</span>
+          <h1 class="title">Sign Up</h1>
           <%= form_for(@user) do |f| %>
             <%= render 'shared/error_messages' %>
             <%= f.label :name, class: "name-label" %>:

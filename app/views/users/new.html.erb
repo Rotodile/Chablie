@@ -3,31 +3,31 @@
 <div class="new-user-container">
     <%= form_for(@user) do |f| %>
           <%= render 'shared/error_messages' %>
-      <%= f.label :name %>:
+      <%= f.label :name, "Name:" %>
       <%= f.text_field :name, class: "input is-primary form-control" %>
       <br>
-      <%= f.label :email %>:
+      <%= f.label :email, "Email:" %>
       <%= f.email_field :email, class: "input is-primary form-control" %>
       <br>
-      <%= f.label :username %>:
+      <%= f.label :username, "Username:" %>
       <%= f.text_field :username, class: "input is-primary form-control" %>
       <br>
-      <%= f.label :phone_number %>:
+      <%= f.label :phone_number, "Phone Number:" %>
       <%= f.text_field :phone_number, class: "input is-primary form-control" %>
       <br>
-      <%= f.label :bio %>:
+      <%= f.label :bio, "Bio:" %>
       <%= f.text_field :bio, class: "input is-primary form-control" %>
       <br> 
-      <%= f.label :locaton %>:
+      <%= f.label :locaton, "Location:" %>
       <%= f.text_field :location, class: "input is-primary form-control" %>
       <br> 
-      <%= f.label :birthday %>:
+      <%= f.label :birthday, "Birthday:" %>
       <%= f.date_field :birthday, class: "input is-primary form-control" %>
       <br>  
-      <%= f.label :password %>:
+      <%= f.label :password, "Password:" %>
       <%= f.password_field :password, class: "input is-primary form-control" %>
       <br>
-      <%= f.label :password_confirmation, "Confirmation:" %>
+      <%= f.label :password_confirmation, "Password Confirmation:" %>
       <%= f.password_field :password_confirmation, class: "input is-primary form-control" %>
       <br>
       <%= f.submit "Create my account", class: "button is-primary signup-btn" %>

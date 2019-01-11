@@ -1,15 +1,27 @@
 .login-container {
     width: 30%;
     display: flex;
+    margin-top: 100px;
     margin-right: auto;
     margin-left: auto;
+    label {
+        margin-left: 15px; 
+    }
+    .title {
+        display: flex;
+        justify-content: center;
+        font-family: 'Cabin', cursive;
+    }
     .loginbtn {
         width: 100%;
         margin-left: 5px;
-        margin-bottom: 5px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        border-radius: 20px;
     }
     .logininput {
         margin: 5px;
+        border-radius: 20px;
     }
     .signuplink {
         color: #00c4a7;
@@ -17,4 +29,8 @@
     .signuplink:hover {
         color:rgb(30, 139, 123) !important; 
     }
+}
+
+.signup-on-login {
+    margin-left: 35px; 
 }

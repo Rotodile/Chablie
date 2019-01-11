@@ -47,12 +47,7 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a id="signupFormBtn" class="button is-primary">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-light">
-            Log in
-          </a>
+     <%= link_to "Log out", logout_path, method: :delete, class: "button is-primary" %>
         </div>
       </div>
     </div>

@@ -18,6 +18,10 @@ class UsersController < ApplicationController
     @user = User.friendly.find(params[:id])
   end
 
+  def edit
+    @user = User.friendly.find(params[:id])
+  end    
+
   private
 
   def user_params 

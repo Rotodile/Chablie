@@ -1,0 +1,15 @@
+<div class="edit-container">
+        <h1 class="title">Update your profile</h1>
+        <%= form_for(@user) do |f| %>
+            <%= render 'shared/error_messages' %>
+            <%= f.label :name %>
+            <%= f.text_field :name, class: 'input is-primary' %>
+            <%= f.label :email %>
+            <%= f.email_field :email, class: 'input is-primary' %>
+            <%= f.label :password %>
+            <%= f.password_field :password, class: 'input is-primary' %>
+            <%= f.label :password_confirmation, "Confirmation" %>
+            <%= f.password_field :password_confirmation, class: 'input is-primary' %>
+            <%= f.submit "Save changes", class: "button is-primary" %>
+        <% end %>   
+</div>

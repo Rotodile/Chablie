@@ -81,3 +81,14 @@
 .new_user {
     padding: 10px;
 }
+
+.edit-container {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    .title {
+        text-align: center;
+    }
+}

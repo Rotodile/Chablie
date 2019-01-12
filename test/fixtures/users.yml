@@ -3,3 +3,8 @@ admin:
   email: admin@chablie.com
   username: admin
   password_digest: <%= User.digest('password') %>
+
+areeba:
+  name: Areeba Ishtiaq
+  email: areeba.aic@gmail.com
+  password_digest: <%= User.digest('password') %>

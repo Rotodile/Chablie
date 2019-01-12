@@ -1,3 +1,6 @@
+body {
+    background-color: #e6ecf0;
+}
 .profile-cover {
     width: 100%;
     height: 40vh;
@@ -83,12 +86,109 @@
 }
 
 .edit-container {
-    width: 30%;
+    background-color: white;
+    width: 40%;
     display: flex;
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 10px;
     .title {
         text-align: center;
+        border-bottom: 1px solid #e6ecf0;
+        margin-top: 5px;
+        padding-bottom: 7px;
+        font-family: 'Cabin', cursive;
+    }
+
+    .update-btn {
+        margin-bottom: 15px;
+    }
+
+    .delete-button {
+        border-top: 1px solid #e6ecf0;
+    }
+
+    .button {
+        margin-top: 25px;
+        width: 41%;
+        border-radius: 20px;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .button-field {
+        margin-left: 45px;
+        margin-bottom: 30px;
+    }
+
+    .username-field {
+        margin-left: -19px !important;
+        input {
+            width: 37.5% !important;
+        }
+    }
+
+    .phone-field {
+        margin-left: -49px !important;
+        input {
+            width: 35.2% !important;
+            margin-left: 18px !important;
+        }
+    } 
+
+    .location-field {
+        margin-left: -14px !important;
+        input {
+            width: 37.5% !important;
+            margin-left: 18px !important;
+        }
+    }
+
+    .birthday-field {
+        margin-left: -12px !important;
+        input {
+            width: 38% !important;
+            margin-left: 18px !important;
+        }
+    }
+
+    .password-field {
+        margin-left: -23px !important;
+        input {
+            width: 37% !important;
+            margin-left: 18px !important;
+        }
+    }
+
+    .confirmation-field {
+        margin-left: -48px !important;
+        input {
+            width: 35.5% !important;
+            margin-left: 18px !important;
+        }
+    }
+
+    .bio-field {
+        margin-left: 30px !important;
+        input {
+            width: 40.5% !important;
+            margin-left: 18px !important;
+        }
+    }
+
+    .edit-fields {
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+        input {
+            width: 40%;
+            margin-left: 20px;
+            border-radius: 20px;
+        }
+        label {
+            margin-top: 5px; 
+        }
     }
 }

@@ -1,15 +1,54 @@
+<style>
+body {
+    height: 820px;
+}
+</style>
 <div class="edit-container">
-        <h1 class="title">Update your profile</h1>
+        <h1 class="title">Account</h1>
         <%= form_for(@user) do |f| %>
             <%= render 'shared/error_messages' %>
-            <%= f.label :name %>
-            <%= f.text_field :name, class: 'input is-primary' %>
-            <%= f.label :email %>
-            <%= f.email_field :email, class: 'input is-primary' %>
-            <%= f.label :password %>
-            <%= f.password_field :password, class: 'input is-primary' %>
-            <%= f.label :password_confirmation, "Confirmation" %>
-            <%= f.password_field :password_confirmation, class: 'input is-primary' %>
-            <%= f.submit "Save changes", class: "button is-primary" %>
-        <% end %>   
+            <div class="edit-fields">
+                <%= f.label :name %>
+                <%= f.text_field :name, class: 'input is-primary' %>
+            </div>
+            <div class="edit-fields">
+                <%= f.label :email %>
+                <%= f.email_field :email, class: 'input is-primary' %>
+            </div>
+            <div class="edit-fields username-field">
+                <%= f.label :username, "Username" %>
+                <%= f.text_field :username, class: "input is-primary form-control" %>
+            </div>
+            <div class="edit-fields phone-field">
+                <%= f.label :phone_number, "Phone Number" %>
+                <%= f.text_field :phone_number, class: "input is-primary form-control" %>
+            </div>
+            <div class="edit-fields bio-field">
+                <%= f.label :bio, "Bio" %>
+                <%= f.text_field :bio, class: "input is-primary form-control" %>
+            </div>
+            <div class="edit-fields location-field">
+                <%= f.label :locaton, "Location" %>
+                <%= f.text_field :location, class: "input is-primary form-control" %>
+            </div>
+            <div class="edit-fields birthday-field">
+                <%= f.label :birthday, "Birthday" %>
+                <%= f.date_field :birthday, class: "input is-primary form-control" %>
+            </div>
+            <div class="edit-fields password-field">
+                <%= f.label :password %>
+                <%= f.password_field :password, class: 'input is-primary' %>
+            </div>
+            <div class="edit-fields confirmation-field">
+                <%= f.label :password_confirmation, "Confirmation" %>
+                <%= f.password_field :password_confirmation, class: 'input is-primary' %>
+            </div>
+            <div class="button-field">
+                <%= f.submit "Save changes", class: "button is-primary update-btn" %>
+        <% end %>
+            <% if current_user %>
+               <p class="delete-button"> <%= link_to "Delete Account", @user, method: :delete,
+                                            data: { confirm: "are you sure?"}, class: "button is-danger" %></p>
+            <% end %>
+            </div>
 </div>

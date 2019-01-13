@@ -9,8 +9,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
-      flash[:notice] = "You have signed up successfully!"
+      UserMailer.account_activation(@user).deliver_now
+      flash[:notice] = "Please verify your email to continue!"
       redirect_to @user
     else
       render 'new'

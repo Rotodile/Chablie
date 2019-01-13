@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     if @user.save
       UserMailer.account_activation(@user).deliver_now
       flash[:notice] = "Please verify your email to continue!"
-      redirect_to user_path
+      redirect_to @user
     else
       render 'new'
     end

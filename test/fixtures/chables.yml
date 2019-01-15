@@ -1,0 +1,14 @@
+hello:
+  content: "Hello Hello Hello"
+  created_at: <%= 10.minutes.ago %>
+  user: admin
+
+blah:
+  content: "I'm a blah"
+  created_at: <%= 2.hours.ago %>
+  user: admin
+
+most_recent:
+  content: "Writing a short test"
+  created_at: <%= Time.zone.now %>
+  user: admin

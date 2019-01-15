@@ -1,0 +1,5 @@
+<%= form_for(@chable) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+    <%= f.text_area :content, placeholder: "Share your thoughts" %>
+  <%= f.submit "Post", class: "button is-primary" %>
+<% end %>

@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    has_many :chables, dependent: :destroy
     extend FriendlyId
     friendly_id :username, use: :slugged
     attr_accessor :remember_token
@@ -23,6 +24,10 @@ class User < ApplicationRecord
     def User.new_token
         SecureRandom.urlsafe_base64
     end
+
+    def feed
+        Chable.where("user_id = ?", id)
+      end
 
     def remember
         self.remember_token = User.new_token

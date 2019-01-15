@@ -8,3 +8,8 @@
 <h1 class="profile-birthday"><%= @user.birthday %></h1>
 <h1 class="profile-email"><%= @user.email %></h1>
 <h1 class="profile-phone_number"><%= @user.phone_number %></h1>
+
+ <% if @user.chables.any? %>
+      <h3>Chables (<%= @user.chables.count %>)</h3>
+        <%= render @chables %>
+    <% end %>

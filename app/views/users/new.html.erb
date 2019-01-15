@@ -2,7 +2,7 @@
 
 <div class="new-user-container">
     <%= form_for(@user) do |f| %>
-          <%= render 'shared/error_messages' %>
+          <%= render 'shared/error_messages', object: f.object %>
       <%= f.label :name, "Name:" %>
       <%= f.text_field :name, class: "input is-primary form-control" %>
       <br>

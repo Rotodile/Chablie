@@ -1,5 +1,6 @@
 <% if logged_in? %>
-
+        <%= render 'shared/chable_form' %>
+        <%= render 'shared/feed' %>
 <% else %>
   <div class="Main-page-content">
     <div class="side-content">
@@ -25,7 +26,7 @@
           <span class="close">&times;</span>
           <h1 class="title">Sign Up</h1>
           <%= form_for(@user) do |f| %>
-            <%= render 'shared/error_messages' %>
+            <%= render 'shared/error_messages', object: f.object %>
             <%= f.label :name, class: "name-label" %>:
             <%= f.text_field :name, class: "input is-primary form-control" %>
             <br>

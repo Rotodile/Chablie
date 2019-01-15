@@ -1,6 +1,0 @@
-Hi <%= @user.name %>!
-
-Thank you for signing up on Chablie!
-Click on the link below to verify your email:
-
-<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>

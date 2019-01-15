@@ -1,5 +1,5 @@
 body {
-    font-family: 'Cabin', cursive;
+    font-family: 'Cabin', cursive !important;
 }
 .navbar-link:not(.is-arrowless)::after {
     border-color: #00d1b2 !important;
@@ -57,7 +57,7 @@ body {
             display: flex;
             margin-left: 18vh;
             margin-right: auto;
-            margin-top: 40px;
+            -webkit-margin-before: 40px;
             .title {
                 margin-top: 40px; 
                 font-size: 22px;

@@ -1,9 +1,13 @@
-<span><%= link_to chable.user.name, chable.user %></span>
-<span><%= chable.content %></span>
-<span>
-    Chabled <%= time_ago_in_words(chable.created_at) %> ago.
-    <% if current_user?(chable.user) %>
-      <%= link_to "delete", chable, method: :delete,
+<div class="chables-feed">
+    <div class="feed-profile-photo"></div>
+    <span class="feed-name"><%= link_to chable.user.name, chable.user %></span>
+    <span class="feed-username">@<%= chable.user.username %></span>
+    <span><%= chable.content %></span>
+    <span>
+        <%= time_ago_in_words(chable.created_at) %>
+        <% if current_user?(chable.user) %>
+            <%= link_to "delete", chable, method: :delete,
                                        data: { confirm: "are you sure?" } %>
-    <% end %>
-</span>
+        <% end %>
+    </span>
+</div>

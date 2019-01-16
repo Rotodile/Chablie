@@ -41,3 +41,148 @@ body {font-family: Arial, Helvetica, sans-serif;}
   margin-left: auto;
   margin-right: auto;
 }
+
+.home-side-profile {
+  margin-top: 10px;
+  width: 300px;
+  height: 220px;
+  margin-bottom: 10px;
+  background-color: white;
+  .home-cover-photo {
+    width: 300px;
+    height: 100px;
+    background-color: #00c4a7; 
+  }
+  .home-profile-photo {
+    background-color: white;
+    border-radius: 100%;
+    width: 70px;
+    height: 70px;
+    position: relative;
+    bottom: 30px;
+    left: 10px;
+  }
+  .home-name {
+    position: relative;
+    font-size: 22px;
+    bottom: 70px;
+    left: 90px;
+    width: 200px;
+  }
+  .home-user-name {
+    position: relative;
+    bottom: 80px;
+    left: 90px;
+    width: 200px;
+  }
+  .home-user-info {
+    display: flex;
+    background-color: white;
+    width: 300px;
+    height: 70px;
+    position: relative;
+    bottom: 80px;
+    .home-chables {
+      width: 98px;
+      height: 65px;
+      margin: 2px;
+      background-color: white;
+      .home-chable-heading {
+        margin-top: 5px;
+        text-align: center;
+        font-size: 18px;
+      }
+      .home-chable-count {
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+      }
+    }
+    .home-following {
+      width: 98px;
+      margin: 2px;
+      height: 65px;
+      background-color: white;
+      .home-following-heading {
+        margin-top: 5px;
+        text-align: center;
+        font-size: 18px;
+      }
+      .home-following-count {
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+      }
+    }
+    .home-followers {
+      width: 98px;
+      margin: 2px;
+      height: 65px;
+      background-color: white;
+      .home-follower-heading {
+        margin-top: 5px;
+        text-align: center;
+        font-size: 18px;
+      }
+      .home-follower-count {
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.container {
+  display: flex;
+  .home-create-chable {
+    margin: 10px;
+    background-color: white;
+    width: 600px;
+    .chables-feed {
+      padding: 10px;
+      width: 600px;
+      .feed-profile-photo {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background-color: black;
+      }
+      .feed-username {
+        position: relative;
+        bottom: 50px;
+        left: 60px;
+      }
+      .feed-name {
+        position: relative;
+        bottom: 50px;
+        left: 60px;
+        a {
+          color: black;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .chable-creator {
+      background-color: #e4fcf8;
+      padding-top: 4px; 
+      .chable-field {
+        width: 500px;
+        height: 40px;
+        padding: 7px;
+        margin: 5px;
+        padding-left: 15px;
+        resize: none;
+        border-radius: 20px;
+        border: 1px solid #00c4a7;
+      }
+      .chable-submit-field {
+        margin-top: 5px;
+        margin-right: 5px;
+        height: 40px;
+      }
+    }
+  }
+}

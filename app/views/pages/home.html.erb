@@ -1,6 +1,36 @@
+<style>
+ body {
+    background-color: #e6ecf0;
+    height: 760px;
+ }
+</style>
 <% if logged_in? %>
+    <div class="container">
+      <div class="home-side-profile">
+        <div class="home-cover-photo"></div>
+        <div class="home-profile-photo"></div>
+        <h1 class="home-name"><%= current_user.name %></h1>
+        <h1 class="home-user-name">@<%= current_user.username %></h1>
+        <div class="home-user-info">
+          <div class="home-chables">
+            <h1 class="home-chable-heading">Chables</h1>
+            <h1 class="home-chable-count"><%= current_user.chables.count %></h1>
+          </div>
+          <div class="home-following">
+            <h1 class="home-following-heading">Following</h1>
+            <h1 class="home-following-count">15</h1>
+          </div>
+          <div class="home-followers">
+            <h1 class="home-follower-heading">Followers</h1>
+            <h1 class="home-follower-count">200</h1>
+          </div>
+        </div>
+      </div>
+      <div class="home-create-chable">
         <%= render 'shared/chable_form' %>
         <%= render 'shared/feed' %>
+      </div>
+    </div>
 <% else %>
   <div class="Main-page-content">
     <div class="side-content">

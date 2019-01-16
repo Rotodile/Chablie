@@ -94,7 +94,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
       }
       .home-chable-count {
         text-align: center;
-        font-size: 22px;
+        font-size: 20px;
         font-weight: bold;
       }
     }
@@ -110,7 +110,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
       }
       .home-following-count {
         text-align: center;
-        font-size: 22px;
+        font-size: 20px;
         font-weight: bold;
       }
     }
@@ -126,7 +126,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
       }
       .home-follower-count {
         text-align: center;
-        font-size: 22px;
+        font-size: 20px;
         font-weight: bold;
       }
     }
@@ -141,17 +141,28 @@ body {font-family: Arial, Helvetica, sans-serif;}
     width: 600px;
     .chables-feed {
       padding: 10px;
-      width: 600px;
+      width: 550px;
+      border-bottom: 1px solid #e6ecf0;
       .feed-profile-photo {
         width: 50px;
         height: 50px;
         border-radius: 100%;
         background-color: black;
       }
+      .feed-content {
+        position: relative;
+        bottom: 75px;
+        left: 60px;
+      }
       .feed-username {
         position: relative;
         bottom: 50px;
         left: 60px;
+      }
+      .feed-time {
+        position: relative;
+        bottom: 73px;
+        left: 227px;
       }
       .feed-name {
         position: relative;
@@ -184,5 +195,17 @@ body {font-family: Arial, Helvetica, sans-serif;}
         height: 40px;
       }
     }
+  }
+}
+
+.flex-chable {
+  display: flex;
+}
+
+.feed-h1 {
+  padding: 10px;
+  border-bottom: 1px solid #e6ecf0;
+  .feed-delete {
+    color: #4a4a4a;
   }
 }

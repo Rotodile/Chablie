@@ -31,7 +31,6 @@
 "en":
   datetime:
     distance_in_words:
-    half_a_minute: "half a minute"
       less_than_x_seconds:
         one:   "1s"
         other: "%{count}s"
@@ -65,11 +64,4 @@
       almost_x_years:
         one:   "1yr"
         other: "%{count}yrs"
-    prompts:
-      year:   "Yr"
-      month:  "M"
-      day:    "D"
-      hour:   "Hr"
-      minute: "Min"
-      second: "S"
 

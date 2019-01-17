@@ -1,5 +1,25 @@
 <div class="profile-cover"></div>
-<div class="second-nav"></div>
+<div class="second-nav tab">
+    <button class="tablinks" onclick="openCity(event, 'Chables')">Chables</button>
+    <button class="tablinks" onclick="openCity(event, 'Followers')">Followers</button>
+    <button class="tablinks" onclick="openCity(event, 'Following')">Followings</button>
+</div>
+<div id="Chables" class="tabcontent show-chable">
+  <% if @user.chables.any? %>
+        <h3>Chables (<%= @user.chables.count %>)</h3>
+        <%= render @chables %>
+  <% end %>
+</div>
+
+<div id="Followers" class="tabcontent">
+  <h3>Followers</h3>
+  <p>There's nothing in this tab right now.</p>
+</div>
+
+<div id="Following" class="tabcontent">
+  <h3>Following</h3>
+  <p>There's nothing in this tab right now.</p>
+</div>
 <div class="profile-photo"></div>
 <h1 class="title profile-name"><%= @user.name %></h1>
 <h1 class="profile-username">@<%= @user.username %></h1>
@@ -9,7 +29,19 @@
 <h1 class="profile-email"><%= @user.email %></h1>
 <h1 class="profile-phone_number"><%= @user.phone_number %></h1>
 
- <% if @user.chables.any? %>
-      <h3>Chables (<%= @user.chables.count %>)</h3>
-        <%= render @chables %>
-    <% end %>
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  } 
+</script>

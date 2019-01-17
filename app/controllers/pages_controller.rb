@@ -3,6 +3,7 @@ class PagesController < ApplicationController
     @user = User.new
     if logged_in?
       @chable = current_user.chables.build
+      @chables = @user.chables
       @feed_items = current_user.feed
     end
   end

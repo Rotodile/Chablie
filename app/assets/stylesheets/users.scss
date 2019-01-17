@@ -11,7 +11,38 @@
     background-color: white;
     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25);
     position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
+
+  .second-nav button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 18px;
+    transition: 0.1s;
+  }
+  .second-nav button:hover {
+    border-bottom: 2px solid #00d1b2;
+    color: #00d1b2;
+  }
+
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+    margin-left: 30%;
+    margin-top: 5%;
+    position: absolute;
+  } 
+
+  .show-chable {
+    width: 36em;
+    background-color: rgb(255, 252, 252);
+  }
 
 .profile-photo {
     top: -110px;
@@ -188,4 +219,73 @@
             margin-top: 5px; 
         }
     }
+}
+
+.chables-feed {
+    padding: 10px;
+    width: 550px;
+    border-bottom: 1px solid #e6ecf0;
+    .feed-profile-photo {
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      background-color: black;
+    }
+    .feed-content {
+      position: relative;
+      bottom: 75px;
+      left: 60px;
+    }
+    .feed-username {
+      position: relative;
+      bottom: 50px;
+      left: 60px;
+    }
+    .feed-time {
+      position: relative;
+      bottom: 73px;
+      left: 227px;
+    }
+    .feed-name {
+      position: relative;
+      bottom: 50px;
+      left: 60px;
+      a {
+        color: black;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .chable-creator {
+    background-color: #e4fcf8;
+    padding-top: 4px; 
+    .chable-field {
+      width: 500px;
+      height: 40px;
+      padding: 7px;
+      margin: 5px;
+      padding-left: 15px;
+      resize: none;
+      border-radius: 20px;
+      border: 1px solid #00c4a7;
+    }
+    .chable-submit-field {
+      margin-top: 5px;
+      margin-right: 5px;
+      height: 40px;
+    }
+}
+
+.flex-chable {
+display: flex;
+}
+
+.feed-h1 {
+padding: 10px;
+border-bottom: 1px solid #e6ecf0;
+.feed-delete {
+  color: #4a4a4a;
+}
 }

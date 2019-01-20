@@ -1,11 +1,8 @@
-
+html {
+    background-color: #e6ecf0 !important;
+}
 body {
-    background-image: url("https://convertingcolors.com/chess-E6ECF0.svg");
     height: 100% !important;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     font-family: 'Cabin', cursive !important;
 }
 
@@ -65,6 +62,11 @@ body {
     border: 1px solid gray;
     border-radius: 100%;
     margin: 0;
+    img {
+        border-radius: 100%;
+        width: 200px;
+        height: 200px;
+    } 
 }
 
 .profile-name {
@@ -242,6 +244,13 @@ body {
       border-radius: 100%;
       background-color: black;
     }
+    .feed-img {
+        img {
+            width: 500px;
+            height: 500px;
+            margin-left: 11%;
+        }
+    }
     .feed-content {
       position: relative;
       bottom: 75px;
@@ -304,4 +313,10 @@ display: flex;
   .feed-delete-area {
     margin-top: 10px;
     border-bottom: 1px solid #e6ecf0;
+  }
+
+  .show-cover-picture img {
+    width: 100%;
+    position: absolute;
+    clip: rect(0px,1500px,310px,0px);
   }

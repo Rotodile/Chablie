@@ -6,10 +6,8 @@
      <span>
         <h1 class="feed-time">- <%= time_ago_in_words(chable.created_at) %></h1>
     </span>
-    <span class="feed-content">
-        <%= chable.content %>
-        <%= image_tag chable.picture.url if chable.picture? %>
-    </span>
+    <span class="feed-content"><%= chable.content %></span>
+    <span class="feed-img"><%= image_tag chable.chable_picture.url if chable.chable_picture? %></span>
 </div>
 <div class="feed-delete-area">
   <% if current_user?(chable.user) %>

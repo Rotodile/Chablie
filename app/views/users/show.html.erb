@@ -1,5 +1,5 @@
 <div class="profile-cover">
-<%= image_tag @user.cover_picture.url if @user.cover_picture? %>
+<span class='show-cover-picture' ><%= image_tag @user.cover_picture.url if @user.cover_picture?%></span>
 </div>
 <div class="second-nav tab">
     <button class="tablinks" onclick="openCity(event, 'Chables')">Chables</button>

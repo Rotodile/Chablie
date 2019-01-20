@@ -30,6 +30,9 @@
       <%= f.label :password_confirmation, "Password Confirmation:" %>
       <%= f.password_field :password_confirmation, class: "input is-primary form-control" %>
       <br>
+      <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+      <%= f.file_field :cover_picture, accept: 'image/jpeg,image/gif,image/png' %>
+      <br>
       <%= f.submit "Create my account", class: "button is-primary signup-btn" %>
     <% end %>
 </div>

@@ -18,7 +18,7 @@ class User < ApplicationRecord
     validate :picture_size
     validate :cover_picture_size
     has_secure_password
-
+    
     def User.digest(string)
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                       BCrypt::Engine.cost
@@ -57,7 +57,7 @@ class User < ApplicationRecord
 
     def picture_size
       if picture.size > 5.megabytes
-        error.add(:picture, "should be less than 5mb")
+        error.add(:chable_picture, "should be less than 5mb")
       end
     end
 end

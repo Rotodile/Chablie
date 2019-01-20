@@ -1,14 +1,12 @@
-<style>
- body {
-    background-color: #e6ecf0;
-    height: 760px;
- }
-</style>
 <% if logged_in? %>
     <div class="container">
       <div class="home-side-profile">
-        <div class="home-cover-photo"></div>
-        <div class="home-profile-photo"></div>
+        <div class="home-cover-photo">
+         <%= image_tag current_user.cover_picture.url if current_user.cover_picture?%>
+        </div>
+        <div class="home-profile-photo">
+          <%= image_tag current_user.picture.url if current_user.picture? %>
+        </div>
         <h1 class="home-name"><%= current_user.name %></h1>
         <h1 class="home-user-name">@<%= current_user.username %></h1>
         <div class="home-user-info">
@@ -83,6 +81,9 @@
             <br>
             <%= f.label :password_confirmation, "Confirmation:" %>
             <%= f.password_field :password_confirmation, class: "input is-primary form-control" %>
+            <br>
+            <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+            <%= f.file_field :cover_picture, accept: 'image/jpeg,image/gif,image/png' %>
             <br>
             <%= f.submit "Create my account", class: "button is-primary signup-btn" %>
           <% end %>

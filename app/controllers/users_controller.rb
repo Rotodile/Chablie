@@ -10,8 +10,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:notice] = "You have signed up successfully!"
-      redirect_to @user
+        flash[:notice] = "You have signed up successfully!"
+        redirect_to @user
     else
       render 'new'
     end
@@ -27,8 +27,8 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(user_params)
-      flash[:notice] = "Profile updated!"
-      redirect_to @user
+        flash[:notice] = "Profile updated!"
+        redirect_to @user
     else
       render 'edit'
     end

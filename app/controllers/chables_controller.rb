@@ -21,7 +21,7 @@ class ChablesController < ApplicationController
     private
 
     def chable_params
-        params.require(:chable).permit(:content)
+        params.require(:chable).permit(:content, :picture)
     end
 
     def correct_user

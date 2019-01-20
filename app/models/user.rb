@@ -3,6 +3,8 @@ class User < ApplicationRecord
     extend FriendlyId
     friendly_id :username, use: :slugged
     attr_accessor :remember_token
+    mount_uploader :picture, PictureUploader
+    mount_uploader :cover_picture, CoverPictureUploader
     before_save { self.email = email.downcase }
     validates :name, presence: true, length: { maximum: 50 }
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -13,6 +15,8 @@ class User < ApplicationRecord
                          uniqueness: true
     validates :phone_number, presence: true, length: { maximum: 11, minimum: 11 }
     validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+    validate :picture_size
+    validate :cover_picture_size
     has_secure_password
 
     def User.digest(string)
@@ -41,5 +45,19 @@ class User < ApplicationRecord
     
     def forget
         update_attribute(:remember_digest, nil)
+    end
+
+    private
+  
+    def cover_picture_size
+        if cover_picture.size > 5.megabytes
+          error.add(:cover_picture, "should be less than 5mb")
+        end
+      end
+
+    def picture_size
+      if picture.size > 5.megabytes
+        error.add(:picture, "should be less than 5mb")
+      end
     end
 end

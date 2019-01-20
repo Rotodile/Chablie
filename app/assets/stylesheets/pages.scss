@@ -1,4 +1,13 @@
-body {font-family: Arial, Helvetica, sans-serif;}
+
+body {
+  background-image: url("https://convertingcolors.com/chess-E6ECF0.svg");
+  height: 100% !important;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Cabin', cursive !important;
+}
 
 .signup-div {
   display: none; 
@@ -163,6 +172,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
         position: relative;
         bottom: 73px;
         left: 227px;
+        width: 100px;
       }
       .feed-name {
         position: relative;
@@ -203,9 +213,14 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 .feed-h1 {
-  padding: 10px;
-  border-bottom: 1px solid #e6ecf0;
+  color: #4a4a4a;
   .feed-delete {
     color: #4a4a4a;
   }
+}
+
+.feed-delete-area {
+  margin-top: 10px;
+  margin-right: 10px;
+  border-bottom: 1px solid #e6ecf0;
 }

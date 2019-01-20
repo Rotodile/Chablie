@@ -6,12 +6,15 @@
      <span>
         <h1 class="feed-time">- <%= time_ago_in_words(chable.created_at) %></h1>
     </span>
-    <span class="feed-content"><%= chable.content %></span>
+    <span class="feed-content">
+        <%= chable.content %>
+        <%= image_tag chable.picture.url if chable.picture? %>
+    </span>
 </div>
-<h1 class="feed-h1">
+<div class="feed-delete-area">
   <% if current_user?(chable.user) %>
             <%= link_to "Delete", chable, method: :delete,
-                                       data: { confirm: "are you sure?" }, class: "feed-delete" %>
+                                       data: { confirm: "are you sure?" }, class: "feed-delete feed-h1" %>
         <% end %>
-</h1>
+</div>
 </div>

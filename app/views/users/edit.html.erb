@@ -45,6 +45,8 @@ body {
                 <%= f.label :password_confirmation, "Confirmation" %>
                 <%= f.password_field :password_confirmation, class: 'input is-primary' %>
             </div>
+            <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+            <%= f.file_field :cover_picture, accept: 'image/jpeg,image/gif,image/png' %>
             <div class="button-field">
                 <%= f.submit "Save changes", class: "button is-primary update-btn" %>
         <% end %>
@@ -54,3 +56,24 @@ body {
             <% end %>
             </div>
 </div>
+
+<script type="text/javascript">
+  $('#user_picture').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+</script>
+
+<script type="text/javascript">
+  $('#user_cover_picture').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+</script>
+
+
+

@@ -35,6 +35,8 @@
 <h1 class="profile-birthday"><%= @user.birthday %></h1>
 <h1 class="profile-email"><%= @user.email %></h1>
 <h1 class="profile-phone_number"><%= @user.phone_number %></h1>
+ <%= render 'shared/stats' %>
+ <%= render 'follow_form' if logged_in? %>
 </div>
 <script>
 function openCity(evt, cityName) {

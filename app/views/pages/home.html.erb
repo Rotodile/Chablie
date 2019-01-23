@@ -16,11 +16,11 @@
           </div>
           <div class="home-following">
             <h1 class="home-following-heading">Following</h1>
-            <h1 class="home-following-count">15</h1>
+            <h1 class="home-following-count"><%= current_user.following.count %></h1>
           </div>
           <div class="home-followers">
             <h1 class="home-follower-heading">Followers</h1>
-            <h1 class="home-follower-count">200</h1>
+            <h1 class="home-follower-count"><%= current_user.followers.count %></h1>
           </div>
         </div>
       </div>

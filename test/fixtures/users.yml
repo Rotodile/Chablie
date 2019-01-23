@@ -8,3 +8,8 @@ areeba:
   name: Areeba Ishtiaq
   email: areeba.aic@gmail.com
   password_digest: <%= User.digest('password') %>
+
+hooria: 
+  name: Hooria Ishtiaq
+  email: hooria.hic@gmail.com
+  password_digest: <%= User.digest('password') %>

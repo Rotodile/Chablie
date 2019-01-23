@@ -104,4 +104,30 @@ class UserTest < ActiveSupport::TestCase
       @user.destroy
     end
   end
+
+  test "should follow and unfollow a user" do
+    admin = users(:admin)
+    areeba  = users(:areeba)
+    assert_not admin.following?(areeba)
+    admin.follow(areeba)
+    assert admin.following?(areeba)
+    assert areeba.followers.include?(admin)
+    admin.unfollow(areeba)
+    assert_not admin.following?(areebar)
+  end
+
+  test "feed should have the right posts" do
+    admin = users(:admin)
+    areeba  = users(:areeba)
+    hooria = users(:hooria)
+    hooria.chables.each do |post_following|
+      assert admin.feed.include?(post_following)
+    end
+    admin.chables.each do |post_self|
+      assert admin.feed.include?(post_self)
+    end
+    areeba.chables.each do |post_unfollowed|
+      assert_not admin.feed.include?(post_unfollowed)
+    end
+  end
 end

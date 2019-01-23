@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get '/signup', to: 'users#new'
-  resources :users
-  resources :account_activations, only: [:edit]
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   resources :chables,             only: [:create, :destroy]
+  resources :connections,         only: [:create, :destroy]
 end

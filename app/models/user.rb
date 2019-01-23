@@ -1,5 +1,13 @@
 class User < ApplicationRecord
     has_many :chables, dependent: :destroy
+    has_many :active_connections, class_name: "Connection",
+                                  foreign_key: "follower_id",
+                                  dependent: :destroy
+    has_many :passive_connections, class_name: "Connection",
+                                  foreign_key: "followed_id",
+                                  dependent: :destroy
+    has_many :following, through: :active_connections, source: :followed 
+    has_many :followers, through: :passive_connections, source: :follower
     extend FriendlyId
     friendly_id :username, use: :slugged
     attr_accessor :remember_token
@@ -30,8 +38,23 @@ class User < ApplicationRecord
     end
 
     def feed
-        Chable.where("user_id = ?", id)
-      end
+        following_ids = "SELECT followed_id FROM connections
+                     WHERE  follower_id = :user_id"
+        Chable.where("user_id IN (#{following_ids})
+                     OR user_id = :user_id", user_id: id)
+    end
+
+    def follow(other_user)
+        following << other_user
+    end
+
+    def unfollow(other_user)
+        following.delete(other_user)
+    end
+
+    def following?(other_user)
+        following.include?(other_user)
+    end
 
     def remember
         self.remember_token = User.new_token

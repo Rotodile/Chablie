@@ -45,8 +45,12 @@ body {
                 <%= f.label :password_confirmation, "Confirmation" %>
                 <%= f.password_field :password_confirmation, class: 'input is-primary' %>
             </div>
-            <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
-            <%= f.file_field :cover_picture, accept: 'image/jpeg,image/gif,image/png' %>
+            <h1 class="imagu">Profile Picture</h1>
+            <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', id: "image-browse" %>
+            <label for="image-browse" class="btn-2 label edit-label">upload</label><br>
+            <h1 class="imagu">Cover Picture</h1>
+            <%= f.file_field :cover_picture, accept: 'image/jpeg,image/gif,image/png', id: "image-browse" %>
+            <label for="image-browse" class="btn-2 label edit-label">upload</label>
             <div class="button-field">
                 <%= f.submit "Save changes", class: "button is-primary update-btn" %>
         <% end %>

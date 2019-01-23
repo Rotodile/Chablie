@@ -43,13 +43,28 @@ body {
     padding: 6px 12px;
     border-top: none;
     margin-left: 30%;
-    margin-top: 5%;
     position: absolute;
   } 
 
   .show-chable {
     width: 36em;
     background-color: rgb(255, 252, 252);
+    margin-top: 5%;
+  }
+
+  .connection {
+      position: absolute !important;
+      left: 85% !important;
+      top: 20% !important;
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+      border-radius: 20px !important;
+  }
+
+  .tablinks {
+      padding: 0 !important;
+      padding-right: 16px !important;
+      padding-left: 16px !important;
   }
 
 .profile-photo {
@@ -320,3 +335,4 @@ display: flex;
     position: absolute;
     clip: rect(0px,1500px,310px,0px);
   }
+  

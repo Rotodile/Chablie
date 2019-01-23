@@ -141,3 +141,78 @@ div#error_explanation {
     margin-top: 60px;
     height: 40em;
 }
+
+#image-browse {
+    height: 0;
+    overflow: hidden;
+    width: 0;
+  }
+  
+  .label {
+    border: none;
+    border-radius: 5px;
+    color: #fff !important;
+    cursor: pointer;
+    display: inline-block !important;
+    font-family: 'Poppins', sans-serif;
+    font-size: inherit;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-left: 10px;
+    outline: none;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    padding-left: 30px;
+    padding-right: 20px;
+    position: relative;
+    transition: all 0.3s;
+    vertical-align: middle;
+    &.btn-2 {
+      background-color: #00c4a7;
+      border-radius: 50px;
+      overflow: hidden;   
+      &::before {
+        color: #fff;
+        content: "\f093";
+        font-family: "FontAwesome";
+        font-size: 95%;
+        height: 100%;
+        right: 75%;
+        line-height: 3.3;
+        position: absolute;
+        top: -9px;
+        transition: all 0.3s;
+      }
+      &:hover {
+        background-color: darken(#00c4a7, 10%);          
+      }
+    }
+  } 
+
+  .edit-label {
+      left: 32%;
+      width: 38%;
+      padding-left: 15%;
+  }
+
+  .imagu {
+      margin-left: 15% !important;
+      position: relative;
+      top: 3.5%;
+  }
+
+  .new-upload {
+      width: 100%;
+      margin-left: 5px !important;
+      margin-top: -8px !important;
+      padding-left: 45%;
+      &.btn-2 {
+        &::before {
+             right: 58%;
+        }
+    }
+  }
+
+  .new-h1 {
+      margin-left: 10px !important;
+  }

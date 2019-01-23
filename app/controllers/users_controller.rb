@@ -24,6 +24,8 @@ class UsersController < ApplicationController
   def show
     @user = User.friendly.find(params[:id])
     @chables = @user.chables
+    @following = @user.following
+    @followers = @user.followers
   end
 
   def edit
@@ -46,14 +48,14 @@ class UsersController < ApplicationController
 
   def following
     @title = "Following"
-    @user  = User.find(params[:id])
+    @user  = User.friendly.find(params[:id])
     @users = @user.following
     render 'show_follow'
   end
 
   def followers
     @title = "Followers"
-    @user  = User.find(params[:id])
+    @user  = User.friendly.find(params[:id])
     @users = @user.followers
     render 'show_follow'
   end

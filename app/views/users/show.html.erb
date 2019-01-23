@@ -2,27 +2,25 @@
 <span class='show-cover-picture' ><%= image_tag @user.cover_picture.url if @user.cover_picture?%></span>
 </div>
 <div class="second-nav tab">
-    <button class="tablinks" onclick="openCity(event, 'Chables')">Chables</button>
-    <button class="tablinks" onclick="openCity(event, 'Followers')">Followers</button>
-    <button class="tablinks" onclick="openCity(event, 'Following')">Followings</button>
+    <button class="tablinks" onclick="openCity(event, 'Chables')">Chables<br><%= @user.chables.count %></button>
+    <button class="tablinks" onclick="openCity(event, 'Followers')">Followers<br><%= @user.followers.count %></button>
+    <button class="tablinks" onclick="openCity(event, 'Following')">Followings<br><%= @user.following.count %></button>
+     <%= render 'follow_form' if logged_in? %>
 </div>
 
 <div class="show-area">
 <div id="Chables" class="tabcontent show-chable">
   <% if @user.chables.any? %>
-        <h3>Chables (<%= @user.chables.count %>)</h3>
         <%= render @chables %>
   <% end %>
 </div>
 
 <div id="Followers" class="tabcontent">
-  <h3>Followers</h3>
-  <p>There's nothing in this tab right now.</p>
+  <%= render @followers %>
 </div>
 
 <div id="Following" class="tabcontent">
-  <h3>Following</h3>
-  <p>There's nothing in this tab right now.</p>
+  <%= render @following %>
 </div>
 
 <div class="profile-photo">
@@ -35,8 +33,6 @@
 <h1 class="profile-birthday"><%= @user.birthday %></h1>
 <h1 class="profile-email"><%= @user.email %></h1>
 <h1 class="profile-phone_number"><%= @user.phone_number %></h1>
- <%= render 'shared/stats' %>
- <%= render 'follow_form' if logged_in? %>
 </div>
 <script>
 function openCity(evt, cityName) {

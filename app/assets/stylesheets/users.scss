@@ -73,15 +73,9 @@ body {
     position: relative;
     width: 200px;
     height: 200px;
-    background-color: white;
     border: 1px solid gray;
     border-radius: 100%;
     margin: 0;
-    img {
-        border-radius: 100%;
-        width: 200px;
-        height: 200px;
-    } 
 }
 
 .profile-name {
@@ -89,6 +83,7 @@ body {
     position: relative !important;
     top: -100px;
     left: 160px;
+    width: 200px;
 }
 
 .profile-username, .profile-email, .profile-phone_number, .profile-bio, .profile-birthday, .profile-location {
@@ -98,6 +93,7 @@ body {
     position: relative;
     top: -120px;
     left: 160px;
+    width: 200px;
 } 
 
 .signup-heading {

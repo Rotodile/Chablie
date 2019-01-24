@@ -54,23 +54,23 @@ body {
   .home-cover-photo {
     width: 300px;
     height: 100px;
-    background-color: #00c4a7; 
-    img {
-      width: 300px;
-      height: 100px;
-    }
   }
   .home-profile-photo {
-    background-color: white;
-    border-radius: 100%;
-    width: 70px;
-    height: 70px;
-    position: relative;
-    bottom: 30px;
-    left: 10px;
-    img {
-      border-radius: 100%;
-    }
+  //  background-color: white;
+ //   border-radius: 100%;
+ //   width: 70px;
+ //   height: 70px;
+ //   position: relative;
+      bottom: 30px;
+      left: 10px;
+      width: 70px;
+      height: 70px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 50%;
+   // img {
+     // border-radius: 100%;
+  //  }
   }
   .home-name {
     position: relative;
@@ -154,8 +154,6 @@ body {
       width: 550px;
       border-bottom: 1px solid #e6ecf0;
       .feed-profile-photo {
-        width: 50px;
-        height: 50px;
         border-radius: 100%;
         background-color: black;
       }

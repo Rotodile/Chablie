@@ -1,8 +1,7 @@
 <% if logged_in? %>
     <div class="container">
       <div class="home-side-profile">
-        <div class="home-cover-photo">
-         <%= image_tag current_user.cover_picture.url if current_user.cover_picture?%>
+        <div class="home-cover-photo" style="background-image: url(' <%= current_user.cover_picture.url if current_user.cover_picture? %>');">
         </div>
         <div class="home-profile-photo">
           <%= image_tag current_user.picture.url if current_user.picture? %>
@@ -87,8 +86,8 @@
             <label for="image-browse" class="btn-2 label new-upload">upload</label>
             <br>
             <h1 class="new-h1">Cover Photo:</h1>
-            <%= f.file_field :cover_picture, accept: 'image/jpeg,image/gif,image/png', id: "image-browse" %>
-            <label for="image-browse" class="btn-2 label new-upload">upload</label>
+            <%= f.file_field :cover_picture, accept: 'image/jpeg,image/gif,image/png', id: "cover-image-browse" %>
+            <label for="cover-image-browse" class="btn-2 label new-upload">upload</label>
             <br>
             <%= f.submit "Create my account", class: "button is-primary signup-btn" %>
           <% end %>

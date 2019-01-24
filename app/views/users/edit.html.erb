@@ -49,8 +49,8 @@ body {
             <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', id: "image-browse" %>
             <label for="image-browse" class="btn-2 label edit-label">upload</label><br>
             <h1 class="imagu">Cover Picture</h1>
-            <%= f.file_field :cover_picture, accept: 'image/jpeg,image/gif,image/png', id: "image-browse" %>
-            <label for="image-browse" class="btn-2 label edit-label">upload</label>
+            <%= f.file_field :cover_picture, accept: 'image/jpeg,image/gif,image/png', id: "cover-image-browse" %>
+            <label for="cover-image-browse" class="btn-2 label edit-label">upload</label>
             <div class="button-field">
                 <%= f.submit "Save changes", class: "button is-primary update-btn" %>
         <% end %>

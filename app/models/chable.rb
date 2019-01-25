@@ -1,7 +1,9 @@
 class Chable < ApplicationRecord
+  mount_uploader :chable_picture, ChablePictureUploader
+  has_many :comments, as: :commentable
+  has_many :likes, dependent: :destroy
   belongs_to :user
   default_scope -> { order(created_at: :desc) }
-  mount_uploader :chable_picture, ChablePictureUploader
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
   validate :chable_picture_size

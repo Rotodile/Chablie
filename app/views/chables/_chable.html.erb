@@ -8,6 +8,30 @@
     </span>
     <span class="feed-content"><%= chable.content %></span>
     <span class="feed-img"><%= image_tag chable.chable_picture.url if chable.chable_picture? %></span>
+    <% pre_like = chable.likes.find { |like| like.user_id == current_user.id} %>
+    <% if pre_like %>
+        <%= link_to "", chable_like_path(chable, pre_like), method: :delete, class: "unlike-button" %>
+    <% else %>
+        <%= link_to "", chable_likes_path(chable), method: :post, class: "like-button" %>
+    <% end %>
+    <p class="like-count"><%= chable.likes.count %></p>
+
+<a id="comment-popup" class="comment-popup"></a>
+
+<div id="commentPop" class="comment">
+
+  <div class="modal-content">
+    <span class="close">&times;</span>
+     <%= form_for [chable, Comment.new] do |f| %>
+        <%= f.text_area :body, placeholder: "Add a comment" %><br/>
+        <%= f.submit "Add Comment" %>
+    <% end %>
+  </div>
+</div>
+
+<!--<ul>
+  <%= render(partial: 'comments/comment', collection: chable.comments) %>
+</ul>-->
 </div>
 <div class="feed-delete-area">
   <% if current_user?(chable.user) %>
@@ -16,3 +40,23 @@
         <% end %>
 </div>
 </div>
+
+<script>
+var comment = document.getElementById('commentPop');
+var btn = document.getElementById("comment-popup");
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  comment.style.display = "block";
+}
+
+span.onclick = function() {
+  comment.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == comment) {
+    comment.style.display = "none";
+  }
+} 
+</script>

@@ -10,6 +10,13 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
-  resources :chables,             only: [:create, :destroy]
+  resources :chables, only: [:create, :destroy] do
+    resources :likes
+    resources :comments
+  end
+  resources :comments do
+    resources :comments
+  end
+
   resources :connections,         only: [:create, :destroy]
 end

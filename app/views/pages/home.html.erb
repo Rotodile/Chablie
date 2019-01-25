@@ -1,7 +1,7 @@
 <% if logged_in? %>
     <div class="container">
       <div class="home-side-profile">
-        <div class="home-cover-photo" style="background-image: url(' <%= current_user.cover_picture.url if current_user.cover_picture? %>');">
+        <div class="home-cover-photo" style="background-image: url(' <%= current_user.cover_picture.url if current_user.cover_picture? %>'); background-size: cover;">
         </div>
         <div class="home-profile-photo">
           <%= image_tag current_user.picture.url if current_user.picture? %>

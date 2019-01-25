@@ -1,8 +1,9 @@
 class ChablesController < ApplicationController
     before_action :logged_in_user, only: [:create, :destroy]
     before_action :correct_user, only: :destroy
+    
     def create
-        @chable = current_user.chables.build(chable_params)
+        @chable = @current_user.chables.build(chable_params)
         if @chable.save
           flash[:notice] = "Your Chable was created!"
           redirect_to root_url

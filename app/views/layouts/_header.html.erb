@@ -28,9 +28,7 @@
 
         <div class="navbar-dropdown">
         <%= link_to 'Settings', edit_user_path(current_user), class: 'navbar-item' %>
-          <a class="navbar-item">
-            Jobs
-          </a>
+          <%= link_to 'Profile', current_user, class: "navbar-item" %>
           <a class="navbar-item">
             Contact
           </a>

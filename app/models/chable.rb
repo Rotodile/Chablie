@@ -1,5 +1,4 @@
 class Chable < ApplicationRecord
-  attr_accessor :content, :chable_picture
   mount_uploader :chable_picture, ChablePictureUploader
   has_many :comments, as: :commentable
   has_many :likes, dependent: :destroy

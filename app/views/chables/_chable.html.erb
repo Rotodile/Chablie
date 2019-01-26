@@ -1,46 +1,82 @@
 <div class="flex-chable">
-<div class="chables-feed">
+<div class="chables-feed" onclick="on()">
     <div class="feed-profile-photo" style="background-image: url(' <%= chable.user.picture.url if chable.user.picture? %>'); background-size: cover;"></div>
     <span class="feed-name"><%= link_to chable.user.name, chable.user %></span>
     <span class="feed-username">@<%= chable.user.username %></span>
-     <span>
+    <span>
         <h1 class="feed-time">- <%= time_ago_in_words(chable.created_at) %></h1>
     </span>
     <span class="feed-content"><%= chable.content %></span>
     <span class="feed-img"><%= image_tag chable.chable_picture.url if chable.chable_picture? %></span>
-    <% pre_like = chable.likes.find { |like| like.user_id == current_user.id} %>
-    <% if pre_like %>
-        <%= link_to "", chable_like_path(chable, pre_like), method: :delete, class: "unlike-button" %>
-    <% else %>
-        <%= link_to "", chable_likes_path(chable), method: :post, class: "like-button" %>
-    <% end %>
-    <p class="like-count"><%= chable.likes.count %></p>
-
-<a id="comment-popup" class="comment-popup"></a>
-
-<div id="commentPop" class="comment">
-
-  <div class="modal-content">
-    <span class="close">&times;</span>
-     <%= form_for [chable, Comment.new] do |f| %>
-        <%= f.text_area :body, placeholder: "Add a comment" %><br/>
-        <%= f.submit "Add Comment" %>
+    <div class="social-area">
+      <div class="like-area">
+        <% pre_like = chable.likes.find { |like| like.user_id == current_user.id} %>
+          <% if pre_like %>
+            <%= link_to "", chable_like_path(chable, pre_like), method: :delete, class: "unlike-button" %>
+          <% else %>
+            <%= link_to "", chable_likes_path(chable), method: :post, class: "like-button" %>
+          <% end %>
+          <p class="like-count"><%= chable.likes.count %></p>
+      </div>
+      <a id="comment-popup" class="comment-popup"></a>
+      <p class="comment-count"><%= chable.comments.count %></p>
+      <div id="commentPop" class="comment">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+            <%= form_for [chable, Comment.new] do |f| %>
+              <%= f.text_area :body, placeholder: "Add a comment" %><br/>
+              <%= f.submit "Add Comment" %>
+            <% end %>
+        </div>
+      </div>
+      <!--<ul>
+      <%= render(partial: 'comments/comment', collection: chable.comments) %>
+      </ul>-->
+    </div>
+</div>
+  <div class="feed-delete-area">
+    <% if current_user?(chable.user) %>
+              <%= link_to "Delete", chable, method: :delete,
+                                       data: { confirm: "are you sure?" }, class: "feed-delete feed-h1" %>
     <% end %>
   </div>
 </div>
 
-<!--<ul>
-  <%= render(partial: 'comments/comment', collection: chable.comments) %>
-</ul>-->
 </div>
-<div class="feed-delete-area">
-  <% if current_user?(chable.user) %>
-            <%= link_to "Delete", chable, method: :delete,
-                                       data: { confirm: "are you sure?" }, class: "feed-delete feed-h1" %>
-        <% end %>
+<div id="overlay">
+  <span class="shut" onclick="off()">&times;</span>
+  <div class="chables-feed" style="margin-top: 10% !important; margin-left: 33% !important; background-color: white; border-radius: 5px; padding: 20px;">
+    <div class="feed-profile-photo" style="background-image: url(' <%= chable.user.picture.url if chable.user.picture? %>'); background-size: cover;"></div>
+    <span class="feed-name" style="font-size: 20px;"><%= link_to chable.user.name, chable.user %></span><br>
+    <span class="feed-username" style="font-size: 15px;">@<%= chable.user.username %></span>
+    <span>
+        <h1 class="feed-time">- <%= time_ago_in_words(chable.created_at) %></h1>
+    </span>
+    <span class="feed-content" style="font-size: 25px; left: 0;"><%= chable.content %></span>
+    <span class="feed-img"><%= image_tag chable.chable_picture.url if chable.chable_picture? %></span>
+    <div class="social-area" style="margin-left: 0;">
+      <div class="like-area">
+        <% pre_like = chable.likes.find { |like| like.user_id == current_user.id} %>
+          <% if pre_like %>
+            <%= link_to "", chable_like_path(chable, pre_like), method: :delete, class: "unlike-button" %>
+          <% else %>
+            <%= link_to "", chable_likes_path(chable), method: :post, class: "like-button" %>
+          <% end %>
+          <p class="like-count"><%= chable.likes.count %></p>
+      </div>
+      <a id="comment-popup" class="comment-popup"></a>
+      <p class="comment-count"><%= chable.comments.count %></p>
+      </div>
+      <%= form_for [chable, Comment.new] do |f| %>
+          <hr>
+          <%= f.text_area :body, placeholder: "Add Reply", class: "comment-text" %>
+          <%= f.submit "Reply", class: "comment-btn" %>
+          <hr>
+      <% end %>
+     <!--<ul>
+          <%= render(partial: 'comments/comment', collection: chable.comments) %>
+      </ul>-->
 </div>
-</div>
-
 <script>
 var comment = document.getElementById('commentPop');
 var btn = document.getElementById("comment-popup");
@@ -59,4 +95,13 @@ window.onclick = function(event) {
     comment.style.display = "none";
   }
 } 
+
+function on() {
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("overlay").style.ZIndex = 0;
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
 </script>

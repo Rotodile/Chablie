@@ -7,7 +7,6 @@ class CommentsController < ApplicationController
     
         def create
           @comment = @commentable.comments.new comment_params
-    
           if @comment.save
             redirect_to root_path, notice: 'Your comment was successfully posted!'
           else

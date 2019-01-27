@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/signup', to: 'users#new'
   resources :users do
+    resources :comments
     member do
       get :following, :followers
     end

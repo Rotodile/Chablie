@@ -2,11 +2,8 @@
 <div class="chables-feed">
     <div class="feed-profile-photo" style="background-image: url(' <%= chable.user.picture.url if chable.user.picture? %>'); background-size: cover;"></div>
     <span class="feed-name"><%= link_to chable.user.name, chable.user %></span>
-    <span class="feed-username">@<%= chable.user.username %></span>
-     <span>
-        <h1 class="feed-time">- <%= time_ago_in_words(chable.created_at) %></h1>
-    </span>
-    <span class="feed-content"><%= chable.content %></span>
+    <span class="feed-username">@<%= chable.user.username %> - <%= time_ago_in_words(chable.created_at) %></span>
+    <h1 class="feed-content"><%= chable.content %></h1>
     <span class="feed-img"><%= image_tag chable.chable_picture.url if chable.chable_picture? %></span>
       <div class="social-area">
       <div class="like-area">
@@ -18,21 +15,19 @@
           <% end %>
           <p class="like-count"><%= chable.likes.count %></p>
       </div>
-      <a id="comment-popup" class="comment-popup"></a>
+      <p class="comment-popup"></p>
       <p class="comment-count"><%= chable.comments.count %></p>
-      <div id="commentPop" class="comment">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-            <%= form_for [chable, Comment.new] do |f| %>
-              <%= f.text_area :body, placeholder: "Add a comment" %><br/>
-              <%= f.submit "Add Comment" %>
-            <% end %>
-        </div>
-      </div>
-      <!--<ul>
-      <%= render(partial: 'comments/comment', collection: chable.comments) %>
-      </ul>-->
 </div>
+    <div class="comment">
+            <%= form_for [chable, Comment.new] do |f| %>
+              <%= f.text_area :body, placeholder: "Add a comment", class: "comment-text" %><br/>
+              <%= f.submit "Add Comment", class: "comment-btn" %>
+            <% end %>
+      </div>
+        <ul>
+<%= render(partial: 'comments/comment', collection: chable.comments) %>
+
+</ul>
 </div>
 <div class="feed-delete-area">
   <% if current_user?(chable.user) %>
@@ -41,19 +36,4 @@
         <% end %>
 </div>
 </div>
-<script>
-var comment = document.getElementById('commentPop');
-var btn = document.getElementById("comment-popup");
-var span = document.getElementsByClassName("close")[0];
-btn.onclick = function() {
-  comment.style.display = "block";
-}
-span.onclick = function() {
-  comment.style.display = "none";
-}
-window.onclick = function(event) {
-  if (event.target == comment) {
-    comment.style.display = "none";
-  }
-}
-</script>
+

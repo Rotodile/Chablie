@@ -47,7 +47,7 @@ body {
   } 
 
   .show-chable {
-    width: 36em;
+    width: 38em;
     background-color: rgb(255, 252, 252);
     margin-top: 5%;
   }
@@ -311,7 +311,8 @@ body {
 }
 
 .flex-chable {
-display: flex;
+    display: flex;
+    width: 600px;
 }
 
 .feed-h1 {

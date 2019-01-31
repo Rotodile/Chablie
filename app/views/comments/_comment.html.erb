@@ -1,6 +1,10 @@
 <li>
-  <h1 class="sub-comment-body"><%= comment.body %> -
-  <small><%= time_ago_in_words(comment.created_at) %></small></h1>
+<div class="comment-container">
+   <div class="feed-profile-photo comment-photo" style="background-image: url(' <%= comment.user.picture.url if comment.user.picture? %>'); background-size: cover;"></div>
+    <span class="feed-name"><%= link_to comment.user.name, comment.user %></span>
+    <span class="feed-username">@<%= comment.user.username %> - <%= time_ago_in_words(comment.created_at) %></span>
+    <h1 class="feed-content"><%= comment.body %></h1>
+    </div>
 <!--  <%= form_for [comment, Comment.new] do |f| %>
       <%= f.text_area :body, placeholder: "Add a Reply" %><br/>
       <%= f.submit "Reply"  %>

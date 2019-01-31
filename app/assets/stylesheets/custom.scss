@@ -327,7 +327,7 @@ div#error_explanation {
   
   .comment-text {
       resize: none;
-      width: 83%;
+      width: 93%;
       height: 35px;
       border-radius: 5px;
       border: 1px solid #31c2ac;
@@ -339,23 +339,43 @@ div#error_explanation {
       color: white;
       background-color: #00d1b2;
       border: none;
-      padding: 10px 25px;
+      padding: 10px 20px;
       border-radius: 20px;
       font-weight: bold;
       position: relative;
       bottom: 50%;
-      left: 85%;
+      left: 95%;
 }
 
 .comment {
-    width: 500px;
+    width: 450px;
     display: flex;
 }
 
 #new_comment {
-    width: 500px;
+    margin-left: 55px;
+    width: 450px;
 }
 
 .sub-comment-body {
     margin-left: 15px;
 }
+  
+  .comment-container {  
+    margin-left: 40px;
+    .comment-photo {
+        width: 40px !important;
+        height: 40px !important;
+        margin-left: 15px;
+        margin-bottom: 5px;
+    }
+    .feed-name {
+        font-size: 14px;
+    }
+    .feed-username {
+        font-size: 14px;
+    }
+    .feed-content {
+        margin-top: -5px;
+    }
+  }

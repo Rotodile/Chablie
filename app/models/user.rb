@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    has_many :rechable, :class_name => "chable"
     has_many :chables, dependent: :destroy
     has_many :active_connections, class_name: "Connection",
                                   foreign_key: "follower_id",

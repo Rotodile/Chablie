@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   resources :chables, only: [:create, :destroy] do
     resources :likes
     resources :comments
+    member do
+      get :rechable
+    end
   end
   resources :comments do
     resources :comments

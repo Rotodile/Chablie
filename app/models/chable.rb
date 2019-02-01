@@ -1,4 +1,6 @@
 class Chable < ApplicationRecord
+  has_many :rechabler, :class_name => 'user'
+  has_many :rechable
   mount_uploader :chable_picture, ChablePictureUploader
   has_many :comments, as: :commentable
   has_many :likes, dependent: :destroy

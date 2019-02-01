@@ -18,6 +18,23 @@ class ChablesController < ApplicationController
         flash[:notice] = "Your Chable was deleted!"
         redirect_to request.referrer || root_url    
     end
+  
+    def rechable
+        @original_chable = Chable.first
+        if @original_chable
+          @chable_rechable = current_user.chables.build(content: @original_chable.content, user_id: @original_chable.user_id)
+          if @chable_rechable.save
+            @rechable = current_user.rechable.build(content: @original_chable.content, user_id: @original_chable.user_id, chable_id: @original_chable.id )
+            redirect_to user_path(current_user)
+            flash[:notice] = "Rechable Successful"
+          else
+            redirect_to user_path(current_user), notice: @chable_rechable.errors.full_messages
+          end
+        else
+         redirect_to root_path
+         flash[:notice] = "Something went wrong"
+        end
+      end 
 
     private
 

@@ -11,12 +11,13 @@
           <% if pre_like %>
             <%= link_to "", chable_like_path(chable, pre_like), method: :delete, class: "unlike-button" %>
           <% else %>
-            <%= link_to "", chable_likes_path(chable), method: :post, class: "like-button" %>
+            <%= link_to "", chable_likes_path(chable), method: :post, class: "like-button", remote: :true %>
           <% end %>
           <p class="like-count"><%= chable.likes.count %></p>
       </div>
       <p class="comment-popup"></p>
       <p class="comment-count"><%= chable.comments.count %></p>
+      <%= link_to "RECHABLE", rechable_chable_path(chable.user.chables)%>
 </div>
     <div class="comment">
             <%= form_for [chable, Comment.new] do |f| %>

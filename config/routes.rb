@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'search' => 'search#index'
   root 'pages#home'
   get '/about', to: 'pages#about'
   get '/login', to: 'sessions#new'

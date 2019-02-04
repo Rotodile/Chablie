@@ -1,5 +1,19 @@
-<div class="flex-chable">
-<div class="chables-feed">
+<style lg="scss">
+.chables-feed .feed-img img{
+        margin-left: 1% !important;
+}
+</style>
+<div class="search-page">
+  <% if @chables.exists? %>
+    <h1 class="title" style="text-align: center; margin-top: 10px;">Top Chables</h1>
+  <% else %>
+    <h1 class="title" style="text-align: center; margin-top: 10px;">Oops! No matching chables found ...</h1>
+  <% end %>
+
+<div class="user-images">
+    <% @chables.each do |chable|%>
+      <div class="wrapper">
+        <div class="chables-feed" style="background-color: white; justify-content: center; margin-left: 30%;">
     <div class="feed-profile-photo" style="background-image: url(' <%= chable.user.picture.url if chable.user.picture? %>'); background-size: cover;"></div>
     <span class="feed-name"><%= link_to chable.user.name, chable.user %></span>
     <span class="feed-username">@<%= chable.user.username %> - <%= time_ago_in_words(chable.created_at) %></span>
@@ -26,22 +40,7 @@
       <%= link_to "", rechable_chable_path(chable.user.chables), class: 'rechable-button'%>
       <p class="rechable-count">0</p>
 </div>
-    <div class="comment">
-            <%= form_for [chable, Comment.new] do |f| %>
-              <%= f.text_area :body, placeholder: "Add a comment", class: "comment-text" %><br/>
-              <%= f.submit "Add Comment", class: "comment-btn" %>
-            <% end %>
       </div>
-        <ul>
-<%= render(partial: 'comments/comment', collection: chable.comments) %>
-
-</ul>
+    <% end %>
+  </div>
 </div>
-<div class="feed-delete-area">
-  <% if current_user?(chable.user) %>
-            <%= link_to "Delete", chable, method: :delete,
-                                       data: { confirm: "are you sure?" }, class: "feed-delete feed-h1" %>
-        <% end %>
-</div>
-</div>
-

@@ -295,6 +295,10 @@ div#error_explanation {
       margin-left: 10px;
   }
 
+  .rechable-count {
+    margin-left: 10px;
+}
+
   .like-area {
       p {
           left: 25px;
@@ -322,6 +326,15 @@ div#error_explanation {
       font-family: "FontAwesome";
       color: gray; 
       margin-left: 20px;
+  }
+}
+
+.rechable-button {
+    &::before {
+      content: "\f079";
+      font-family: "FontAwesome";
+      color: gray; 
+      margin-left: 50px;
   }
 }
   

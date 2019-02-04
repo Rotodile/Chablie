@@ -20,15 +20,15 @@ class ChablesController < ApplicationController
     end
   
     def rechable
-        @original_chable = Chable.first
+        @original_chable = Chable.find_by_id(params[:id])
         if @original_chable
           @chable_rechable = current_user.chables.build(content: @original_chable.content, user_id: @original_chable.user_id)
           if @chable_rechable.save
             @rechable = current_user.rechable.build(content: @original_chable.content, user_id: @original_chable.user_id, chable_id: @original_chable.id )
-            redirect_to user_path(current_user)
+            redirect_to root_path
             flash[:notice] = "Rechable Successful"
           else
-            redirect_to user_path(current_user), notice: @chable_rechable.errors.full_messages
+            redirect_to root_path, notice: @chable_rechable.errors.full_messages
           end
         else
          redirect_to root_path

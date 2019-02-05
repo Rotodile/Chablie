@@ -8,9 +8,9 @@ class CommentsController < ApplicationController
         def create
           @comment = @commentable.comments.new comment_params.merge(user_id: current_user.id)
           if @comment.save
-            redirect_to root_path, notice: 'Your comment was successfully posted!'
+            redirect_to root_path, notice: 'Your comment was successfully sent!'
           else
-            redirect_to root_path, notice: "Your comment wasn't posted!"
+            redirect_to root_path, notice: "Your comment wasn't sent!"
           end
         end
 

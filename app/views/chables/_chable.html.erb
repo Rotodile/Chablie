@@ -11,6 +11,16 @@
                                                 <%end %>
                                           <% end %></h1>
     <span class="feed-img"><%= image_tag chable.chable_picture.url if chable.chable_picture? %></span>
+
+    <div class="comment">
+            <%= form_for [chable, Comment.new] do |f| %>
+              <%= f.text_area :body, placeholder: "Add a comment", class: "comment-text" %><br/>
+              <%= f.submit "Add Comment", class: "comment-btn" %>
+            <% end %>
+      </div>
+        <ul>
+<%= render(partial: 'comments/comment', collection: chable.comments) %>
+</ul>
       <div class="social-area">
       <div class="like-area">
         <% pre_like = chable.likes.find { |like| like.user_id == current_user.id} %>
@@ -26,16 +36,6 @@
       <%= link_to "", rechable_chable_path(chable.user.chables), class: 'rechable-button'%>
       <p class="rechable-count">0</p>
 </div>
-    <div class="comment">
-            <%= form_for [chable, Comment.new] do |f| %>
-              <%= f.text_area :body, placeholder: "Add a comment", class: "comment-text" %><br/>
-              <%= f.submit "Add Comment", class: "comment-btn" %>
-            <% end %>
-      </div>
-        <ul>
-<%= render(partial: 'comments/comment', collection: chable.comments) %>
-
-</ul>
 </div>
 <div class="feed-delete-area">
   <% if current_user?(chable.user) %>

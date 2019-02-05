@@ -1,8 +1,4 @@
 <% if logged_in? %>
-  <%= form_with url: search_path, method: :get, local: true, class: 'form-inline search-form' do |form| %>
-  <%= form.text_field :query, value: params[:query], class: 'form-control mr-sm-2', placeholder: '#search' %>
-<% end %>
-
     <div class="container">
       <div class="home-side-profile">
         <div class="home-cover-photo" style="background-image: url(' <%= current_user.cover_picture.url if current_user.cover_picture? %>'); background-size: cover;">

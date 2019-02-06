@@ -231,7 +231,6 @@ div#error_explanation {
       height: 300px;
       background-color: white;
       margin-top: 15px;
-      .sub-user-avatar {
           img {
             width: 80px;
             height: 80px;
@@ -240,7 +239,6 @@ div#error_explanation {
             bottom: 15%;
             left: 5%;
           }
-      }
       .sub-user-cover {
           width: 300px;
           height: 120px;
@@ -254,12 +252,13 @@ div#error_explanation {
       }
       .sub-user-username {
         color: rgb(119, 119, 119);
-        font-size: 18px;
         position: relative;
         right: 45.5%;
         top: 1%;
+        width: 250px;
         a {
             color: rgb(119, 119, 119);
+            width: 250px;
         }
       }
       .sub-user-bio {
@@ -433,3 +432,14 @@ div#error_explanation {
     height: 40px;
     margin-top: 5px;
 }
+
+.user-area {
+    width: 70%;
+}
+
+.user-area > * {
+    float: left;  
+    width: 30.7%;
+    margin: 5px;
+  }
+  

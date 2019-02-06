@@ -15,23 +15,21 @@
   <% end %>
 </div>
 
-<div id="Followers" class="tabcontent">
+<div id="Followers" class="tabcontent user-area">
   <%= render @followers %>
 </div>
 
-<div id="Following" class="tabcontent">
+<div id="Following" class="tabcontent user-area">
   <%= render @following %>
 </div>
 
 <div class="profile-photo" style="background-image: url('<%= @user.picture.url if @user.picture? %> '); background-size: cover;">
 </div>
-<h1 class="title profile-name"><%= @user.name %></h1>
-<h1 class="profile-username">@<%= @user.username %></h1>
-<h1 class="profile-bio"><%= @user.bio %></h1>
-<h1 class="profile-location"><%= @user.location %></h1>
-<h1 class="profile-birthday"><%= @user.birthday %></h1>
-<h1 class="profile-email"><%= @user.email %></h1>
-<h1 class="profile-phone_number"><%= @user.phone_number %></h1>
+  <h1 class="title profile-name"><%= @user.name %></h1>
+  <h1 class="profile-username">@<%= @user.username %></h1>
+  <h1 class="profile-bio"><%= @user.bio %></h1>
+  <h1 class="profile-location"><%= @user.location %></h1>
+  <h1 class="profile-birthday"><%= @user.birthday %></h1>
 </div>
 <script>
 function openCity(evt, cityName) {

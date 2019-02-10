@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_04_131343) do
+ActiveRecord::Schema.define(version: 2019_02_08_121330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,13 +32,6 @@ ActiveRecord::Schema.define(version: 2019_02_04_131343) do
     t.string "chable_picture"
     t.index ["user_id", "created_at"], name: "index_chables_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_chables_on_user_id"
-  end
-
-  create_table "chables_tags", id: false, force: :cascade do |t|
-    t.bigint "chable_id"
-    t.bigint "tag_id"
-    t.index ["chable_id"], name: "index_chables_tags_on_chable_id"
-    t.index ["tag_id"], name: "index_chables_tags_on_tag_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -120,8 +113,6 @@ ActiveRecord::Schema.define(version: 2019_02_04_131343) do
   end
 
   add_foreign_key "chables", "users"
-  add_foreign_key "chables_tags", "chables"
-  add_foreign_key "chables_tags", "tags"
   add_foreign_key "comments", "users"
   add_foreign_key "likes", "chables"
   add_foreign_key "likes", "users"

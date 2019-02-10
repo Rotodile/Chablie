@@ -32,7 +32,6 @@ gem 'friendly_id'
 gem 'mini_magick', '~> 4.8'
 gem 'rmagick'
 gem 'carrierwave'
-
 gem 'rails-controller-testing'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

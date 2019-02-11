@@ -1,33 +1,32 @@
 <% if logged_in? %>
-    <div class="container">
-      <div class="home-side-profile">
-        <div class="home-cover-photo" style="background-image: url(' <%= current_user.cover_picture.url if current_user.cover_picture? %>'); background-size: cover;">
-        </div>
-        <div class="home-profile-photo">
-          <%= image_tag current_user.picture.url if current_user.picture? %>
-        </div>
-        <h1 class="home-name"><%= current_user.name %></h1>
-        <h1 class="home-user-name">@<%= current_user.username %></h1>
-        <div class="home-user-info">
-          <div class="home-chables">
-            <h1 class="home-chable-heading">Chables</h1>
-            <h1 class="home-chable-count"><%= current_user.chables.count %></h1>
-          </div>
-          <div class="home-following">
-            <h1 class="home-following-heading">Following</h1>
-            <h1 class="home-following-count"><%= current_user.following.count %></h1>
-          </div>
-          <div class="home-followers">
-            <h1 class="home-follower-heading">Followers</h1>
-            <h1 class="home-follower-count"><%= current_user.followers.count %></h1>
-          </div>
-        </div>
+  <div class="container">
+    <div class="home-side-profile">
+      <div class="home-cover-photo" style="background-image: url(' <%= current_user.cover_picture.url if current_user.cover_picture? %>'); background-size: cover;"></div>
+      <div class="home-profile-photo">
+        <%= image_tag current_user.picture.url if current_user.picture? %>
       </div>
-      <div class="home-create-chable">
-        <%= render 'shared/chable_form' %>
-        <%= render 'shared/feed' %>
+      <h1 class="home-name"><%= current_user.name %></h1>
+      <h1 class="home-user-name">@<%= current_user.username %></h1>
+      <div class="home-user-info">
+        <div class="home-chables">
+          <h1 class="home-chable-heading">Chables</h1>
+          <h1 class="home-chable-count"><%= current_user.chables.count %></h1>
+        </div>
+        <div class="home-following">
+          <h1 class="home-following-heading">Following</h1>
+          <h1 class="home-following-count"><%= current_user.following.count %></h1>
+        </div>
+        <div class="home-followers">
+          <h1 class="home-follower-heading">Followers</h1>
+          <h1 class="home-follower-count"><%= current_user.followers.count %></h1>
+        </div>
       </div>
     </div>
+    <div class="home-create-chable">
+      <%= render 'shared/chable_form' %>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
 <% else %>
   <div class="Main-page-content">
     <div class="side-content">
@@ -44,10 +43,10 @@
         <h1 class="title">Find friends to Chable</h1>
       </div>
     </div>
-      <div class="other-side-content">
-        <h1 class="title front-heading">Start Chabling,<br> Become A Chable Today! <br> Signup or Login</h1>
-        <%= link_to "Log in", login_path, class: "button is-primary front-login" %>
-        <button id="signupFormBtn" class="button is-primary front-signup">Sign Up</button>
+    <div class="other-side-content">
+      <h1 class="title front-heading">Start Chabling,<br> Become A Chable Today! <br> Signup or Login</h1>
+      <%= link_to "Log in", login_path, class: "button is-primary front-login" %>
+      <button id="signupFormBtn" class="button is-primary front-signup">Sign Up</button>
       <div id="signupForm" class="signup-div">
         <div class="new-user-container">
           <span class="close">&times;</span>
@@ -94,7 +93,7 @@
         </div>  
       </div>
     </div>
-</div>
+  </div>
 <script>
 var form = document.getElementById('signupForm');
 var button = document.getElementById("signupFormBtn");

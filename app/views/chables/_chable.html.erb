@@ -9,39 +9,39 @@
                                                   <%else %>
                                                   <%= word %>
                                                 <%end %>
-                                          <% end %></h1>
+                                          <% end %>
+    </h1>
     <span class="feed-img"><%= image_tag chable.chable_picture.url if chable.chable_picture? %></span>
-
     <div class="comment">
             <%= form_for [chable, Comment.new] do |f| %>
               <%= f.text_area :body, placeholder: "Add a comment", class: "comment-text" %><br/>
               <%= f.submit "Add Comment", class: "comment-btn" %>
             <% end %>
-      </div>
+    </div>
         <ul>
-<%= render(partial: 'comments/comment', collection: chable.comments) %>
-</ul>
+          <%= render(partial: 'comments/comment', collection: chable.comments) %>
+        </ul>
       <div class="social-area">
-      <div class="like-area">
-        <% pre_like = chable.likes.find { |like| like.user_id == current_user.id} %>
-          <% if pre_like %>
-            <%= link_to "", chable_like_path(chable, pre_like), method: :delete, class: "unlike-button" %>
-          <% else %>
-            <%= link_to "", chable_likes_path(chable), method: :post, class: "like-button", remote: :true %>
-          <% end %>
-          <p class="like-count"><%= chable.likes.count %></p>
+        <div class="like-area">
+          <% pre_like = chable.likes.find { |like| like.user_id == current_user.id} %>
+            <% if pre_like %>
+              <%= link_to "", chable_like_path(chable, pre_like), method: :delete, class: "unlike-button" %>
+            <% else %>
+              <%= link_to "", chable_likes_path(chable), method: :post, class: "like-button", remote: :true %>
+            <% end %>
+            <p class="like-count"><%= chable.likes.count %></p>
+        </div>
+        <p class="comment-popup"></p>
+        <p class="comment-count"><%= chable.comments.count %></p>
+        <%= link_to "", rechable_chable_path(chable.user.chables), class: 'rechable-button'%>
+        <p class="rechable-count">0</p>
       </div>
-      <p class="comment-popup"></p>
-      <p class="comment-count"><%= chable.comments.count %></p>
-      <%= link_to "", rechable_chable_path(chable.user.chables), class: 'rechable-button'%>
-      <p class="rechable-count">0</p>
-</div>
-</div>
-<div class="feed-delete-area">
-  <% if current_user?(chable.user) %>
+    </div>
+    <div class="feed-delete-area">
+      <% if current_user?(chable.user) %>
             <%= link_to "Delete", chable, method: :delete,
                                        data: { confirm: "are you sure?" }, class: "feed-delete feed-h1" %>
-        <% end %>
-</div>
+      <% end %>
+  </div>
 </div>
 

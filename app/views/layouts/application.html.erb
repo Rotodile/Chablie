@@ -4,23 +4,20 @@
     <title>Chablie</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-     <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet"> 
   </head>
-
   <body>
-  <% if logged_in? %>
-     <%= render 'layouts/header' %>
-  <% else %>
-  
-  <% end %>
-<% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>
+    <% if logged_in? %>
+      <%= render 'layouts/header' %>
+    <% end %>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

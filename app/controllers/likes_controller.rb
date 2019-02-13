@@ -5,11 +5,11 @@ class LikesController < ApplicationController
     def create
         if already_liked?
             flash[:notice] = "You can't like more than once"
-          else
+        else
             @chable.likes.create(user_id: current_user.id)
-          end
-          redirect_to root_path
-      end
+        end
+        redirect_to root_path
+    end
 
     def destroy
         if !(already_liked?)
@@ -28,7 +28,7 @@ class LikesController < ApplicationController
 
       def find_like
         @like = @chable.likes.find(params[:id])
-     end
+      end
 
       def already_liked?
         Like.where(user_id: current_user.id, chable_id:

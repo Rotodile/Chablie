@@ -1,6 +1,6 @@
 <div class="sub-user">
-<div class="sub-user-cover" data-parallax="true" style="background-image: url(' <%= user.cover_picture.url if user.cover_picture? %>');"></div>
-<%= image_tag user.picture.url if user.picture? %>
+  <div class="sub-user-cover" data-parallax="true" style="background-image: url(' <%= user.cover_picture.url if user.cover_picture? %>');"></div>
+  <%= image_tag user.picture.url if user.picture? %>
   <%= link_to user.name, user, class: "sub-user-name" %>
   <span class= "sub-user-username">@<%= link_to user.username, user %></span>
   <h3 class="sub-user-bio"><%= user.bio %></h3>

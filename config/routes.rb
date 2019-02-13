@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
-  get 'search' => 'search#index'
   root 'pages#home'
+  get '/signup', to: 'users#new'
+  get 'search' => 'search#index'
   get '/about', to: 'pages#about'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-  get '/signup', to: 'users#new'
+  resources :connections,         only: [:create, :destroy]
+  resources :comments do
+    resources :comments
+  end
   resources :users do
     resources :comments
     member do
@@ -19,9 +23,4 @@ Rails.application.routes.draw do
       get :rechable
     end
   end
-  resources :comments do
-    resources :comments
-  end
-
-  resources :connections,         only: [:create, :destroy]
 end

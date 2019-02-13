@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_08_121330) do
+ActiveRecord::Schema.define(version: 2019_02_13_120357) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,45 @@ ActiveRecord::Schema.define(version: 2019_02_08_121330) do
     t.string "chable_picture"
     t.index ["user_id", "created_at"], name: "index_chables_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_chables_on_user_id"
+  end
+
+  create_table "chat_conversations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "chat_messages", force: :cascade do |t|
+    t.bigint "user_id"
+    t.text "text"
+    t.bigint "conversation_id"
+    t.bigint "session_id"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.bigint "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_chat_messages_on_conversation_id"
+    t.index ["session_id"], name: "index_chat_messages_on_session_id"
+    t.index ["user_id"], name: "index_chat_messages_on_user_id"
+  end
+
+  create_table "chat_sessions", force: :cascade do |t|
+    t.bigint "conversation_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_chat_sessions_on_conversation_id"
+    t.index ["user_id"], name: "index_chat_sessions_on_user_id"
+  end
+
+  create_table "comment_tags", force: :cascade do |t|
+    t.bigint "comment_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_comment_tags_on_comment_id"
+    t.index ["tag_id"], name: "index_comment_tags_on_tag_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -108,6 +147,9 @@ ActiveRecord::Schema.define(version: 2019_02_08_121330) do
     t.string "picture"
     t.string "cover_picture"
     t.string "chable_picture"
+    t.string "chat_status", default: "offline"
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["slug"], name: "index_users_on_slug", unique: true
   end

@@ -6,41 +6,59 @@
 <div class="search-page">
   <% if @chables.exists? %>
     <h1 class="title" style="text-align: center; margin-top: 10px;">Top Chables</h1>
-  <% else %>
-    <h1 class="title" style="text-align: center; margin-top: 10px;">Oops! No matching chables found ...</h1>
   <% end %>
-
-<div class="user-images">
+  <% if @comments.exists? %>
+    <h1 class="title" style="text-align: center; margin-top: 10px;">Top Comments</h1>
+  <% end %>
+  <div class="user-images">
     <% @chables.each do |chable|%>
       <div class="wrapper">
         <div class="chables-feed" style="background-color: white; justify-content: center; margin-left: 30%;">
-    <div class="feed-profile-photo" style="background-image: url(' <%= chable.user.picture.url if chable.user.picture? %>'); background-size: cover;"></div>
-    <span class="feed-name"><%= link_to chable.user.name, chable.user %></span>
-    <span class="feed-username">@<%= chable.user.username %> - <%= time_ago_in_words(chable.created_at) %></span>
-    <h1 class="feed-content"><% chable.content.to_s.split(' ').each do |word| %>
+          <div class="feed-profile-photo" style="background-image: url(' <%= chable.user.picture.url if chable.user.picture? %>'); background-size: cover;"></div>
+          <span class="feed-name"><%= link_to chable.user.name, chable.user %></span>
+          <span class="feed-username">@<%= chable.user.username %> - <%= time_ago_in_words(chable.created_at) %></span>
+          <h1 class="feed-content"><% chable.content.to_s.split(' ').each do |word| %>
                                                   <% if word.start_with?('#') %>
                                                     <%= link_to word, search_path(query: word) %>
                                                   <%else %>
-                                                  <%= word %>
-                                                <%end %>
-                                          <% end %></h1>
-    <span class="feed-img"><%= image_tag chable.chable_picture.url if chable.chable_picture? %></span>
-      <div class="social-area">
-      <div class="like-area">
-        <% pre_like = chable.likes.find { |like| like.user_id == current_user.id} %>
-          <% if pre_like %>
-            <%= link_to "", chable_like_path(chable, pre_like), method: :delete, class: "unlike-button" %>
-          <% else %>
-            <%= link_to "", chable_likes_path(chable), method: :post, class: "like-button", remote: :true %>
-          <% end %>
-          <p class="like-count"><%= chable.likes.count %></p>
-      </div>
-      <p class="comment-popup"></p>
-      <p class="comment-count"><%= chable.comments.count %></p>
-      <%= link_to "", rechable_chable_path(chable.user.chables), class: 'rechable-button'%>
-      <p class="rechable-count">0</p>
-</div>
-      </div>
-    <% end %>
+                                                    <%= word %>
+                                                  <%end %>
+                                                <% end %></h1>
+          <span class="feed-img"><%= image_tag chable.chable_picture.url if chable.chable_picture? %></span>
+          <div class="social-area">
+            <div class="like-area">
+              <% pre_like = chable.likes.find { |like| like.user_id == current_user.id} %>
+              <% if pre_like %>
+                <%= link_to "", chable_like_path(chable, pre_like), method: :delete, class: "unlike-button" %>
+              <% else %>
+                <%= link_to "", chable_likes_path(chable), method: :post, class: "like-button", remote: :true %>
+              <% end %>
+              <p class="like-count"><%= chable.likes.count %></p>
+            </div>
+            <p class="comment-popup"></p>
+            <p class="comment-count"><%= chable.comments.count %></p>
+            <%= link_to "", rechable_chable_path(chable.user.chables), class: 'rechable-button'%>
+            <p class="rechable-count">0</p>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>
+
+   <div class="user-images">
+    <% @comments.each do |comment|%>
+      <div class="wrapper">
+        <div class="chables-feed" style="background-color: white; justify-content: center; margin-left: 30%;">
+          <div class="feed-profile-photo" style="background-image: url(' <%= comment.user.picture.url if comment.user.picture? %>'); background-size: cover;"></div>
+          <span class="feed-name"><%= link_to comment.user.name, comment.user %></span>
+          <span class="feed-username">@<%= comment.user.username %> - <%= time_ago_in_words(comment.created_at) %></span>
+          <h1 class="feed-content"><% comment.body.to_s.split(' ').each do |word| %>
+                                                  <% if word.start_with?('#') %>
+                                                    <%= link_to word, search_path(query: word) %>
+                                                  <%else %>
+                                                    <%= word %>
+                                                  <%end %>
+                                                <% end %></h1>
+        <% end %>
+      </div>
+    </div>

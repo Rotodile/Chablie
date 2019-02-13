@@ -12,6 +12,11 @@ class Chable < ApplicationRecord
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
   validate :chable_picture_size
+  after_create :add_mentions
+
+  def add_mentions
+    Mention.create_from_text(self)
+  end
 
   def extract_name_tags
     content.to_s.scan(/#\w+/).map{|name| name.gsub("#", "")}

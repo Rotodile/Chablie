@@ -2,4 +2,5 @@
  *= require jquery.Jcrop
  *= require_self
  *= require_tree . 
+ *= require jquery.atwho 
  */

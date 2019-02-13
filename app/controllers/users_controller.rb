@@ -10,6 +10,12 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def mentions
+    respond_to do |format|
+      format.json { render :json => Mention.all(params[:q]) }
+    end
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save

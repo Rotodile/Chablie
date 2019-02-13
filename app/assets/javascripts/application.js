@@ -14,6 +14,7 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery
+//= require jquery.atwho
 //= require bootstrap
 //= require popper
 //= require jquery_ujs

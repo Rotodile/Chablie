@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   get '/signup', to: 'users#new'
   get 'search' => 'search#index'
+  get 'mentions', to: 'users#mentions'
   get '/about', to: 'pages#about'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

@@ -3,8 +3,7 @@
     <div class="feed-profile-photo" style="background-image: url(' <%= chable.user.picture.url if chable.user.picture? %>'); background-size: cover;"></div>
     <span class="feed-name"><%= link_to chable.user.name, chable.user %></span>
     <span class="feed-username">@<%= chable.user.username %> - <%= time_ago_in_words(chable.created_at) %></span>
-    <h1 class="feed-content"><%= markdown(chable.content) %> 
-                                <% chable.content.to_s.split(' ').each do |word| %>
+    <h1 class="feed-content">    <% chable.content.to_s.split(' ').each do |word| %>
                                                   <% if word.start_with?('#') %>
                                                     <%= link_to word, search_path(query: word) %>
                                                   <% else %>
@@ -46,3 +45,4 @@
   </div>
 </div>
 
+<!--<%= markdown(chable.content) %>-->

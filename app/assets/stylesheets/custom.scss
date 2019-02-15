@@ -28,8 +28,9 @@ body {
     background-color: white;
     width: 300px;
     margin-top: 10px;
-    height: 280px;
+    height: auto;
     padding: 10px;
+    height: 50vh;
     .whotocontainer {
         display:flex;
         flex-direction: column;

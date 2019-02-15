@@ -30,9 +30,9 @@
       <h1 class="whotoheading">Chablers You May Know</h1>
         <div class="whotocontainer">
             <% @other.each do |other| %>   
-            <div style="border-bottom: 1px solid #e6ecf0; padding: 5px;">
               <% other.following.each do |follower| %>
                <% next if follower == current_user %>
+            <div style="border-bottom: 1px solid #e6ecf0; padding: 5px;">
                <%= image_tag follower.picture.url, ALIGN: "left" %>
                <%= link_to follower.name, follower, class: "whotoname" %>
                <span class="whotousername">@<%= follower.username %></span>

@@ -5,6 +5,8 @@ class PagesController < ApplicationController
       @chable = current_user.chables.build
       @chables = @user.chables
       @feed_items = current_user.feed
+      @other = current_user.followers
+    #  @other2 = @other.followings
     end
   end
   

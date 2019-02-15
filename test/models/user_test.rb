@@ -113,7 +113,7 @@ class UserTest < ActiveSupport::TestCase
     assert admin.following?(areeba)
     assert areeba.followers.include?(admin)
     admin.unfollow(areeba)
-    assert_not admin.following?(areebar)
+    assert_not admin.following?(areeba)
   end
 
   test "feed should have the right posts" do

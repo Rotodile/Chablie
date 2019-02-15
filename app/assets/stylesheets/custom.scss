@@ -20,6 +20,44 @@ body {
     height: 50px !important;
 }
 
+.container .home-create-chable .chable-creator .chable-field {
+    width: 450px !important;
+}
+
+.whotofollow {
+    background-color: white;
+    width: 300px;
+    margin-top: 10px;
+    height: 280px;
+    padding: 10px;
+    .whotocontainer {
+        display:flex;
+        flex-direction: column;
+    }
+    .whotoheading {
+        font-size: 18px;
+        font-weight: bolder;
+        margin-bottom: 10px;
+    }
+    img {
+        border-radius: 50%;
+        width: 50px;
+        overflow: hidden;
+        height: 50px;
+    }
+    .whotousername {
+        color: gray;
+    }
+    .whotoname {
+        color: black;
+        margin-left: 10px;
+        &:hover {
+            color: #00c4a7;;
+            text-decoration: underline;
+        }
+    }
+}
+
     .header-img {
         height: 80px !important;
         position: relative;

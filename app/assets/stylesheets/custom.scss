@@ -16,6 +16,17 @@ body {
     color: #00d1b2 !important;
 }
 
+.navbar {
+    height: 50px !important;
+}
+
+    .header-img {
+        height: 80px !important;
+        position: relative;
+        bottom: 14px;
+        margin-left: 20px;
+    }
+
 .alert.alert-notice {
     display: flex !important;
     justify-content: center;

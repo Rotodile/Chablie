@@ -48,6 +48,34 @@ body {
     }
 }
 
+.userguide {
+    background-color: white;
+    width: 300px;
+    height: 100px;
+    margin-top: 10px;
+    padding: 10px;
+    h1 {
+        a {
+            color: #00917c;
+            font-weight: bold;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    span {
+        width: 100px;
+        a {
+            color: #00917c;
+            font-weight: bold;
+            font-size: 18px;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
 .whotofollow {
     background-color: white;
     width: 300px;

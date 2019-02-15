@@ -162,6 +162,12 @@ body {
         position: relative;
         bottom: 50px;
         left: 60px;
+        a {
+          color: #00917c;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       }
       .feed-img {
         img {

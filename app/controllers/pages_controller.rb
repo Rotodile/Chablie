@@ -6,7 +6,7 @@ class PagesController < ApplicationController
       @chables = @user.chables
       @feed_items = current_user.feed
       @other = current_user.followers
-    #  @other2 = @other.followings
+      @hashtags = Tag.all
     end
   end
   

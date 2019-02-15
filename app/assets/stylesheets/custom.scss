@@ -24,6 +24,30 @@ body {
     width: 450px !important;
 }
 
+.trends {
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    margin-top: -65px;
+    padding: 10px;
+    .trendheading {
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .trendname {
+        margin-top: 10px;
+        color: #00917c;
+        font-weight: bold;
+        a {
+            color: #00917c;
+            font-weight: bold;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
 .whotofollow {
     background-color: white;
     width: 300px;
@@ -443,6 +467,12 @@ div#error_explanation {
     }
     .feed-content {
         margin-top: -5px;
+        a {
+        color: #00917c !important;
+        &:hover {
+            text-decoration: underline !important;
+        }
+        }
     }
   }
 

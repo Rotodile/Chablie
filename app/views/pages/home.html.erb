@@ -25,7 +25,7 @@
         <h1 class="trendheading">Trending Hashtags On Chablie</h1>
         <% @hashtags.each do |tag| %>
             <div style="display: flex; flex-direction: column;">
-             <span class="trendname">#<%= link_to tag.name, search_path(query: tag.name) %></span>
+                <span class="trendname">#<%= link_to tag.name, search_path(query: tag.name) %></span>
             </div>
         <% end %>
       </div>

@@ -1,6 +1,6 @@
 class Chable < ApplicationRecord
   after_commit :create_tags, on: :create
-  has_many :chable_tags
+  has_many :chable_tags, dependent: :destroy
   has_many :tags, through: :chable_tags
   has_many :rechabler, :class_name => 'user'
   has_many :rechable

@@ -29,30 +29,6 @@ body {
     margin-right: auto !important;
 }
 
-.trends {
-    background-color: white;
-    width: 300px;
-    height: 300px;
-    margin-top: -65px;
-    padding: 10px;
-    .trendheading {
-        font-size: 18px;
-        font-weight: 600;
-    }
-    .trendname {
-        margin-top: 10px;
-        color: #00917c;
-        font-weight: bold;
-        a {
-            color: #00917c;
-            font-weight: bold;
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
-}
-
 .userguide {
     background-color: white;
     width: 300px;
@@ -77,41 +53,6 @@ body {
             &:hover {
                 text-decoration: underline;
             }
-        }
-    }
-}
-
-.whotofollow {
-    background-color: white;
-    width: 300px;
-    margin-top: 10px;
-    height: auto;
-    padding: 10px;
-    height: 50vh;
-    .whotocontainer {
-        display:flex;
-        flex-direction: column;
-    }
-    .whotoheading {
-        font-size: 18px;
-        font-weight: bolder;
-        margin-bottom: 10px;
-    }
-    img {
-        border-radius: 50%;
-        width: 50px;
-        overflow: hidden;
-        height: 50px;
-    }
-    .whotousername {
-        color: gray;
-    }
-    .whotoname {
-        color: black;
-        margin-left: 10px;
-        &:hover {
-            color: #00c4a7;;
-            text-decoration: underline;
         }
     }
 }
@@ -556,4 +497,13 @@ div#error_explanation {
     float: left;  
     width: 30.7%;
     margin: 5px;
+  }
+
+  .modal-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      .title {
+          text-align: center;
+      }
   }

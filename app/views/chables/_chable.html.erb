@@ -12,12 +12,6 @@
                                           <% end %>
     </h1>
     <span class="feed-img"><%= image_tag chable.chable_picture.url if chable.chable_picture? %></span>
-    <div class="comment">
-            <%= form_for [chable, Comment.new] do |f| %>
-              <%= f.text_area :body, placeholder: "Add a comment", class: "comment-text" %><br/>
-              <%= f.submit "Add Comment", class: "comment-btn" %>
-            <% end %>
-    </div>
         <ul>
           <%= render(partial: 'comments/comment', collection: chable.comments) %>
         </ul>
@@ -31,7 +25,22 @@
             <% end %>
             <p class="like-count"><%= chable.likes.count %></p>
         </div>
-        <p class="comment-popup"></p>
+        <!-- Popup Modals -->
+        <div id="replyModal" class="modal">
+          <div class="modal-background"></div>
+          <div class="modal-content">
+            <h1 class="title">Comment On This Chable</h1>
+            <button class="modal-close is-large" aria-label="close" onclick="closeReplyModal();"></button>
+            <hr>
+            <div class="comment">
+               <%= form_for [chable, Comment.new] do |f| %>
+                      <%= f.text_area :body, placeholder: "Add a comment", class: "comment-text" %><br/>
+                      <%= f.submit "Add Comment", class: "comment-btn" %>
+                    <% end %>
+            </div>
+          </div>
+        </div>
+        <button data-chableid="<%= chable.id %>" onclick="openReplyModal('<%= chable.id %>')" class="comment-popup" style="background-color: transparent; border: none;"></button>
         <p class="comment-count"><%= chable.comments.count %></p>
       </div>
     </div>
@@ -44,3 +53,17 @@
 </div>
 
 <!--<%= markdown(chable.content) %>-->
+
+<script> 
+  function closeReplyModal() {
+    $("#replyModal").removeClass("is-active");
+  }
+
+  function openReplyModal(chableId) {
+    var actionAttr = "/chables/"+chableId+"/comments"
+    var $commentForm = $("#new_comment");
+    $commentForm.attr("action", actionAttr);
+
+    $("#replyModal").addClass("is-active");
+  }
+</script>

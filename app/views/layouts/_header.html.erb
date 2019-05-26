@@ -22,7 +22,7 @@
         <span class="search-icon"><i class="fas fa-search"></i></span>
       <% end %>
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link header-avatar" style="background-image: url(<%= current_user.picture.url %>); background-size: cover;"></a>
+        <a class="navbar-link header-avatar" style="background-color: #00c4a7; background-image: url(<%= current_user.picture.url %>); background-size: cover;"></a>
         <div class="navbar-dropdown">
           <%= link_to 'Settings', edit_user_path(current_user), class: 'navbar-item' %>
           <%= link_to 'Profile', current_user, class: "navbar-item" %>

@@ -1,6 +1,6 @@
 <div class="flex-chable">
 <div class="chables-feed">
-    <div class="feed-profile-photo" style="background-image: url(' <%= chable.user.picture.url if chable.user.picture? %>'); background-size: cover;"></div>
+    <div class="feed-profile-photo" style="background-color: #00c4a7; background-image: url(' <%= chable.user.picture.url if chable.user.picture? %>'); background-size: cover;"></div>
     <span class="feed-name"><%= link_to chable.user.name, chable.user %></span>
     <span class="feed-username">@<%= chable.user.username %> - <%= time_ago_in_words(chable.created_at) %></span>
     <h1 class="feed-content">    <% chable.content.to_s.split(' ').each do |word| %>

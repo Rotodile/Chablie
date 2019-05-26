@@ -1,5 +1,5 @@
 <div class="profile-cover">
-  <span class='show-cover-picture' ><%= image_tag @user.cover_picture.url if @user.cover_picture?%></span>
+  <span class='show-cover-picture' style="background-color: #00c4a7;"><%= image_tag @user.cover_picture.url if @user.cover_picture?%></span>
 </div>
 <div class="second-nav tab">
   <button class="tablinks" onclick="openCity(event, 'Chables')">Chables<br><%= @user.chables.count %></button>
@@ -19,7 +19,7 @@
   <div id="Following" class="tabcontent user-area">
     <%= render @following %>
   </div>
-  <div class="profile-photo" style="background-image: url('<%= @user.picture.url if @user.picture? %> '); background-size: cover;">
+  <div class="profile-photo" style="background-color:#00c4a7; background-image: url('<%= @user.picture.url if @user.picture? %> '); background-size: cover;">
   </div>
   <h1 class="title profile-name"><%= @user.name %></h1>
   <h1 class="profile-username">@<%= @user.username %></h1>

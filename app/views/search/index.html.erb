@@ -14,7 +14,7 @@
     <% @chables.each do |chable|%>
       <div class="wrapper">
         <div class="chables-feed" style="background-color: white; justify-content: center; margin-left: 30%;">
-          <div class="feed-profile-photo" style="background-image: url(' <%= chable.user.picture.url if chable.user.picture? %>'); background-size: cover;"></div>
+          <div class="feed-profile-photo" style="background-color: #00c4a7; background-image: url(' <%= chable.user.picture.url if chable.user.picture? %>'); background-size: cover;"></div>
           <span class="feed-name"><%= link_to chable.user.name, chable.user %></span>
           <span class="feed-username">@<%= chable.user.username %> - <%= time_ago_in_words(chable.created_at) %></span>
           <h1 class="feed-content"><% chable.content.to_s.split(' ').each do |word| %>
@@ -43,13 +43,12 @@
         </div>
       <% end %>
     </div>
-  </div>
 
    <div class="user-images">
     <% @comments.each do |comment|%>
       <div class="wrapper">
         <div class="chables-feed" style="background-color: white; justify-content: center; margin-left: 30%;">
-          <div class="feed-profile-photo" style="background-image: url(' <%= comment.user.picture.url if comment.user.picture? %>'); background-size: cover;"></div>
+          <div class="feed-profile-photo" style="background-color: #00c4a7; background-image: url(' <%= comment.user.picture.url if comment.user.picture? %>'); background-size: cover;"></div>
           <span class="feed-name"><%= link_to comment.user.name, comment.user %></span>
           <span class="feed-username">@<%= comment.user.username %> - <%= time_ago_in_words(comment.created_at) %></span>
           <h1 class="feed-content"><% comment.body.to_s.split(' ').each do |word| %>
@@ -62,3 +61,4 @@
         <% end %>
       </div>
     </div>
+  </div>

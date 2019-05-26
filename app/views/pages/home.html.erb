@@ -1,8 +1,8 @@
 <% if logged_in? %>
   <div class="container">
     <div class="home-side-profile">
-      <div class="home-cover-photo" style="background-image: url(' <%= current_user.cover_picture.url if current_user.cover_picture? %>'); background-size: cover;"></div>
-      <div class="home-profile-photo">
+      <div class="home-cover-photo" style="background-color: #e4fcf8; background-image: url(' <%= current_user.cover_picture.url if current_user.cover_picture? %>'); background-size: cover;"></div>
+      <div class="home-profile-photo" style="background-color: #00c4a7;">
         <%= image_tag current_user.picture.url if current_user.picture? %>
       </div>
       <h1 class="home-name"><%= current_user.name %></h1>
@@ -21,35 +21,12 @@
           <h1 class="home-follower-count"><%= current_user.followers.count %></h1>
         </div>
       </div>
-      <div class="trends">
-        <h1 class="trendheading">Trending Hashtags On Chablie</h1>
-        <% @hashtags.each do |tag| %>
-            <div style="display: flex; flex-direction: column;">
-                <span class="trendname">#<%= link_to tag.name, search_path(query: tag.name) %></span>
-            </div>
-        <% end %>
-      </div>
     </div>
     <div class="home-create-chable">
       <%= render 'shared/chable_form' %>
       <%= render 'shared/feed' %>
     </div>
   <div class="container-end">
-    <div class="whotofollow">
-      <h1 class="whotoheading">Chablers You May Know</h1>
-        <div class="whotocontainer">
-            <% @other.each do |other| %>   
-              <% other.following.each do |follower| %>
-               <% next if follower == current_user %>
-            <div style="border-bottom: 1px solid #e6ecf0; padding: 5px;">
-               <%= image_tag follower.picture.url, ALIGN: "left" %>
-               <%= link_to follower.name, follower, class: "whotoname" %>
-               <span class="whotousername">@<%= follower.username %></span>
-               </div>
-             <% end %>
-            <% end %>
-        </div>
-    </div>
         <div class="userguide">
           <span><%= link_to 'Learn What Is Chablie And How To Use It.', '/about' %></span>
           <h1>Created With Love By <%= link_to 'Areeba Ishtiaq', 'https://twitter.com/RibaIshtiaq', target: '_blank' %></h1>

@@ -1,0 +1,4 @@
+<%= form_for message, remote: true, authenticity_token: true do |f| %>
+    <%= f.text_area :content, data: {textarea: "message"} %>
+    <%= f.hidden_field :chat_id, value: chat.id %>
+<% end %>

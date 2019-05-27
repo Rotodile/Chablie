@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_13_120357) do
+ActiveRecord::Schema.define(version: 2019_05_27_105106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,12 @@ ActiveRecord::Schema.define(version: 2019_02_13_120357) do
     t.index ["user_id"], name: "index_chat_sessions_on_user_id"
   end
 
+  create_table "chats", force: :cascade do |t|
+    t.string "identifier"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "comment_tags", force: :cascade do |t|
     t.bigint "comment_id"
     t.bigint "tag_id"
@@ -114,11 +120,26 @@ ActiveRecord::Schema.define(version: 2019_02_13_120357) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.integer "user_id"
+    t.integer "chat_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "rechables", force: :cascade do |t|
     t.string "content"
     t.integer "user_id"
     t.integer "chable_id"
     t.index ["chable_id"], name: "index_rechables_on_chable_id"
+  end
+
+  create_table "subcriptions", force: :cascade do |t|
+    t.integer "chat_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tags", force: :cascade do |t|

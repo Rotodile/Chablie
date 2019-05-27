@@ -10,6 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require messages_form
+//= require_tree ./channels
+//= require channels/messages
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks

@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-    has_many :rechable, :class_name => "chable"
     has_many :chables, dependent: :destroy
     has_many :active_connections, class_name: "Connection",
                                   foreign_key: "follower_id",
@@ -27,6 +26,17 @@ class User < ApplicationRecord
     validate :picture_size
     validate :cover_picture_size
     has_secure_password
+    has_many :messages
+    has_many :subcriptions
+    has_many :chats, through: :subcriptions
+
+    def existing_chats_users
+        existing_chat_users = []
+        self.chats.each do |chat|
+            existing_chat_users.concat(chat.subcriptions.where.not(user_id:self.id).map {|subcription| subcription.user})
+        end
+        existing_chat_users.uniq
+    end
 
     def User.digest(string)
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

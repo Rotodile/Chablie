@@ -12,9 +12,7 @@
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
       <%= link_to 'Home', root_path, class: "navbar-item" %>
-      <a class="navbar-item">
-        Notifications
-      </a>
+      <%= link_to 'Messages', '/messages', class: "navbar-item" %>
     </div>
     <div class="navbar-end">
       <%= form_with url: search_path, method: :get, local: true, class: 'form-inline search-form' do |form| %>

@@ -1,6 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  
+  config.web_socket_server_url = "wss://chablie.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://chablie.herokuapp.com', 'http://chablie.herokuapp.com']
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   host = 'chablie.herokuapp.com'

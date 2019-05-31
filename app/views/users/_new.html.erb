@@ -1,0 +1,23 @@
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.text_field :name, class: "input is-primary form-control", placeholder: "Name" %>
+      <br>
+      <%= f.email_field :email, class: "input is-primary form-control", placeholder: "Email" %>
+      <br>
+      <%= f.text_field :username, class: "input is-primary form-control", placeholder: "Username" %>
+      <br>
+      <%= f.text_field :phone_number, class: "input is-primary form-control", placeholder: "Phone Number" %>
+      <br>
+      <%= f.text_field :bio, class: "input is-primary form-control", placeholder: "Bio" %>
+      <br> 
+      <%= f.text_field :location, class: "input is-primary form-control", placeholder: "Location" %>
+      <br> 
+      <%= f.date_field :birthday, class: "input is-primary form-control", placeholder: "DOB" %>
+      <br>
+      <div class="addtoinone">
+        <%= f.password_field :password, class: "input is-primary form-control", placeholder: "Password" %>
+        <%= f.password_field :password_confirmation, class: "input is-primary form-control", placeholder: "Retype Password" %>
+      </div>
+      <br>
+      <%= f.submit "Create my account", class: "button btn-primary signup-btn" %>
+    <% end %>

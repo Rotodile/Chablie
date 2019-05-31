@@ -1,36 +1,53 @@
-.login-container {
-    width: 30%;
-    display: flex;
-    margin-top: 100px;
-    margin-right: auto;
+body, html {
+    background-color: white !important;
+}
+.login-tab {
+    margin-top: 150px;
+    width: 500px;
+    height: auto;
     margin-left: auto;
-    label {
-        margin-left: 15px; 
-    }
-    .title {
-        display: flex;
-        justify-content: center;
-        font-family: 'Cabin', cursive;
+    margin-right: auto;
+    .logininput {
+      margin: 5px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid lightsalmon !important;
+      border: none;
+      box-shadow: none;
     }
     .loginbtn {
-        width: 100%;
-        margin-left: 5px;
-        margin-bottom: 15px;
-        margin-top: 15px;
-        border-radius: 20px;
-    }
-    .logininput {
-        margin: 5px;
-        border-radius: 20px;
-    }
-    .signuplink {
-        color: #00c4a7;
-    }
-    .signuplink:hover {
-        color:rgb(30, 139, 123) !important; 
-    }
-}
+      width: 100%;
+      background-color: salmon;
+      border: none;
+      box-shadow: 1px 1px 100px 3px rgba(255, 160, 122, .4);
+      border-radius: 100px/100px;
+      height: 40px;
+      color: white;
+      margin: 5px;
+      margin-bottom: 25px;
+      margin-top: 25px;
+    } 
+    .logheading {
+      text-align: center;
+      font-size: 30px;
+    } 
+  }
+ 
+  input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 2px solid lightsalmon !important;
+    transition-duration: .2s;
+  }
+  .input:active {
+    box-shadow: none !important;
+  }
 
-.signup-on-login {
-    margin-left: 35px; 
-}
+  .signuplink {
+      color: salmon;
+  }
+
+  .signup-on-login {
+      margin-left: 60px;
+  }
+ 

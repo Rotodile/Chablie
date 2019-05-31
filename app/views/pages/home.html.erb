@@ -34,90 +34,52 @@
     </div>
   </div>
 <% else %>
-  <div class="Main-page-content">
-    <div class="side-content">
-      <div class="first-column">
-        <i class="fas fa-map-marker-alt"></i>
-        <h1 class="title">Find a point of Chabling</h1>
+  <style>
+    html {
+      overflow-y: hidden !important;
+    }
+  </style>
+  <!-- Main Page Content "When not Logged In" -->
+  <div class='bg'>
+    <!--Login and Signup tabs-->
+    <div class='formtabs'>
+      <div class="tab">
+        <button class="tablinks tl-btn" onclick="openTab(event, 'Login')">Login</button>
+        <button class="tablinks ts-btn" onclick="openTab(event, 'Signup')" id="defaultOpen">Signup</button>
       </div>
-      <div class="second-column">
-        <i class="fas fa-globe"></i>
-        <h1 class="title">World's biggest platform for Chabling</h1>
+      <div id="Login" class="tabcontent login-tab">
+        <h1 class="logheading">Welcome Back!</h1>
+        <%= form_for(:session, url: login_path) do |f| %>
+          <%= f.email_field :email, class: 'input is-primary logininput', placeholder: "Email" %>
+          <%= f.password_field :password, class: 'input is-primary logininput', placeholder: "Password" %>
+          <br>
+          <%= f.submit "Log in", class: "button loginbtn" %>
+        <% end %>
       </div>
-      <div class="third-column">
-        <i class="fas fa-comment"></i>
-        <h1 class="title">Find friends to Chable</h1>
-      </div>
-    </div>
-    <div class="other-side-content">
-      <h1 class="title front-heading">Start Chabling,<br> Become A Chable Today! <br> Signup or Login</h1>
-      <%= link_to "Log in", login_path, class: "button is-primary front-login" %>
-      <button id="signupFormBtn" class="button is-primary front-signup">Sign Up</button>
-      <div id="signupForm" class="signup-div">
-        <div class="new-user-container">
-          <span class="close">&times;</span>
-          <h1 class="title">Sign Up</h1>
-          <%= form_for(@user) do |f| %>
-            <%= render 'shared/error_messages', object: f.object %>
-            <%= f.label :name, class: "name-label" %>:
-            <%= f.text_field :name, class: "input is-primary form-control" %>
-            <br>
-            <%= f.label :email %>:
-            <%= f.email_field :email, class: "input is-primary form-control" %>
-            <br>
-            <%= f.label :username %>:
-            <%= f.text_field :username, class: "input is-primary form-control" %>
-            <br>
-            <%= f.label :phone_number %>:
-            <%= f.text_field :phone_number, class: "input is-primary form-control" %>
-            <br>
-            <%= f.label :bio %>:
-            <%= f.text_field :bio, class: "input is-primary form-control" %>
-            <br> 
-            <%= f.label :location %>:
-            <%= f.text_field :location, class: "input is-primary form-control" %>
-            <br> 
-            <%= f.label :birthday %>:
-            <%= f.date_field :birthday, class: "input is-primary form-control" %>
-            <br>  
-            <%= f.label :password %>:
-            <%= f.password_field :password, class: "input is-primary form-control" %>
-            <br>
-            <%= f.label :password_confirmation, "Confirmation:" %>
-            <%= f.password_field :password_confirmation, class: "input is-primary form-control" %>
-            <br>
-            <h1 class="new-h1">Profile Picture:</h1>
-            <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', id: "image-browse" %>
-            <label for="image-browse" class="btn-2 label new-upload">upload</label>
-            <br>
-            <h1 class="new-h1">Cover Photo:</h1>
-            <%= f.file_field :cover_picture, accept: 'image/jpeg,image/gif,image/png', id: "cover-image-browse" %>
-            <label for="cover-image-browse" class="btn-2 label new-upload">upload</label>
-            <br>
-            <%= f.submit "Create my account", class: "button is-primary signup-btn" %>
-          <% end %>
-        </div>  
+      <div id="Signup" class="tabcontent">
+        <%= render 'users/new'%>
       </div>
     </div>
+    <div class='wave'></div>
+    <div class='wave wave-two'></div>
+    <div class='wave wave-three'></div>
   </div>
+  
 <script>
-var form = document.getElementById('signupForm');
-var button = document.getElementById("signupFormBtn");
-var span = document.getElementsByClassName("close")[0];
-
-button.onclick = function() {
-  form.style.display = "block";
-}
-
-span.onclick = function() {
-  form.style.display = "none";
-}
-
-window.onclick = function(event) {
-  if (event.target == form) {
-    form.style.display = "none";
+  document.getElementById("defaultOpen").click();
+  function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
   }
-}
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+  }
 </script>
 
 <% end %>

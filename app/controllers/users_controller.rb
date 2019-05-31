@@ -23,7 +23,7 @@ class UsersController < ApplicationController
         flash[:notice] = "You have signed up successfully!"
         redirect_to @user
     else
-      render 'new'
+      render 'pages/home'
     end
   end
 

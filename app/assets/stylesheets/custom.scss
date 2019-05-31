@@ -73,107 +73,6 @@ body {
     background-color: white;
 }
 
-.Main-page-content {
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    .side-content {
-        width: 50%;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-top: 50vh;
-        padding-bottom: 50vh;
-        background-color: #00d1b2;
-        .second-column {
-            margin-left: 15vh;
-            display: flex;
-            .title {
-                margin-top: 40px; 
-                font-size: 22px;
-                margin-left: 5px;
-                text-align: left;
-                font-family: 'Cabin', cursive;
-                color: white;
-            }
-
-            .fa-globe {
-                color: white;
-                height: 24px;
-                width: 24px;
-                margin-top: 42px;
-            }
-        }
-
-        .third-column {
-            display: flex;
-            margin-left: 18vh;
-            margin-right: auto;
-            -webkit-margin-before: 40px;
-            .title {
-                margin-top: 40px; 
-                font-size: 22px;
-                margin-left: 5px;
-                font-family: 'Cabin', cursive;
-                color: white;
-            }
-            
-            .fa-comment {
-                height: 24px;
-                width: 24px;
-                color: white;
-                margin-top: 42px;
-                margin-left: -25px;
-            }
-        }
-
-        .first-column {
-            display: flex;
-            margin-left: 16vh;
-            margin-right: auto;
-            .title {
-                font-size: 22px;
-                font-family: 'Cabin', cursive;
-                color: white;
-            }
-            .fa-map-marker-alt {
-                height: 25px;
-                width: 20px;
-                color: white;
-                margin-right: 5px;
-                margin-left: -5px;
-            }
-        }
-    }
-    .other-side-content {
-        flex-direction: column;
-        display: flex;
-        width: 50%;
-        justify-content: center;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 200px;
-    }
-    .front-signup {
-        margin: 10px;
-        width: 300px;
-        border-radius: 20px;
-        font-family: 'Cabin', cursive;
-    }
-
-    .front-login {
-        margin: 10px;
-        width: 300px;
-        border-radius: 20px;
-        font-family: 'Cabin', cursive;
-    }
-
-    .front-heading {
-        margin-left: 10px;
-        font-family: 'Cabin', cursive;
-    }
-}
 
 div#error_explanation {
     color: red;
@@ -379,15 +278,6 @@ div#error_explanation {
       font-family: "FontAwesome";
       color: gray; 
       margin-left: 20px;
-  }
-}
-
-.rechable-button {
-    &::before {
-      content: "\f079";
-      font-family: "FontAwesome";
-      color: gray; 
-      margin-left: 50px;
   }
 }
   

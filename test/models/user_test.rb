@@ -24,11 +24,6 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
-  test "phone number should be present" do
-    @user.phone_number = "  "
-    assert_not @user.valid?
-  end
-
   test "name should not be too long" do
     @user.name = "a" * 51
     assert_not @user.valid?
@@ -47,7 +42,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "phone number should not be too long" do
-    @user.phone_number = "1" * 12
+    @user.phone_number = "1" * 12 
     assert_not @user.valid?
   end
 

@@ -6,10 +6,10 @@ admin:
 
 areeba:
   name: Areeba Ishtiaq
-  email: areeba.aic@gmail.com
+  username: areeba
   password_digest: <%= User.digest('password') %>
 
 hooria: 
   name: Hooria Ishtiaq
-  email: hooria.hic@gmail.com
+  username: hooria
   password_digest: <%= User.digest('password') %>

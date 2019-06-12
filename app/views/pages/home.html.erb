@@ -50,7 +50,7 @@
       <div id="Login" class="tabcontent login-tab">
         <h1 class="logheading">Welcome Back!</h1>
         <%= form_for(:session, url: login_path) do |f| %>
-          <%= f.email_field :email, class: 'input is-primary logininput', placeholder: "Email" %>
+          <%= f.text_field :username, class: 'input is-primary logininput', placeholder: "Username" %>
           <%= f.password_field :password, class: 'input is-primary logininput', placeholder: "Password" %>
           <br>
           <%= f.submit "Log in", class: "button loginbtn" %>

@@ -21,7 +21,7 @@ class User < ApplicationRecord
                       allow_blank: true
     validates :username, presence: true, length: { maximum: 50 },
                          uniqueness: true
-    validates :phone_number, length: { maximum: 11, minimum: 11 }
+    validates :phone_number, length: { maximum: 11, minimum: 11 }, allow_blank: true
     validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
     validate :picture_size
     validate :cover_picture_size

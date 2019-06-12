@@ -24,3 +24,4 @@ Chablie is a social networking website created with ruby on rails. The live vers
 + Carrierwave.
 + Rails-controller-testing.
 + Redis.
++ Fog.

@@ -15,9 +15,8 @@ class User < ApplicationRecord
     mount_uploader :cover_picture, CoverPictureUploader
     before_save { self.email = email.downcase }
     validates :name, presence: true, length: { maximum: 50 }
-    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-    validates :email, format: { with: VALID_EMAIL_REGEX },
-                      uniqueness: { case_sensitive: false }
+    EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
+    validates :email, :presence => true, :uniqueness => true, :format => EMAIL_REGEX,unless: lambda { self.email.blank? }
     validates :username, presence: true, length: { maximum: 50 },
                          uniqueness: true
     validates :phone_number, length: { maximum: 11, minimum: 11 }

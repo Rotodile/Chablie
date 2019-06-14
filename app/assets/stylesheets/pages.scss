@@ -119,11 +119,18 @@ body {
   padding-right: 20px;
   .home-create-chable {
     margin: 10px;
-    background-color: red;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);  
     width: 800px;
+    .home-create-picture{
+      border-radius: 100%;
+    }
     .chables-feed {
       padding: 10px;
       width: 550px;
+      margin-top: 10px;
+      margin-left: 30px;
       border-bottom: 1px solid #e6ecf0;
       .feed-profile-photo {
         border-radius: 100%;
@@ -171,22 +178,76 @@ body {
       }
     }
     .chable-creator {
-      background-color: #e4fcf8;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+      background-color: white;
       padding-top: 4px; 
       .chable-field {
-        width: 500px;
-        height: 40px;
-        padding: 7px;
-        margin: 5px;
+        margin-left: 22px;
+        margin-top: 20px;
+        width: 620px;
+        height: 70px;
+        padding: 9px;
         padding-left: 15px;
         resize: none;
-        border-radius: 20px;
-        border: 1px solid #00c4a7;
+        border-radius: 5px;
+        background-color:whitesmoke;
+        border: none;
+        transition-duration: 500ms;
+      }
+      .chable-field:focus {
+        outline: none !important;
+        box-shadow: none !important;
+        border: 2px solid salmon;  
+        color: #14171a;
+        transition-duration: 500ms;
+        padding: 8px;
+        padding-left: 14px;
+      }
+      .file-field::-webkit-file-upload-button{
+        visibility: hidden;
+      }
+      
+      .file-field::before {
+        content: 'Upload Image';
+        display: inline-block;
+        background: linear-gradient(top, #f9f9f9, #e3e3e3);
+        border: 1px solid lightsalmon;
+        border-radius: 3px;
+        padding: 5px 8px;
+        outline: none;
+        color: salmon;
+        white-space: nowrap;
+        -webkit-user-select: none;
+        cursor: pointer;
+        text-shadow: 1px 1px #fff;
+        font-weight: 700;
+        font-size: 10pt;
+      }
+      .file-field {
+        margin-left: 20px;
+        font-size: 12.2pt;
+      }
+      .file-field:hover::before {
+        border-color: black;
+      }
+      .file-field:active::before {
+        background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
       }
       .chable-submit-field {
-        margin-top: 5px;
+        position: relative;
+        left: 240px;
+        bottom: 10px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        background-color: salmon;
+        color: white;
+        border: none;
         margin-right: 5px;
         height: 40px;
+      }
+      .chable-submit-field:focus {
+        box-shadow: none;
       }
     }
   }
@@ -348,6 +409,7 @@ body {
     border: 2px solid lightsalmon !important;
     transition-duration: .2s;
   }
+  
   .input:active {
     box-shadow: none !important;
   }

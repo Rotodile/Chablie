@@ -2,9 +2,8 @@
   <%= form_for(@chable) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <%= f.text_area :content, placeholder: "Share your thoughts", class: "chable-field" %>
-    <%= f.submit "Chable", class: "button is-primary chable-submit-field" %>
-    <%= f.file_field :chable_picture, accept: 'image/jpeg,image/gif,image/png', id: "image-browse" %>
-    <label for="image-browse" class="btn-2 label">upload</label>
+    <%= f.file_field :chable_picture, accept: 'image/jpeg,image/gif,image/png', class: 'file-field' %>
+    <%= f.submit "Chable", class: "button chable-submit-field" %>
   <% end %>
 </div>
 <script type="text/javascript">

@@ -5,27 +5,32 @@ body {
 
 .home-side-profile {
   margin-top: 10px;
-  width: 300px;
-  height: 220px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  width: 350px;
+  height: 350px;
   margin-bottom: 10px;
   background-color: white;
   .home-cover-photo {
-    width: 300px;
-    height: 100px;
+    width: 348px;
+    height: 130px;
+  }
+  .box-2 {
+    border: 3px thick;
+    border-image-source: linear-gradient(90deg, rgb(255, 201, 180), rgb(255, 117, 70));
+    border-image-slice: 1;
+    border-radius: 5% !important;
+    display: inline-block;
+    border-image-repeat: round;
   }
   .home-profile-photo {
-  //  background-color: white;
- //   border-radius: 100%;
- //   width: 70px;
- //   height: 70px;
- //   position: relative;
-      bottom: 30px;
-      left: 10px;
-      width: 70px;
-      height: 70px;
+      bottom: 70px;
+      left: 100px;
+      width: 150px;
+      height: 150px;
       position: relative;
       overflow: hidden;
-      border-radius: 50%;
+      border-radius: 5%;
       background-size: cover !important;
    // img {
      // border-radius: 100%;
@@ -33,26 +38,30 @@ body {
   }
   .home-name {
     position: relative;
-    font-size: 22px;
+    font-size: 24px;
     bottom: 70px;
-    left: 90px;
+    left: 140px;
     width: 200px;
+    a {
+      color: black;
+    }
   }
   .home-user-name {
     position: relative;
     bottom: 80px;
-    left: 90px;
+    font-size: 18px;
+    left: 140px;
     width: 200px;
   }
   .home-user-info {
     display: flex;
     background-color: white;
-    width: 300px;
+    width: 348px;
     height: 70px;
     position: relative;
-    bottom: 80px;
+    bottom: 72px;
     .home-chables {
-      width: 98px;
+      width: 116px;
       height: 65px;
       margin: 2px;
       background-color: white;
@@ -68,7 +77,7 @@ body {
       }
     }
     .home-following {
-      width: 98px;
+      width: 116px;
       margin: 2px;
       height: 65px;
       background-color: white;
@@ -84,7 +93,7 @@ body {
       }
     }
     .home-followers {
-      width: 98px;
+      width: 116px;
       margin: 2px;
       height: 65px;
       background-color: white;
@@ -102,12 +111,16 @@ body {
   }
 }
 
-.container {
+.home-container {
   display: flex;
+  justify-content: center;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   .home-create-chable {
     margin: 10px;
-    background-color: white;
-    width: 600px;
+    background-color: red;
+    width: 800px;
     .chables-feed {
       padding: 10px;
       width: 550px;
@@ -209,7 +222,7 @@ body {
 	text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
 }
 
-// Waves Styling
+// Waves //
 @keyframes wave {
 	from {
 		transform: rotate(0deg);
@@ -243,7 +256,7 @@ body {
   opacity: .2;
 }
 
-// Tabs Styling 
+// Tabs Styling //
 
 .formtabs {
   margin-top: 120px;
@@ -254,8 +267,9 @@ body {
   float: right;
   margin-right: 70px;
   z-index: 1 !important;
-  border-radius: 10px;
-  box-shadow: 1px 1px 50px 1px rgba(255, 160, 122, .5);
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   .tab {
     display: flex;
     overflow: hidden;
@@ -359,11 +373,11 @@ body {
   }
 
   .tl-btn {
-    border-radius: 10px 0 0 0;
+    border-radius: 5px 0 0 0;
   }
 
   .ts-btn {
-    border-radius: 0 10px 0 0;
+    border-radius: 0 5px 0 0;
   }
 
   .tab button.active {

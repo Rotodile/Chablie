@@ -76,13 +76,11 @@ body {
 
 div#error_explanation {
     color: red;
-    .alert.alert-danger {
-        color: red;
-        font-size: 20px !important;
-    }
     ul {
         list-style: disc !important;
         margin-left: 20px;
+        font-size: 14px;
+        margin-top: -30px;
     }
 }
 

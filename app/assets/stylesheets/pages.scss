@@ -14,6 +14,7 @@ body {
   .home-cover-photo {
     width: 348px;
     height: 130px;
+    background-color: rgb(255, 179, 170);
   }
   .box-2 {
     border: 3px thick;
@@ -120,8 +121,6 @@ body {
   .home-create-chable {
     margin: 10px;
     background-color: white;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);  
     width: 800px;
     .home-create-picture{
       border-radius: 100%;
@@ -130,7 +129,7 @@ body {
       padding: 10px;
       width: 550px;
       margin-top: 10px;
-      margin-left: 30px;
+      margin-left: 40px;
       border-bottom: 1px solid #e6ecf0;
       .feed-profile-photo {
         border-radius: 100%;
@@ -152,6 +151,9 @@ body {
           width: 500px;
           height: 500px;
           margin-left: 11%;
+          border-radius: 10px;
+          margin-top: -30px;
+          margin-bottom: 10px;
         }
       }
       .feed-username {
@@ -236,10 +238,11 @@ body {
       }
       .chable-submit-field {
         position: relative;
-        left: 240px;
+        left: 242px;
         bottom: 10px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        font-weight: bold;
+      //  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      //  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
         background-color: salmon;
         color: white;
         border: none;
@@ -257,6 +260,12 @@ body {
   display: flex;
 }
 
+.chable-show-section {
+  margin-top: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);    
+}
+
 .feed-h1 {
   color: #4a4a4a;
   .feed-delete {
@@ -265,7 +274,7 @@ body {
 }
 
 .feed-delete-area {
-  margin-top: 10px;
+  margin-top: 20px !important;
   margin-right: 10px;
   border-bottom: 1px solid #e6ecf0;
 }

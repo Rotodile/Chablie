@@ -1,6 +1,6 @@
 <div class="flex-chable">
 <div class="chables-feed">
-    <div class="feed-profile-photo" style="background-color: #00c4a7; background-image: url(' <%= chable.user.picture.url if chable.user.picture? %>'); background-size: cover;"></div>
+    <div class="feed-profile-photo" style="background-color: salmon; background-image: url(' <%= chable.user.picture.url if chable.user.picture? %>'); background-size: cover;"></div>
     <span class="feed-name"><%= link_to chable.user.name, chable.user %></span>
     <span class="feed-username">@<%= chable.user.username %> - <%= time_ago_in_words(chable.created_at) %></span>
     <h1 class="feed-content">    <% chable.content.to_s.split(' ').each do |word| %>
@@ -12,9 +12,6 @@
                                           <% end %>
     </h1>
     <span class="feed-img"><%= image_tag chable.chable_picture.url if chable.chable_picture? %></span>
-        <ul>
-          <%= render(partial: 'comments/comment', collection: chable.comments) %>
-        </ul>
       <div class="social-area">
         <div class="like-area">
           <% pre_like = chable.likes.find { |like| like.user_id == current_user.id} %>
@@ -28,22 +25,25 @@
         <!-- Popup Modals -->
         <div id="replyModal" class="modal">
           <div class="modal-background"></div>
-          <div class="modal-content">
-            <h1 class="title">Comment On This Chable</h1>
-            <button class="modal-close is-large" aria-label="close" onclick="closeReplyModal();"></button>
-            <hr>
-            <div class="comment">
-               <%= form_for [chable, Comment.new] do |f| %>
+            <div class="modal-content">
+              <h1 class="title">Comment On This Chable</h1>
+              <button class="modal-close is-large" aria-label="close" onclick="closeReplyModal();"></button>
+              <hr>
+                <div class="comment">
+                  <%= form_for [chable, Comment.new] do |f| %>
                       <%= f.text_area :body, placeholder: "Add a comment", class: "comment-text" %><br/>
                       <%= f.submit "Add Comment", class: "comment-btn" %>
                     <% end %>
+                </div>
             </div>
           </div>
+          <button data-chableid="<%= chable.id %>" onclick="openReplyModal('<%= chable.id %>')" class="comment-popup" style="background-color: transparent; border: none; margin-bottom: 10px;"></button>
+          <p class="comment-count"><%= chable.comments.count %></p>
         </div>
-        <button data-chableid="<%= chable.id %>" onclick="openReplyModal('<%= chable.id %>')" class="comment-popup" style="background-color: transparent; border: none;"></button>
-        <p class="comment-count"><%= chable.comments.count %></p>
+        <ul>
+          <%= render(partial: 'comments/comment', collection: chable.comments) %>
+        </ul>
       </div>
-    </div>
     <div class="feed-delete-area">
       <% if current_user?(chable.user) %>
             <%= link_to "Delete", chable, method: :delete,

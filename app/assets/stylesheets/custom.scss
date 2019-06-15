@@ -245,11 +245,8 @@ div#error_explanation {
 
   .comment-count {
       margin-left: 10px;
+      margin-bottom: 3px;
   }
-
-  .rechable-count {
-    margin-left: 10px;
-}
 
   .like-area {
       p {
@@ -283,24 +280,29 @@ div#error_explanation {
   
   .comment-text {
       resize: none;
-      width: 93%;
-      height: 35px;
+      width: 500px;
+      height: 80px;
       border-radius: 5px;
-      border: 1px solid #31c2ac;
-      padding: 4px;
+      padding: 10px;
       padding-left: 10px;
+      background-color: whitesmoke;
+      border: none;
+      &:focus {
+          outline: none !important;
+          border: 2px solid salmon;
+          transition-duration: 500ms;
+      }
   }
 
   .comment-btn {
       color: white;
-      background-color: #00d1b2;
+      background-color: salmon;
       border: none;
       padding: 10px 20px;
-      border-radius: 20px;
+      border-radius: 5px;
       font-weight: bold;
       position: relative;
-      bottom: 50%;
-      left: 95%;
+      left: 82%;
 }
 
 .comment {
@@ -309,7 +311,7 @@ div#error_explanation {
 }
 
 #new_comment {
-    margin-left: 55px;
+    margin-left: 45px;
     width: 450px;
 }
 
@@ -358,7 +360,7 @@ div#error_explanation {
   }
 
   .search-field:focus {
-      border: 2px solid #00c4a7;  
+      border: 2px solid salmon;  
       color: #14171a;
       transition-duration: 500ms;
   }

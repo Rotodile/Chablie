@@ -1,8 +1,8 @@
 <% if logged_in? %>
   <div class="home-container">
     <div class="home-side-profile">
-      <div class="home-cover-photo" style="background-color: #e4fcf8; background-image: url(' <%= current_user.cover_picture.url if current_user.cover_picture? %>'); background-size: cover;"></div>
-      <div class="home-profile-photo box-2" style="background-color: #00c4a7; background-image: url(' <%= current_user.picture.url if current_user.picture? %>')">
+      <div class="home-cover-photo" style="background-image: url(' <%= current_user.cover_picture.url if current_user.cover_picture? %>'); background-size: cover;"></div>
+      <div class="home-profile-photo box-2" style="background-color: salmon; background-image: url(' <%= current_user.picture.url if current_user.picture? %>')">
       </div>
       <h1 class="home-name"><%= link_to current_user.name, current_user %></h1>
       <h1 class="home-user-name">@<%= current_user.username %></h1>
@@ -23,7 +23,9 @@
     </div>
     <div class="home-create-chable">
       <%= render 'shared/chable_form' %>
-      <%= render 'shared/feed' %>
+      <div class="chable-show-section">
+        <%= render 'shared/feed' %>
+      </div>
     </div>
   <div class="container-end">
         <div class="userguide">

@@ -50,6 +50,7 @@ GEM
     arel (9.0.0)
     autoprefixer-rails (9.6.0)
       execjs
+    aws_cf_signer (0.1.3)
     bcrypt (3.1.13)
     bindex (0.7.0)
     bootsnap (1.4.4)
@@ -77,6 +78,9 @@ GEM
     chromedriver-helper (2.1.1)
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
+    cloudinary (1.11.1)
+      aws_cf_signer
+      rest-client
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -97,6 +101,8 @@ GEM
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     ffi (1.11.1)
+    figaro (1.1.1)
+      thor (~> 0.14)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
     fog (2.1.0)
@@ -463,7 +469,9 @@ DEPENDENCIES
   capybara (>= 2.15)
   carrierwave
   chromedriver-helper
+  cloudinary
   coffee-rails (~> 4.2)
+  figaro
   fog
   friendly_id
   jbuilder (~> 2.5)

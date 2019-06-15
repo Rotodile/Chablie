@@ -26,6 +26,10 @@ body, html {
       margin: 5px;
       margin-bottom: 25px;
       margin-top: 25px;
+      &:focus {
+        background-color: salmon;
+        color: white;
+      }
     } 
     .logheading {
       text-align: center;

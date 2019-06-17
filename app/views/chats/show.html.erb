@@ -1,7 +1,7 @@
-<div>
-  <h5>Chat with <%= @other_user.username %></h5>
+<div class="message-container">
+  <h5 class='message-header'>Chat with <%= @other_user.username %></h5>
   <% if @chat.messages.any? %>
-    <div id="messages">
+    <div id="messages" class="messages">
       <%= render partial: 'messages/message', collection: @chat.messages.order(id: :asc)%>
     </div>
   <%else%>

@@ -7,7 +7,7 @@
 <div>
 <br>
     <p class="message-img" style="float: right;"><%= image_tag message.user.picture.url if message.user.picture? %></p>
-    <p class="message-content" style="float: right; margin-top: 40px;"><%=message.content%></p>
+    <p class="message-content" style="float: right; margin-top: 40px; right: 0; position: relative;"><%=message.content%></p>
 <br>
 </div>
 <% end %>

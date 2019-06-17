@@ -1,10 +1,10 @@
 <% if message.user == current_user %>
-<div>
+<div class="messages">
     <span class="message-img"><%= image_tag message.user.picture.url if message.user.picture? %></span>
     <span class="message-content"><%=message.content%></span>
 </div>
 <% elsif message.user == @other_user %>
-<div>
+<div class="messages">
 <br>
     <p class="message-img" style="float: right;"><%= image_tag message.user.picture.url if message.user.picture? %></p>
     <p class="message-content" style="float: right; margin-top: 40px; right: 0; position: relative;"><%=message.content%></p>

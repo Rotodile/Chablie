@@ -9,7 +9,7 @@ Chablie is a social networking website created with ruby on rails. The live vers
 + Chables (posts).
 + Following/Followers Users.
 + Hashtags.
-+ Chable Likes.
++ Chable(posts) Likes.
 + Edit User Profiles.
 + Hashtag Searches.
 + Comment On Chables.

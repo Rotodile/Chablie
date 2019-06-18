@@ -6,6 +6,13 @@ body {
     font-family: 'Cabin', cursive !important;
 }
 
+.chat-index {
+    display: flex;
+    ul.chat-all-users {
+        width: 250px;
+    }
+}
+
 .message-img {
     img {
         border-radius: 100%;

@@ -4,10 +4,12 @@ function createMessageChannel() {
           },
           {
           received: function(data) {
+              debugger
             $("#messages").removeClass('hidden')
             return $('#messages').append(this.renderMessage(data));
           },
           renderMessage: function(data) {
+              debugger
       return "<p> <b>" + data.user + ": </b>" + data.message + "</p>";
     },
         });

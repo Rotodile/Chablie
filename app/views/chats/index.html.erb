@@ -1,7 +1,7 @@
 <h1 class="message-header">Chat</h1>
 <div class='chat-index'>
-    <h1>All Users:</h1>
     <ul class='chat-all-users'>
+      <h1>All Users:</h1>
       <% User.all.each do |other_user| %>
         <% if other_user != current_user %>
           <li>
@@ -13,8 +13,8 @@
       <% end %>
     </ul>
 
-    <h1>Current chats:</h1>
     <div class='chat-users'>
+       <h1>Current chats:</h1>
       <% if @existing_chats_users %>
         <% @existing_chats_users.each do |other_user| %>
         <% if other_user != current_user %>

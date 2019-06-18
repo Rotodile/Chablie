@@ -1,7 +1,7 @@
 <h1 class="message-header">Chat</h1>
 
-All Users:
-<ul>
+<h1>All Users:</h1>
+<ul class='chat-all-users'>
   <% User.all.each do |other_user| %>
    <% if other_user != current_user %>
      <li>

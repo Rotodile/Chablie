@@ -1,17 +1,17 @@
 <h1 class="message-header">Chat</h1>
-<ul>
+<div>
 <% if @existing_chats_users %>
    <% @existing_chats_users.each do |other_user| %>
     <% if other_user != current_user %>
-      <li>
+      <p>
         <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
         <%= other_user.username %>
         <% end %>
-      </li>
+      </p>
      <% end %>
    <% end %>
   <% end %>
-</ul>
+</div>
 
 All Users:
 <ul>

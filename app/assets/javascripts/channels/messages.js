@@ -8,9 +8,9 @@ function createMessageChannel() {
             return $('#messages').append(this.renderMessage(data));
           },
           renderMessage: function(data) {
-      return "<p> <b>" + data.user + ": </b>" + data.message + "</p>";
-    },
-        });
+            return "<div class='messages'><img src='https://i.pinimg.com/originals/fd/0c/55/fd0c559856ca991e9e28937dc802f0b0.png' class='circle' /> <span class='message-content'><b>" + data.message + "</b></span></div>";
+        },
+      });
   
   return App.messages;
   }

@@ -2,7 +2,9 @@
 
 Chablie is a social networking website created with ruby on rails. The live version of Chablie can be found [here](https://chablie.herokuapp.com)
 
-![Chable Main Page](https://res.cloudinary.com/areeba/image/upload/v1561033434/screencapture-chablie-herokuapp-2019-06-20-17_22_48.png)
+![Chablie Main Page](https://res.cloudinary.com/areeba/image/upload/v1561033434/screencapture-chablie-herokuapp-2019-06-20-17_22_48.png)
+![Chablie Messages Page](https://res.cloudinary.com/areeba/image/upload/v1561032537/Screenshot_2019-06-20_Chablie.png)
+
 ## Current Chablie Features:
 
 + User Accounts.

@@ -3,13 +3,22 @@
         margin-left: 1% !important;
 }
 </style>
+
 <div class="search-page">
   <% if @chables.exists? %>
-    <h1 class="title" style="text-align: center; margin-top: 10px;">Top Chables</h1>
+    <h1 class="title b1" style="text-align: center; margin-top: 10px;">Top Chables</h1>
   <% end %>
   <% if @comments.exists? %>
-    <h1 class="title" style="text-align: center; margin-top: 10px;">Top Comments</h1>
+    <h1 class="title b1" style="text-align: center; margin-top: 10px;">Top Comments</h1>
   <% end %>
+  <% if @chables.exists? && @comments.exists? %>
+  <h1 class="title" style="text-align: center; margin-top: 10px;">Top Chables and Comments</h1>
+  <style>
+    .b1 {
+      display: none;
+    }
+  </style>
+  <% end %>  
   <div class="user-images">
     <% @chables.each do |chable|%>
       <div class="wrapper">

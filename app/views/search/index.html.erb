@@ -2,28 +2,33 @@
 .chables-feed .feed-img img{
    margin-left: 1% !important;
 }
+
+.chables-feed .feed-content a {
+  color: salmon !important;
+}
 </style>
 
 <div class="search-page">
-  <% if @chables.exists? %>
-    <h1 class="title b1" style="text-align: center; margin-top: 10px;">Top Chables</h1>
-  <% end %>
-  <% if @comments.exists? %>
-    <h1 class="title b1" style="text-align: center; margin-top: 10px;">Top Comments</h1>
-  <% end %>
-  <% if @chables.exists? && @comments.exists? %>
-  <h1 class="title" style="text-align: center; margin-top: 10px;">Top Chables and Comments</h1>
-  <style>
-    .b1 {
-      display: none;
-    }
-  </style>
-  <% end %>  
+    <% if @chables.exists? %>
+      <h1 class="title b1" style="text-align: center; margin-top: 10px;">Top Chables</h1>
+    <% end %>
+    <% if @comments.exists? %>
+      <h1 class="title b1" style="text-align: center; margin-top: 10px;">Top Comments</h1>
+    <% end %>
+    <% if @chables.exists? && @comments.exists? %>
+      <h1 class="title" style="text-align: center; margin-top: 10px;">Top Chables and Comments</h1>
+      <style>
+      .b1 {
+        display: none;
+      }
+      </style>
+    <% end %>  
   <div class="user-images">
     <% @chables.each do |chable|%>
-      <div class="wrapper">
-        <div class="chables-feed" style="background-color: white; justify-content: center; margin-left: 30%;">
-          <div class="feed-profile-photo" style="background-color: #00c4a7; background-image: url(' <%= chable.user.picture.url if chable.user.picture? %>'); background-size: cover;"></div>
+      <div class="wrapper" style='padding: 10px;'>
+        <div class="chables-feed" style="padding: 20px; background-color: white; justify-content: center; margin-left: 30%; border: none; box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);">
+          <div class="feed-profile-photo" style="background-color: salmon; background-image: url(' <%= chable.user.picture.url if chable.user.picture? %>'); background-size: cover;"></div>
           <span class="feed-name"><%= link_to chable.user.name, chable.user %></span>
           <span class="feed-username">@<%= chable.user.username %> - <%= time_ago_in_words(chable.created_at) %></span>
           <h1 class="feed-content"><% chable.content.to_s.split(' ').each do |word| %>
@@ -48,14 +53,15 @@
             <p class="comment-count"><%= chable.comments.count %></p>
           </div>
         </div>
-      <% end %>
-    </div>
+    <% end %>
+  </div>
 
-   <div class="user-images">
+  <div class="user-images">
     <% @comments.each do |comment|%>
-      <div class="wrapper">
-        <div class="chables-feed" style="background-color: white; justify-content: center; margin-left: 30%;">
-          <div class="feed-profile-photo" style="background-color: #00c4a7; background-image: url(' <%= comment.user.picture.url if comment.user.picture? %>'); background-size: cover;"></div>
+      <div class="wrapper" style='padding: 10px;'>
+        <div class="chables-feed" style="background-color: white; justify-content: center; margin-left: 30%; box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1); padding: 20px;">
+          <div class="feed-profile-photo" style="background-color: salmon; background-image: url(' <%= comment.user.picture.url if comment.user.picture? %>'); background-size: cover;"></div>
           <span class="feed-name"><%= link_to comment.user.name, comment.user %></span>
           <span class="feed-username">@<%= comment.user.username %> - <%= time_ago_in_words(comment.created_at) %></span>
           <h1 class="feed-content"><% comment.body.to_s.split(' ').each do |word| %>
@@ -65,7 +71,8 @@
                                                     <%= word %>
                                                   <%end %>
                                                 <% end %></h1>
-        <% end %>
+          
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>

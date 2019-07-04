@@ -89,6 +89,7 @@ body {
 .messages {
     margin-top: 25px;
     margin-bottom: 30px;
+    margin-left: 300px;
 }
 
 .message-header {
@@ -108,11 +109,12 @@ body {
     position: fixed;
     resize: none;
     height: 60px;
-    padding: 5px;
+    padding: 10px;
     border: none;
     border-top: 1px solid salmon;
     background-color: whitesmoke;
     font-size: 15px;
+    margin-left: 300px;
     &:focus {
         box-shadow: none;
         outline: none;

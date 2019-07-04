@@ -1,5 +1,31 @@
+<style>
+  .nav {
+    z-index: 3;
+  }
+  .chat-all-users {
+    margin-top: 105px;
+  }
+</style>
+<div class='chat-index'>
+    <ul class='chat-all-users'>
+      <h1>All Users:</h1>
+      <input type="text" id="userSearch" onkeyup="userFunction()" placeholder="Search Username" title="Search Users">
+      <ul id='allUsers'>
+        <% User.all.each do |other_user| %>
+          <% if other_user != current_user %>
+            <li>
+              <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
+                <%= other_user.username %>
+              <% end %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </ul>
+</div>
+
 <div class="message-container" style="margin-bottom: 100px;">
-  <h5 class='message-header'>Chat with <%= @other_user.username %></h5>
+  <h5 class='message-header' style='position: fixed; width: 100%; height: 54px; margin-top:26px;'>Chat with <%= @other_user.username %></h5>
   <% if @chat.messages.any? %>
     <div id="messages">
       <%= render partial: 'messages/message', collection: @chat.messages.order(id: :asc)%>

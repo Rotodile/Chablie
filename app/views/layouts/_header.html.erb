@@ -1,8 +1,8 @@
- <nav id="navbar" class="navbar" role="navigation" aria-label="main navigation">
+<!-- <nav id="navbar" class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <!--<a class="navbar-item" href="#" style="padding: 0;">--> 
-      <img src="https://res.cloudinary.com/areeba/image/upload/v1560941566/3f77b86f-4168-4e3e-82da-a767565b33e7_200x200.png" width="80px" class="header-img">
-   <!-- </a>-->
+    <a class="navbar-item" href="#" style="padding: 0;">--> 
+   <!--   <img src="https://res.cloudinary.com/areeba/image/upload/v1560941566/3f77b86f-4168-4e3e-82da-a767565b33e7_200x200.png" width="80px" class="header-img">
+   </a>
     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onclick="myFunction()">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -36,3 +36,43 @@
     </div>
   </div>
 </nav>
+-->
+
+<div class='nav'>
+  <img src="https://res.cloudinary.com/areeba/image/upload/v1560941566/3f77b86f-4168-4e3e-82da-a767565b33e7_200x200.png" width="80px" class="header-img">
+  <div class="dropdown">
+    <button onclick="dropFunc()" class="dropbtn"><img src='https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'/></button>
+    <span class='something2' id='something2'></span>
+    <span class='something' id='something'></span>
+    <div id="mydropdown" class="myDropdown">
+       <%= link_to 'Profile', current_user, class: "navbar-item" %>
+       <%= link_to 'Messages', '/messages', class: "navbar-item" %>
+       <%= link_to 'Settings', edit_user_path(current_user), class: 'navbar-item' %>
+        <hr>
+      <%= link_to "Log out", logout_path, method: :delete, class: "navbar-item" %>
+    </div>
+  </div>
+</div>
+
+<script>
+
+function dropFunc() {
+  document.getElementById("something").classList.toggle("show");
+  document.getElementById("something2").classList.toggle("show");
+  document.getElementById("mydropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+</script>

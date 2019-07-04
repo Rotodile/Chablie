@@ -134,13 +134,7 @@ body {
     }
 }
 
-    .header-img {
-        height: 80px !important;
-        position: relative;
-        bottom: 14px;
-        margin-left: 20px;
-    }
-
+ 
 .alert.alert-notice {
     display: flex !important;
     justify-content: center;
@@ -474,3 +468,131 @@ div#error_explanation {
           text-align: center;
       }
   }
+
+
+// Navbar Styling Start //
+
+.header-img {
+    height: 80px !important;
+    position: relative;
+    bottom: 22px;
+    margin-left: 12px;
+}
+  
+  .nav {
+    padding-left: 5px;
+    padding-top: 8px;
+    padding-right: 5px;
+    background-color: white;
+    width: 100%;
+    height: 50px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    z-index: 1;
+  }
+  
+  .dropbtn {
+    position: relative;
+    left: 1250px;
+    top: -13px;
+    color: white;
+    border-radius: 100%;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .dropbtn{
+        img {
+            margin-bottom: -3.5px;
+            border-radius: 100%;
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+        }
+    }
+  
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: salmon;
+    outline: none;
+    box-shadow: none;
+  }
+  
+  .dropbtn:focus {
+      border: 1px solid salmon;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 7px;
+  }
+  
+  .something2 {
+      display: none;
+      border-bottom: 16px solid #657786;
+      border-bottom-color: rgba(0,0,0,0.1);
+      border-left: 16px solid transparent;
+      border-right: 16px solid transparent;
+      height: auto;
+      left: 1255px;
+      top: 30px;
+      position: absolute;
+      width: auto;
+  }
+  hr {
+    border: 1px solid #f1f1f1;
+  }
+  
+  .log {
+    margin-top: -5px;
+  }
+  
+  .something {
+      display: none;
+      position: absolute;
+      top: 31px;
+      left: 1256px;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 15px solid #fff;
+      border-bottom-color: #fff;
+      z-index: 2;
+  }
+  
+  .myDropdown {
+    left: 1175px;
+    top: 30px;
+    border-radius: 2px;
+    display: none;
+    margin-top: 14px;
+    position: absolute;
+    background-color: #fff;
+    min-width: 120px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    z-index: 1;
+  }
+  
+  .myDropdown a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .myDropdown a:hover {
+    background-color: #ddd
+  }
+  
+  .show {
+    display:block
+  }
+  

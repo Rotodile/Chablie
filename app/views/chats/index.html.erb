@@ -1,20 +1,28 @@
+<style>
+  .nav {
+    z-index: 3;
+  }
+</style>
 <h1 class="message-header">Chat</h1>
 <div class='chat-index'>
     <ul class='chat-all-users'>
       <h1>All Users:</h1>
-      <% User.all.each do |other_user| %>
-        <% if other_user != current_user %>
-          <li>
-            <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
-              <%= other_user.username %>
-            <% end %>
-          </li>
+      <input type="text" id="userSearch" onkeyup="userFunction()" placeholder="Search Username" title="Search Users">
+      <ul id='allUsers'>
+        <% User.all.each do |other_user| %>
+          <% if other_user != current_user %>
+            <li>
+              <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
+                <%= other_user.username %>
+              <% end %>
+            </li>
+          <% end %>
         <% end %>
-      <% end %>
+      </ul>
     </ul>
 
     <div class='chat-users'>
-       <h1>Current chats:</h1>
+       <h1>Current Chats:</h1>
       <% if @existing_chats_users %>
         <% @existing_chats_users.each do |other_user| %>
         <% if other_user != current_user %>
@@ -28,3 +36,24 @@
       <% end %>
     </div>
 </div>
+
+<script>
+function userFunction() {
+  // Declare variables
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("userSearch");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("allUsers");
+  li = ul.getElementsByTagName("li");
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>

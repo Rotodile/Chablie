@@ -627,3 +627,420 @@ div#error_explanation {
     display:block
   }
   
+
+  @media screen and (max-width: 1400px) {
+    .something2 {
+        left: 1205px;
+    }
+    .something {
+        left: 1206px;   
+    }
+    .myDropdown {
+        left: 1125px;
+      }
+      .dropbtn {
+        left: 1200px;
+      }
+      .home-side-profile {
+          width: 300px !important;
+          .home-cover-photo {
+              width: 298px !important;
+          }
+          .home-user-info {
+              width: 298px !important;
+          }
+      }
+      .home-create-chable {
+          width: 750px;
+      }
+      .container-end {
+          width: 320px;
+          .userguide {
+              width: 300px;
+          }
+      }
+  }
+  
+  @media screen and (max-width: 1350px) {
+    .something2 {
+        left: 1155px;
+    }
+    .something {
+        left: 1156px;   
+    }
+    .myDropdown {
+        left: 1075px;
+      }
+      .dropbtn {
+        left: 1150px;
+      }
+      
+  }
+  
+    
+  
+  @media screen and (max-width: 1300px) {
+    .something2 {
+        left: 1105px;
+    }
+    .something {
+        left: 1106px;   
+    }
+    .myDropdown {
+        left: 1025px;
+      }
+      .dropbtn {
+        left: 1100px;
+      }
+      .container-end {
+          display: none;
+      }
+      .home-side-profile {
+        width: 350px !important;
+        .home-cover-photo {
+            width: 348px !important;
+        }
+        .home-user-info {
+            width: 348px !important;
+        }
+    }
+    .home-create-chable {
+        width: 700px !important;
+        .chable-field {
+            width: 655px !important;
+            height: 80px !important;
+        }
+        .chable-submit-field {
+            left: 262px !important;
+            width: 90px !important;
+        }
+    }
+    .flex-chable {
+        width: 700px !important;
+    }
+  }
+ 
+   
+  @media screen and (max-width: 1250px) {
+    .something2 {
+        left: 1055px;
+    }
+    .something {
+        left: 1056px;   
+    }
+    .myDropdown {
+        left: 975px;
+      }
+      .dropbtn {
+        left: 1050px;
+      }
+      
+  }
+
+    
+  @media screen and (max-width: 1200px) {
+    .something2 {
+        left: 1005px;
+    }
+    .something {
+        left: 1006px;   
+    }
+    .myDropdown {
+        left: 925px;
+      }
+      .dropbtn {
+        left: 1000px;
+      }
+      
+  }
+ 
+     
+  @media screen and (max-width: 1150px) {
+    .something2 {
+        left: 955px;
+    }
+    .something {
+        left: 956px;   
+    }
+    .myDropdown {
+        left: 875px;
+      }
+      .dropbtn {
+        left: 950px;
+      }
+      
+  }
+ 
+      
+  @media screen and (max-width: 1100px) {
+    .something2 {
+        left: 905px;
+    }
+    .something {
+        left: 906px;   
+    }
+    .myDropdown {
+        left: 825px;
+      }
+      .dropbtn {
+        left: 900px;
+      }
+      .home-side-profile {
+        width: 300px !important;
+        .home-cover-photo {
+            width: 298px !important;
+        }
+        .home-profile-photo {
+            left: 80px !important;
+        }
+        .home-name, .home-user-name {
+            left: 115px !important;
+        }
+        .home-user-info {
+            width: 298px !important;
+        }
+    }
+  }
+ 
+      
+  @media screen and (max-width: 1050px) {
+    .something2 {
+        left: 855px;
+    }
+    .something {
+        left: 856px;   
+    }
+    .myDropdown {
+        left: 775px;
+      }
+      .dropbtn {
+        left: 850px;
+      }
+      .home-create-chable {
+        width: 650px !important;
+        .chable-field {
+            width: 605px !important;
+            height: 70px !important;
+        }
+        .chable-submit-field {
+            left: 232px !important;
+            width: 70px !important;
+        }
+    }
+    .flex-chable {
+        width: 650px !important;
+    }
+  }
+ 
+      
+  @media screen and (max-width: 1000px) {
+    .something2 {
+        left: 805px;
+    }
+    .something {
+        left: 806px;   
+    }
+    .myDropdown {
+        left: 725px;
+      }
+      .dropbtn {
+        left: 800px;
+      }
+      .home-side-profile {
+          display: none;
+      }
+      .home-create-chable {
+        width: 700px !important;
+        .chable-field {
+            width: 655px !important;
+            height: 70px !important;
+        }
+        .chable-submit-field {
+            left: 262px !important;
+            width: 90px !important;
+        }
+    }
+    .flex-chable {
+        width: 700px !important;
+    }
+  }
+ 
+  
+      
+  @media screen and (max-width: 950px) {
+    .something2 {
+        left: 755px;
+    }
+    .something {
+        left: 756px;   
+    }
+    .myDropdown {
+        left: 675px;
+      }
+      .dropbtn {
+        left: 750px;
+      }
+      
+  }
+
+  
+      
+  @media screen and (max-width: 900px) {
+    .something2 {
+        left: 705px;
+    }
+    .something {
+        left: 706px;   
+    }
+    .myDropdown {
+        left: 625px;
+      }
+      .dropbtn {
+        left: 700px;
+      }
+      
+  }
+ 
+  
+      
+  @media screen and (max-width: 850px) {
+    .something2 {
+        left: 655px;
+    }
+    .something {
+        left: 656px;   
+    }
+    .myDropdown {
+        left: 575px;
+      }
+      .dropbtn {
+        left: 650px;
+      }
+      
+  }
+ 
+  
+      
+  @media screen and (max-width: 800px) {
+    .something2 {
+        left: 605px;
+    }
+    .something {
+        left: 606px;   
+    }
+    .myDropdown {
+        left: 525px;
+      }
+      .dropbtn {
+        left: 600px;
+      }
+      
+  }
+      
+  @media screen and (max-width: 750px) {
+    .something2 {
+        left: 555px;
+    }
+    .something {
+        left: 556px;   
+    }
+    .myDropdown {
+        left: 475px;
+      }
+      .dropbtn {
+        left: 550px;
+      }
+      
+  }
+    
+  @media screen and (max-width: 700px) {
+    .something2 {
+        left: 505px;
+    }
+    .something {
+        left: 506px;   
+    }
+    .myDropdown {
+        left: 425px;
+      }
+      .dropbtn {
+        left: 500px;
+      }     
+  }
+
+  @media screen and (max-width: 650px) {
+    .something2 {
+        left: 455px;
+    }
+    .something {
+        left: 456px;   
+    }
+    .myDropdown {
+        left: 375px;
+      }
+      .dropbtn {
+        left: 450px;
+      }     
+  }
+
+  @media screen and (max-width: 600px) {
+    .something2 {
+        left: 405px;
+    }
+    .something {
+        left: 406px;   
+    }
+    .myDropdown {
+        left: 325px;
+      }
+      .dropbtn {
+        left: 400px;
+      }     
+  }
+
+  @media screen and (max-width: 550px) {
+    .something2 {
+        left: 355px;
+    }
+    .something {
+        left: 356px;   
+    }
+    .myDropdown {
+        left: 275px;
+      }
+      .dropbtn {
+        left: 350px;
+      }     
+  }
+
+  
+  @media screen and (max-width: 500px) {
+    .something2 {
+        left: 305px;
+    }
+    .something {
+        left: 306px;   
+    }
+    .myDropdown {
+        left: 225px;
+      }
+      .dropbtn {
+        left: 300px;
+      }     
+  }
+
+  
+  @media screen and (max-width: 450px) {
+    .something2 {
+        left: 255px;
+    }
+    .something {
+        left: 256px;   
+    }
+    .myDropdown {
+        left: 175px;
+      }
+      .dropbtn {
+        left: 250px;
+      }     
+  }

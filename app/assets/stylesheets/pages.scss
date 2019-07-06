@@ -271,7 +271,11 @@ body {
   color: #4a4a4a;
   .feed-delete {
     color: #4a4a4a;
+    cursor: pointer !important;
   }
+}
+.feed-h1:hover {
+  color: salmon !important;
 }
 
 .feed-delete-area {

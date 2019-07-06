@@ -950,7 +950,23 @@ div#error_explanation {
       .dropbtn {
         left: 550px;
       }
-      
+      .home-create-chable {
+        width: 650px !important;
+        .chable-field {
+            width: 605px !important;
+            height: 70px !important;
+        }
+        .chable-submit-field {
+            left: 222px !important;
+            width: 80px !important;
+        }
+    }
+    .flex-chable {
+        width: 650px !important;
+    }
+    .home-container .home-create-chable .chables-feed {
+        margin-left: 20px !important;
+    }
   }
     
   @media screen and (max-width: 700px) {
@@ -965,7 +981,24 @@ div#error_explanation {
       }
       .dropbtn {
         left: 500px;
-      }     
+      }  
+      .home-create-chable {
+        width: 600px !important;
+        .chable-field {
+            width: 555px !important;
+            height: 70px !important;
+        }
+        .chable-submit-field {
+            left: 182px !important;
+            width: 70px !important;
+        }
+    }
+    .flex-chable {
+        width: 600px !important;
+    }
+    .home-container .home-create-chable .chables-feed {
+        margin-left: 10px !important;
+    }   
   }
 
   @media screen and (max-width: 650px) {
@@ -980,7 +1013,10 @@ div#error_explanation {
       }
       .dropbtn {
         left: 450px;
-      }     
+      } 
+      .feed-delete-area {     
+        margin-right: 30px !important; 
+   }    
   }
 
   @media screen and (max-width: 600px) {
@@ -995,7 +1031,27 @@ div#error_explanation {
       }
       .dropbtn {
         left: 400px;
-      }     
+      } 
+      .home-create-chable {
+        width: 550px !important;
+        .chable-field {
+            width: 505px !important;
+            height: 70px !important;
+        }
+        .chable-submit-field {
+            left: 132px !important;
+            width: 70px !important;
+        }
+    }
+    .flex-chable {
+        width: 550px !important;
+    }
+    .home-container .home-create-chable .chables-feed {
+        margin-left: 10px !important;
+    }   
+    .feed-delete-area {     
+         margin-right: 30px !important; 
+    }
   }
 
   @media screen and (max-width: 550px) {
@@ -1010,7 +1066,27 @@ div#error_explanation {
       }
       .dropbtn {
         left: 350px;
-      }     
+      }   
+      .home-create-chable {
+        width: 500px !important;
+        .chable-field {
+            width: 455px !important;
+            height: 70px !important;
+        }
+        .chable-submit-field {
+            left: 92px !important;
+            width: 60px !important;
+        }
+    }
+    .flex-chable {
+        width: 500px !important;
+    }
+    .home-container .home-create-chable .chables-feed {
+        margin-left: 10px !important;
+    }   
+    .feed-delete-area {     
+         margin-right: 30px !important; 
+    }  
   }
 
   
@@ -1026,7 +1102,21 @@ div#error_explanation {
       }
       .dropbtn {
         left: 300px;
-      }     
+      } 
+      .home-create-chable {
+        width: 450px !important;
+        .chable-field {
+            width: 405px !important;
+            height: 70px !important;
+        }
+        .chable-submit-field {
+            left: 42px !important;
+            width: 60px !important;
+        }
+    }
+    .flex-chable {
+        width: 450px !important;
+    }    
   }
 
   
@@ -1043,4 +1133,114 @@ div#error_explanation {
       .dropbtn {
         left: 250px;
       }     
+      .home-create-chable {
+        width: 400px !important;
+        .chable-field {
+            width: 355px !important;
+            height: 70px !important;
+        }
+        .chable-submit-field {
+            left: -7px !important;
+            width: 60px !important;
+        }
+    }
+    .flex-chable {
+        width: 400px !important;
+    }     
+  }
+
+  @media screen and (max-width: 400px) {
+    .something2 {
+        left: 205px;
+    }
+    .something {
+        left: 206px;   
+    }
+    .myDropdown {
+        left: 125px;
+      }
+      .dropbtn {
+        left: 200px;
+      }     
+      .home-create-chable {
+        width: 350px !important;
+        .chable-field {
+            width: 305px !important;
+            height: 70px !important;
+        }
+        .chable-submit-field {
+            left: 1px !important;
+            width: 60px !important;
+        }
+    }
+    .flex-chable {
+        width: 350px !important;
+    } 
+    .home-container .home-create-chable .chable-creator .file-field {
+        width: 240px !important;
+    }    
+  }
+
+  @media screen and (max-width: 400px) {
+    .something2 {
+        left: 205px;
+    }
+    .something {
+        left: 206px;   
+    }
+    .myDropdown {
+        left: 125px;
+      }
+      .dropbtn {
+        left: 200px;
+      }     
+      .home-create-chable {
+        width: 350px !important;
+        .chable-field {
+            width: 305px !important;
+            height: 70px !important;
+        }
+        .chable-submit-field {
+            left: 1px !important;
+            width: 60px !important;
+        }
+    }
+    .flex-chable {
+        width: 350px !important;
+    } 
+    .home-container .home-create-chable .chable-creator .file-field {
+        width: 240px !important;
+    }    
+  }
+  
+  @media screen and (max-width: 350px) {
+    .something2 {
+        left: 155px;
+    }
+    .something {
+        left: 156px;   
+    }
+    .myDropdown {
+        left: 75px;
+      }
+      .dropbtn {
+        left: 150px;
+      }     
+      .home-create-chable {
+        width: 300px !important;
+        .chable-field {
+            width: 255px !important;
+            height: 70px !important;
+        }
+        .chable-submit-field {
+            left: 1px !important;
+            width: 60px !important;
+        }
+    }
+    .flex-chable {
+        width: 300px !important;
+    } 
+    .home-container .home-create-chable .chable-creator .file-field {
+        width: 190px !important;
+    }    
   }

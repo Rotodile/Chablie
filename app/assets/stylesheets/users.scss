@@ -6,8 +6,9 @@ body {
 
 .profile-cover {
     width: 100%;
-    height: 40vh;
+    height: 41vh;
     background-color: rgb(235, 234, 234);
+    margin-top: 50px;
 }
 
 .second-nav {
@@ -72,15 +73,20 @@ body {
       padding-left: 16px !important;
   }
 
-.profile-photo {
-    top: -110px;
-    left: 150px;
-    position: relative;
-    width: 200px;
-    height: 200px;
-    border: 1px solid gray;
-    border-radius: 5%;
-    margin: 0;
+.info-box {
+    height: 120px;
+    width: 100%;
+    background-color: tan;   
+    .profile-photo {
+        top: -80px;
+        left: 250px;
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border: 1px solid gray;
+        border-radius: 5%;
+        margin: 0;
+    }
 }
 
 .profile-name {
@@ -340,6 +346,7 @@ body {
 
   .show-cover-picture img {
     width: 100%;
+    height: 41vh;
+    object-fit: cover;
     position: absolute;
-    clip: rect(0px,1500px,310px,0px);
   }

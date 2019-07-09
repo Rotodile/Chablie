@@ -32,7 +32,9 @@ class UsersController < ApplicationController
     @chables = @user.chables
     @following = @user.following
     @followers = @user.followers
-  end
+    @comments = current_user.comments
+    @likes = current_user.likes
+end
 
   def edit
   end 

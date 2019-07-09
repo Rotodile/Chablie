@@ -1,5 +1,7 @@
 class User < ApplicationRecord
     has_many :chables, dependent: :destroy
+    has_many :comments, through: :chables
+    has_many :likes, through: :chables
     has_many :active_connections, class_name: "Connection",
                                   foreign_key: "follower_id",
                                   dependent: :destroy

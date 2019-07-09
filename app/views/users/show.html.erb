@@ -5,6 +5,7 @@
   <button class="tablinks" onclick="openCity(event, 'Chables')">Chables<br><%= @user.chables.count %></button>
   <button class="tablinks" onclick="openCity(event, 'Followers')">Followers<br><%= @user.followers.count %></button>
   <button class="tablinks" onclick="openCity(event, 'Following')">Followings<br><%= @user.following.count %></button>
+  <button class="tablinks" onclick="openCity(event, 'Likes')">Likes<br><%= @likes.count %></button>
   <%= render 'follow_form' if logged_in? %>
 </div>
 <div class="show-area">
@@ -12,6 +13,9 @@
     <% if @user.chables.any? %>
       <%= render @chables %>
     <% end %>
+  </div>
+   <div id="Likes" class="tabcontent user-area">
+    <%= render @likes %>
   </div>
   <div id="Followers" class="tabcontent user-area">
     <%= render @followers %>

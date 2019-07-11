@@ -40,9 +40,9 @@
           <button data-chableid="<%= chable.id %>" onclick="openReplyModal('<%= chable.id %>')" class="comment-popup" style="background-color: transparent; border: none; margin-bottom: 10px;"></button>
           <p class="comment-count"><%= chable.comments.count %></p>
         </div>
-        <ul>
+      <ul>
           <%= render(partial: 'comments/comment', collection: chable.comments) %>
-        </ul>
+        </ul>  
       </div>
     <div class="feed-delete-area">
       <% if current_user?(chable.user) %>

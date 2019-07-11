@@ -14,9 +14,10 @@ body {
 .second-nav {
     width: 100%;
     height: 8vh;
-    border-top: 1px solid gray;
+    border-top: none;
     background-color: white;
-    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25);
+    box-shadow: 0 4px 5px rgba(0,0,0,0.12), 0 1px 0px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     position: absolute;
     overflow: hidden;
     display: flex;
@@ -25,25 +26,64 @@ body {
 
   .second-nav button {
     background-color: inherit;
-    border: none;
+    border: 1px solid white;
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
     font-size: 18px;
+    font-weight: 450;
     transition: 0.1s;
+    width: 150px !important;
   }
   .second-nav button:hover {
-    border-bottom: 2px solid #00d1b2;
-    color: #00d1b2;
+    border-bottom: 2px solid salmon;
+    color: salmon;
+    padding-bottom: 0 !important;
+  }
+
+  .second-nav button:focus {
+    border-bottom: 2px solid salmon;
+    color: salmon;
+    padding-bottom: 0 !important;
+  }
+
+  .desp-box {
+        color: whitesmoke;
+        background-color: rgba(0,0,0,0.6);
+        padding: 5px;
+        bottom: 60px;
+        position: relative;
+    .title:not(:last-child) {
+         margin-bottom: 0rem !important; 
+    }
+    .profile-name {
+        margin-left: 370px;
+        color: whitesmoke;
+        position: static !important;
+        font-weight: 500 !important;
+    }
+    .profile-username {
+        margin-left: 370px;
+        color: whitesmoke;
+        position: static !important;
+        margin-top: 0 !important;
+        font-weight: 500 !important;
+    }
   }
 
   .tabcontent {
     display: none;
-    padding: 6px 12px;
+    padding: 6px 15px;
     border-top: none;
-    margin-left: 30%;
+    margin-left: 28%;
     position: absolute;
-  } 
+    animation: fadeEffect 1s;
+  }
+  
+  @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
 
   .show-chable {
     width: 40em;
@@ -69,21 +109,21 @@ body {
 
   .tablinks {
       padding: 0 !important;
-      padding-right: 16px !important;
-      padding-left: 16px !important;
+      padding-right: 20px !important;
+      padding-left: 20px !important;
   }
 
 .info-box {
-    height: 120px;
+    height: 100px;
     width: 100%;
-    background-color: tan;   
+    background-color: white;   
     .profile-photo {
-        top: -80px;
-        left: 250px;
+        top: -150px;
+        left: 150px;
         position: relative;
         width: 200px;
         height: 200px;
-        border: 1px solid gray;
+        border: none;
         border-radius: 5%;
         margin: 0;
     }
@@ -92,20 +132,60 @@ body {
 .profile-name {
     font-size: 22px !important;
     position: relative !important;
-    top: -100px;
-    left: 160px;
-    width: 200px;
+    top: 100px;
+    left: 220px;
+    width: 600px;
 }
 
-.profile-username, .profile-email, .profile-phone_number, .profile-bio, .profile-birthday, .profile-location {
-    margin-top: 5px;
-    margin-bottom: 5px;
+ .profile-email {
+    margin-top: 2px;
+    margin-bottom: 2px;
     font-size: 17px;
     position: relative;
-    top: -120px;
-    left: 160px;
-    width: 200px;
+    top: 90px;
+    left: 220px;
+    width: 600px;
 } 
+ .profile-bio {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size: 15px;
+    position: relative;
+    top: 100px;
+    left: 220px;
+    width: 600px;
+    margin-left: 0px;
+    .fa-portrait {
+        width: 10px;
+        margin-right: 5px;
+        color: salmon;
+    }
+} 
+
+.profile-location {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    position: relative;
+    top: 100px;
+    left: 220px;
+    width: 600px;
+    font-size: 15px !important;
+    margin-left: 0px;
+    .fa-map-marker-alt {
+        width: 20px;
+        margin-right: -5px;
+        color: salmon;
+    }
+}
+.profile-username {
+    top: 75px !important;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size: 17px;
+    position: relative;
+    left: 220px;
+    width: 600px;
+}
 
 .signup-heading {
     margin-top: 40px;

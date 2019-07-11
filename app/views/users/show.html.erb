@@ -1,20 +1,21 @@
 <div class="profile-cover">
   <span class='show-cover-picture' style="background-color: #00c4a7;"><%= image_tag @user.cover_picture.url if @user.cover_picture?%></span>
 </div>
+<div class='desp-box'>
+    <h1 class="title profile-name"><%= @user.name %></h1>
+    <h1 class="profile-username">@<%= @user.username %></h1>
+  </div>
 <div class='info-box'>
    <div class="profile-photo" style="background-color:#00c4a7; background-image: url('<%= @user.picture.url if @user.picture? %> '); background-size: cover;">
-   <h1 class="title profile-name"><%= @user.name %></h1>
-   <h1 class="profile-username">@<%= @user.username %></h1>
-   <h1 class="profile-bio"><%= @user.bio %></h1>
-   <h1 class="profile-location"><%= @user.location %></h1>
-   <h1 class="profile-birthday"><%= @user.birthday %></h1>
+   <h1 class="profile-location"><i class="fas fa-map-marker-alt"></i><%= @user.location %></h1>
+   <h1 class="profile-bio"><i class="fas fa-portrait"></i><%= @user.bio %></h1>
 </div>
 </div>
 <div class="second-nav tab">
-  <button class="tablinks" onclick="openCity(event, 'Chables')">Chables<br><%= @user.chables.count %></button>
-  <button class="tablinks" onclick="openCity(event, 'Likes')">Likes<br><%= @likes.count %></button>
-  <button class="tablinks" onclick="openCity(event, 'Followers')">Followers<br><%= @user.followers.count %></button>
-  <button class="tablinks" onclick="openCity(event, 'Following')">Followings<br><%= @user.following.count %></button>
+  <button class="tablinks" onclick="openNav(event, 'Chables')" id='defaultOpen'>Chables<br><%= @user.chables.count %></button>
+  <button class="tablinks" onclick="openNav(event, 'Likes')">Likes<br><%= @likes.count %></button>
+  <button class="tablinks" onclick="openNav(event, 'Followers')">Followers<br><%= @user.followers.count %></button>
+  <button class="tablinks" onclick="openNav(event, 'Following')">Followings<br><%= @user.following.count %></button>
   <%= render 'follow_form' if logged_in? %>
 </div>
 <div class="show-area">
@@ -34,7 +35,9 @@
   </div>
 </div>
 <script>
-function openCity(evt, cityName) {
+document.getElementById("defaultOpen").click();
+
+function openNav(evt, navName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -45,7 +48,7 @@ function openCity(evt, cityName) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
     
-    document.getElementById(cityName).style.display = "block";
+    document.getElementById(navName).style.display = "block";
     evt.currentTarget.className += " active";
   } 
 </script>

@@ -1,7 +1,33 @@
-<li>
-<div class="comment-container">
-    <span class="feed-name"><%= link_to like.chable.user.name, like.chable.user %></span>
-    <span class="feed-username">@<%= like.chable.user.username %></span>
-    <span><%= like.chable.content %></span>
+<div class='like-container'>
+<div class="chables-feed show-likes" style="padding: 20px; background-color: white; justify-content: center; margin-left: 30%; border: none; box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);">
+            <h1><%= link_to like.user.username, like.user %> Liked <%= link_to like.chable.user.username, like.chable.user %>'s this post:</h1>
+          <div class="feed-profile-photo" style="background-color: salmon; background-image: url(' <%= like.chable.user.picture.url if like.chable.user.picture? %>'); background-size: cover;"></div>
+          <span class="feed-name"><%= link_to like.chable.user.name, like.user %></span>
+          <span class="feed-username">@<%= like.chable.user.username %> - <%= time_ago_in_words(like.created_at) %></span>
+          <h1 class="feed-content"><% like.chable.content.to_s.split(' ').each do |word| %>
+                                                  <% if word.start_with?('#') %>
+                                                    <%= link_to word, search_path(query: word) %>
+                                                  <%else %>
+                                                    <%= word %>
+                                                  <%end %>
+                                                <% end %></h1>
+          <span class="feed-img"><%= image_tag like.chable.chable_picture.url if like.chable.chable_picture? %></span>
+          <div class="social-area">
+            <div class="like-area">
+              <% pre_like = like.chable.likes.find { |like| like.user_id == current_user.id} %>
+              <% if pre_like %>
+                <%= link_to "", chable_like_path(like.chable, pre_like), method: :delete, class: "unlike-button" %>
+              <% else %>
+                <%= link_to "", chable_likes_path(like.chable), method: :post, class: "like-button", remote: :true %>
+              <% end %>
+              <p class="like-count"><%= like.chable.likes.count %></p>
+            </div>
+            <p class="comment-popup"></p>
+            <p class="comment-count"><%= like.chable.comments.count %></p>
+          </div>
+           <ul>
+          <%= render(partial: 'comments/comment', collection: like.chable.comments) %>
+        </ul>
+        </div>
     </div>
-</li>

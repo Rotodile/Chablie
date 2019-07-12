@@ -41,8 +41,10 @@ body {
     position: relative;
     font-size: 24px;
     bottom: 70px;
-    left: 140px;
-    width: 200px;
+    width: 150px;
+    display: flex !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     a {
       color: black;
     }

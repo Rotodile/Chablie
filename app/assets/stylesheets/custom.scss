@@ -794,7 +794,10 @@ div#error_explanation {
             left: 80px !important;
         }
         .home-name, .home-user-name {
-            left: 115px !important;
+            left: 115px;
+            display: flex !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
         }
         .home-user-info {
             width: 298px !important;

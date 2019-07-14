@@ -794,7 +794,7 @@ div#error_explanation {
             left: 80px !important;
         }
         .home-name, .home-user-name {
-            left: 115px;
+            width: max-content;
             display: flex !important;
             margin-left: auto !important;
             margin-right: auto !important;

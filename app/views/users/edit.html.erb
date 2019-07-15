@@ -1,39 +1,107 @@
-<div class="edit-container">
-    <h1 class="title">Account</h1>
+<style>
+html {
+  height: 100%;
+}
+</style>
+<div class='edit-container'>
+<div class="sidenav">
+  <button class="sidelinks" onclick="openSide(event, 'Edit')" id='defaultOpen'>Edit Profile</button>
+  <button class="sidelinks" onclick="openSide(event, 'Avatars')">Change Your Avatar</button>
+  <button class="sidelinks" onclick="openSide(event, 'Password')">Change Your Password</button>
+  <button class="sidelinks" onclick="openSide(event, 'Settings')">Account Settings</button>
+</div>
+
+<div id="Edit" class="sidecontent">
+    <h1 class="title">Edit Your Profile</h1>
+    <p class='desp'>Below are the info that will be displayed publicly on your profile.</p>
     <%= form_for(@user) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
-        <div class="edit-fields">
-            <%= f.label :name %>
+            <%= f.label :name %>      
+            <p style='margin-left: 100px; font-size: 12px; color: grey;'>Note: Your name can't be longer than 50 words.</p> 
             <%= f.text_field :name, class: 'input is-primary' %>
-        </div>
-        <div class="edit-fields">
+            <%= f.label :location %>
+            <p style='margin-left: 100px; font-size: 12px; color: grey;'>Enter your current location ( country / city ) below.</p> 
+            <%= f.text_field :location, class: "input is-primary form-control" %>
+            <%= f.label :bio %>
+            <p style='margin-left: 100px; font-size: 12px; color: grey; width: 380px;'>Tip: Tell people about yourself, who are you, what do you like to do and what are your hobbies.</p> 
+            <%= f.text_field :bio, class: "input is-primary form-control bio" %>
+            <%= f.submit "Save changes", class: "button is-primary update-btn" %>
+    <% end %>
+</div>
+
+<div id="Settings" class="sidecontent">
+      <h1 class="title">Account Settings</h1>
+      <p class='desp'>Below are the settings that will not displayed publicly.</p>
+      <%= form_for(@user) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+            <%= f.label :email %>
+            <p style='margin-left: 100px; font-size: 12px; color: grey; width: 380px;'>Tip: You can leave this field blank if you don't want to add email.</p> 
+            <%= f.email_field :email, class: 'input is-primary' %>
+            <%= f.label :phone_number %>
+            <p style='margin-left: 100px; font-size: 12px; color: grey; width: 380px;'>Tip: You can leave this field blank if you don't want to add phone number.</p> 
+            <%= f.text_field :phone_number, class: "input is-primary form-control" %>
+            <%= f.label :birthday %>
+            <p style='margin-left: 100px; font-size: 12px; color: grey; width: 380px;'>Add your birthday so we can surprise you :)</p> 
+            <%= f.date_field :birthday, class: "input is-primary form-control" %>
+            <%= f.submit "Save changes", class: "button is-primary update-btn" %>
+             <% if current_user %>
+               <p class="delete-button"> <%= link_to "Delete Account", @user, method: :delete,
+                                            data: { confirm: "are you sure?"}, class: "button is-danger" %></p>
+            <% end %>
+      <% end %> 
+</div>
+
+<div id="Password" class="sidecontent">
+      <h1 class="title">Change Your Password</h1>
+      <p class='desp'>You can change your account password below.</p>
+      <%= form_for(@user) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+            <%= f.label :password %>
+            <p style='margin-left: 100px; font-size: 12px; color: grey; width: 380px;'>Tip: Enter the strongest password you can think of.</p> 
+            <%= f.password_field :password, class: 'input is-primary' %>
+            <%= f.label :password_confirmation %>
+            <p style='margin-left: 100px; font-size: 12px; color: grey; width: 380px;'>Retype the password so you will never forget it.</p> 
+            <%= f.password_field :password_confirmation, class: 'input is-primary' %>
+            <%= f.submit "Save changes", class: "button is-primary update-btn" %>
+      <% end %>
+</div>
+
+<div id="Avatars" class="sidecontent">
+      <h1 class="title">Change Your Avatars</h1>
+      <p class='desp'>Below you can add your profile picture and cover photo.</p>
+      <%= form_for(@user) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <h1 class="imagu">Profile Picture</h1>
+        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', id: "image-browse" %>
+        <label for="image-browse" class="btn-2 label edit-label">upload</label><br>
+        <h1 class="imagu">Cover Picture</h1>
+        <%= f.file_field :cover_picture, accept: 'image/jpeg,image/gif,image/png', id: "cover-image-browse" %>
+        <label for="cover-image-browse" class="btn-2 label edit-label">upload</label>
+        <%= f.submit "Save changes", class: "button is-primary update-btn" %>
+      <% end %>
+</div>
+</div>
+<!--
+<div class="edit-container">
+    <h1 class="title">Edit Your Profile</h1>
+    <%= form_for(@user) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+            <%= f.label :name %>       
+            <%= f.text_field :name, class: 'input is-primary' %>
             <%= f.label :email %>
             <%= f.email_field :email, class: 'input is-primary' %>
-        </div>
-        <div class="edit-fields phone-field">
-            <%= f.label :phone_number, "Phone Number" %>
+            <%= f.label :phone_number %>
             <%= f.text_field :phone_number, class: "input is-primary form-control" %>
-        </div>
-        <div class="edit-fields bio-field">
-            <%= f.label :bio, "Bio" %>
-            <%= f.text_field :bio, class: "input is-primary form-control" %>
-        </div>
-        <div class="edit-fields location-field">
-            <%= f.label :locaton, "Location" %>
+            <%= f.label :location %>
             <%= f.text_field :location, class: "input is-primary form-control" %>
-        </div>
-        <div class="edit-fields birthday-field">
-            <%= f.label :birthday, "Birthday" %>
+            <%= f.label :birthday %>
             <%= f.date_field :birthday, class: "input is-primary form-control" %>
-        </div>
-        <div class="edit-fields password-field">
+            <%= f.label :bio %>
+            <%= f.text_field :bio, class: "input is-primary form-control bio" %>
             <%= f.label :password %>
             <%= f.password_field :password, class: 'input is-primary' %>
-        </div>
-        <div class="edit-fields confirmation-field">
-            <%= f.label :password_confirmation, "Confirmation" %>
+            <%= f.label :password_confirmation %>
             <%= f.password_field :password_confirmation, class: 'input is-primary' %>
-        </div>
         <h1 class="imagu">Profile Picture</h1>
         <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', id: "image-browse" %>
         <label for="image-browse" class="btn-2 label edit-label">upload</label><br>
@@ -48,15 +116,32 @@
                                             data: { confirm: "are you sure?"}, class: "button is-danger" %></p>
             <% end %>
         </div>
-</div>
+</div>-->
 
 <script type="text/javascript">
+  function openSide(evt, sideName) {
+  var i, sidecontent, sidelinks;
+  sidecontent = document.getElementsByClassName("sidecontent");
+  for (i = 0; i < sidecontent.length; i++) {
+    sidecontent[i].style.display = "none";
+  }
+
+  sidelinks = document.getElementsByClassName("sidelinks");
+  for (i = 0; i < sidelinks.length; i++) {
+    sidelinks[i].className = sidelinks[i].className.replace(" active", "");
+  }
+
+  document.getElementById(sideName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
   $('#user_picture').bind('change', function() {
     var size_in_megabytes = this.files[0].size/1024/1024;
     if (size_in_megabytes > 5) {
       alert('Maximum file size is 5MB. Please choose a smaller file.');
     }
   });
+
+  document.getElementById("defaultOpen").click();
 </script>
 
 <script type="text/javascript">

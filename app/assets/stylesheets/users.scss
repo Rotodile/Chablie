@@ -246,19 +246,29 @@ h1 a {
 }
 
 .edit-container {
+    position: fixed;
     background-color: white;
-    width: 40%;
+    width: 60%;
+    height: 90%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
+    margin-top: 60px;
+    left: 280px;
     .title {
         text-align: center;
+        margin-top: 55px;
+        font-family: 'Cabin', cursive;
+    }
+    .desp {
         border-bottom: 1px solid #e6ecf0;
-        margin-top: 5px;
         padding-bottom: 7px;
         font-family: 'Cabin', cursive;
+        text-align: center;
+        font-size: 14px;
+        margin-top: -10px;
+        margin-bottom: 30px;
     }
 
     .update-btn {
@@ -267,15 +277,45 @@ h1 a {
 
     .delete-button {
         border-top: 1px solid #e6ecf0;
+        margin-top: 40px;
+        a {
+            background-color: lightgrey !important;
+        }
+        a:hover {
+            background-color: rgb(255, 97, 97) !important;
+        }
     }
 
     .button {
-        margin-top: 25px;
-        width: 41%;
+        margin-top: 40px;
+        width: 65%;
         border-radius: 20px;
         display: flex;
         margin-left: auto;
         margin-right: auto;
+        background-color: salmon !important;
+    }
+    .input { 
+      margin: 5px;
+      border: 2px solid lightsalmon !important;
+      border: none;
+      box-shadow: none;
+      width: 65%;
+      margin-top: 0px;
+      margin-bottom: 20px;
+      border-radius: 4px !important;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .bio {
+        height: 80px;
+        padding-bottom: 50px;
+    }
+
+    label {
+       margin-left: 100px;
     }
 
     .button-field {
@@ -446,4 +486,48 @@ h1 a {
     height: 41vh;
     object-fit: cover;
     position: absolute;
+  }
+
+  // Edit Page Styling //
+
+  .sidelinks {
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .sidenav {
+    float: left;
+    width: 25%;
+    height: 100%;
+    margin-top: 90px;
+  }
+
+  .sidenav button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 10px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .sidenav button:hover {
+    color: salmon;
+  }
+  
+  .sidenav button.active {
+    color: salmon;
+  }
+  
+  .sidecontent {
+    display: none;
+    float: left;
+    padding: 0px 12px;
+    width: 70%;
+    border-left: none;
+    height: 100%;
   }

@@ -41,7 +41,7 @@
 <div class='nav'>
   <a href='/'><img src="https://res.cloudinary.com/areeba/image/upload/v1560941566/3f77b86f-4168-4e3e-82da-a767565b33e7_200x200.png" width="80px" class="header-img"></a>
   <div class="dropdown">
-    <button onclick="dropFunc()" class="dropbtn"><%= image_tag current_user.picture.url %></button>
+    <button onclick="dropFunc()" class="dropbtn"><%= image_tag current_user.picture.url if current_user.picture? %></button>
     <span class='something2' id='something2'></span>
     <span class='something' id='something'></span>
     <div id="mydropdown" class="myDropdown">

@@ -72,11 +72,11 @@ html {
       <%= form_for(@user) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
         <h1 class="imagu">Profile Picture</h1>
-        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', id: "image-browse" %>
-        <label for="image-browse" class="btn-2 label edit-label">upload</label><br>
+        <p style='margin-left: 100px; font-size: 12px; color: grey; width: 380px;'>Add your profile picture below, maximum image size is 5MB.</p> 
+        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', class: 'file-field pic-edit' %>
         <h1 class="imagu">Cover Picture</h1>
-        <%= f.file_field :cover_picture, accept: 'image/jpeg,image/gif,image/png', id: "cover-image-browse" %>
-        <label for="cover-image-browse" class="btn-2 label edit-label">upload</label>
+        <p style='margin-left: 100px; font-size: 12px; color: grey; width: 380px;'>Add your cover picture below, maximum image size is 5MB.</p> 
+        <%= f.file_field :cover_picture, accept: 'image/jpeg,image/gif,image/png', class: 'file-field cover-edit' %>
         <%= f.submit "Save changes", class: "button is-primary update-btn" %>
       <% end %>
 </div>

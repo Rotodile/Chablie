@@ -196,6 +196,12 @@ div#error_explanation {
     overflow: hidden;
     width: 0;
   }
+
+  .act {
+      .user-area {
+          margin-top: 3% !important;
+      }
+  }
   
 #cover-image-browse {
     height: 0;
@@ -273,10 +279,11 @@ div#error_explanation {
   }
 
   .sub-user {
-      width: 300px;
+      width: 295px;
       height: 280px;
+      display: inline-block;
       background-color: white;
-      margin-top: 5% !important;
+      margin-top: -10px !important;
       box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
       transition: all 0.3s cubic-bezier(.25,.8,.25,1);
       .img {
@@ -289,7 +296,7 @@ div#error_explanation {
         background-color: salmon;
       }
       .sub-user-cover {
-          width: 297px;
+          width: 295px;
           height: 120px;
       }
       .sub-user-name {
@@ -488,12 +495,13 @@ div#error_explanation {
 }
 
 .user-area {
-    width: 70%;
+    width: 40em;
+    margin-top: 4% !important;
 }
 
 .user-area > * {
     float: left;  
-    width: 30.7%;
+    width: 295px !important;
     margin: 5px;
   }
 

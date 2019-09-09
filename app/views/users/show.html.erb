@@ -16,7 +16,7 @@
   <button class="tablinks" onclick="openNav(event, 'Chables')" id='defaultOpen'>Chables<br><%= @user.chables.count %></button>
   <button class="tablinks" onclick="openNav(event, 'Followers')">Followers<br><%= @user.followers.count %></button>
   <button class="tablinks" onclick="openNav(event, 'Following')">Followings<br><%= @user.following.count %></button>
-  <button class="tablinks" onclick="openNav(event, 'Likes')">Activity<br><%= @likes.count %></button>
+  <button class="tablinks act" onclick="openNav(event, 'Likes')">Activity<br><%= @likes.count %></button>
 </div>
 <div class="show-area">
   <div id="Chables" class="tabcontent show-chable">

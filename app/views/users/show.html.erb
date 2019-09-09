@@ -5,18 +5,18 @@
     <h1 class="title profile-name"><%= @user.name %></h1>
     <h1 class="profile-username">@<%= @user.username %></h1>
   </div>
-<div class='info-box'>
-   <div class="profile-photo" style="background-color: salmon; background-image: url('<%= @user.picture.url if @user.picture? %> '); background-size: cover;">
-   <h1 class="profile-location"><i class="fas fa-map-marker-alt"></i><%= @user.location %></h1>
-   <h1 class="profile-bio"><i class="fas fa-portrait"></i><%= @user.bio %></h1>
-</div>
-</div>
+  <div class='info-box'>
+    <div class="profile-photo" style="background-color: salmon; background-image: url('<%= @user.picture.url if @user.picture? %> '); background-size: cover;">
+      <h1 class="profile-location"><i class="fas fa-map-marker-alt"></i><%= @user.location %></h1>
+      <h1 class="profile-bio"><i class="fas fa-portrait"></i><%= @user.bio %></h1>
+      <%= render 'follow_form' if logged_in? %>
+    </div>
+  </div>
 <div class="second-nav tab">
   <button class="tablinks" onclick="openNav(event, 'Chables')" id='defaultOpen'>Chables<br><%= @user.chables.count %></button>
   <button class="tablinks" onclick="openNav(event, 'Followers')">Followers<br><%= @user.followers.count %></button>
   <button class="tablinks" onclick="openNav(event, 'Following')">Followings<br><%= @user.following.count %></button>
   <button class="tablinks" onclick="openNav(event, 'Likes')">Activity<br><%= @likes.count %></button>
-  <%= render 'follow_form' if logged_in? %>
 </div>
 <div class="show-area">
   <div id="Chables" class="tabcontent show-chable">

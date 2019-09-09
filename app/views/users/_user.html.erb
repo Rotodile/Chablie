@@ -1,10 +1,10 @@
 <div class="sub-user">
-  <div class="sub-user-cover" data-parallax="true" style="background-color: #e4fcf8; background-image: url(' <%= user.cover_picture.url if user.cover_picture? %>');"></div>
+  <div class="sub-user-cover" data-parallax="true" style="background-color: #ffb3aa; background-image: url(' <%= user.cover_picture.url if user.cover_picture? %>');"></div>
  <!-- <%= image_tag user.picture.url if user.picture? %>-->
   <div class="img" style="background-image: url('<%= user.picture.url if user.picture? %> '); background-size: cover;"></div>
   <div class="sub-user-infodiv">
     <%= link_to user.name, user, class: "sub-user-name" %>
     <span class= "sub-user-username">@<%= link_to user.username, user %></span>
-    <h3 class="sub-user-bio"><%= user.bio %></h3>
+    <h3 class="sub-user-bio"><i class="fas fa-portrait" style="color: salmon; margin-right: 5px;"></i><%= user.bio %></h3>
   </div>
 </div>

@@ -53,8 +53,9 @@ body {
     position: relative;
     bottom: 80px;
     font-size: 18px;
-    left: 140px;
-    width: 200px;
+    width: max-content !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
   .home-user-info {
     display: flex;
@@ -152,11 +153,12 @@ body {
       .feed-img {
         img {
           width: 500px;
-          height: 500px;
+          height: 300px;
           margin-left: 11%;
           border-radius: 10px;
           margin-top: -30px;
           margin-bottom: 10px;
+          object-fit: cover;
         }
       }
       .feed-username {

@@ -1,4 +1,4 @@
 <%= form_for(current_user.active_connections.build, remote: true) do |f| %>
   <div><%= hidden_field_tag :followed_id, @user.id %></div>
-  <%= f.submit "Follow", class: "button is-primary connection" %>
+  <%= f.submit "Follow", class: "button is-primary connection follow-btn" %>
 <% end %>

@@ -1,5 +1,5 @@
 <div class='like-container'>
-<div class="chables-feed show-likes" style="padding: 20px; background-color: white; justify-content: center; margin-left: 30%; border: none; box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+<div class="chables-feed show-likes" style="padding: 20px !important; background-color: white; justify-content: center; margin-left: 30%; border: none; box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
         transition: all 0.3s cubic-bezier(.25,.8,.25,1);">
             <h1><% if like.user == current_user %>You<% else %><%= link_to like.user.username, like.user %><% end %> Liked <% if like.chable.user == current_user%>
                                                                     your

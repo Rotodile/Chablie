@@ -1042,6 +1042,72 @@ div#error_explanation {
   }
 
   @media screen and (max-width: 600px) {
+      .info-box {
+            .profile-photo {
+                left: 50px !important;
+            }
+            .profile-bio {
+                width: 300px !important;
+            } 
+            .profile-location {
+                width: 300px !important;
+            }
+        }
+        .act-tab {
+            width: 35em !important;
+            margin-top: 7% !important;
+            margin-left: 3% !important;
+            .show-likes {
+                width: 35em !important;
+                .feed-img img {
+                    width: 400px !important;
+                    height: 300px !important;
+                }
+                .feed-content {
+                    width: 400px !important;
+                }
+            }
+        }
+        .follow-tab {
+            margin-left: 0% !important;
+            margin-top: 8% !important;
+            width: 37em !important;
+            padding: 0 !important;
+            padding-left: 10px !important;
+            .sub-user {
+                height: 260px !important;
+                width: 275px !important;
+                .sub-user-cover {
+                    width: 275px !important;
+                }
+                .img {
+                    bottom: 22% !important;
+                }
+                .sub-user-infodiv {
+                    bottom: 22% !important;
+                }
+            }
+        }
+      .desp-box {
+          .profile-name {
+              margin-left: 270px !important;
+              width: 300px !important;
+          }
+          .profile-username {
+              margin-left: 270px !important;
+              width: 300px !important;
+          }
+      }
+      .show-chable {
+          margin-top: 7% !important;
+          margin-left: 3% !important;
+          width: 35em !important;
+          .flex-chable {         
+            .feed-delete-area {
+                 margin-top: 10px !important;
+            }
+          }
+      }
     .home-container .home-create-chable .chables-feed .feed-img img {
         width: 450px !important;
     }
@@ -1230,7 +1296,7 @@ div#error_explanation {
           margin-left: 4% !important;
           width: 20em !important;
       }
-      .flex-chable .feed-delete-area {
+      .show-chable .flex-chable .feed-delete-area {
           margin-top: 10px !important;
       }
       .profile-location {

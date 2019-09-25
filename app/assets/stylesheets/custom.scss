@@ -87,7 +87,7 @@ body {
 }
 
 .messages {
-    margin-top: 145px;
+    margin-top: 25px;
     margin-bottom: 30px;
     margin-left: 300px;
 }
@@ -121,6 +121,10 @@ body {
         border-top: 2px solid salmon;
         transition-duration: 500ms;
     }
+}
+
+#messages {
+    margin-top: 150px !important;
 }
 
 .container .home-create-chable .chable-creator .chable-field {

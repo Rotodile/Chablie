@@ -1,0 +1,19 @@
+.search-form {
+    position: relative;
+    top: -95px;
+    left: 76%;
+    width: 230px;
+    .search-field {
+        width: 230px !important;
+        border-radius: 5px !important;
+        background-color: whitesmoke;
+        border: none;
+        position: relative;
+    }
+    .search-icon {
+        right: 5% !important;
+        color: salmon;
+        top: 35%;
+        position: absolute !important;
+    }
+}

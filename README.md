@@ -1,6 +1,6 @@
 # **Chablie**
 
-Chablie is a social networking website created with ruby on rails. The live version of Chablie can be found [here](https://chablie.herokuapp.com)
+Chablie is a social networking website created with ruby on rails. The live version of Chablie can be found [here](https://chablie.herokuapp.com).
 
 **Main Page:**
 ![Chablie Main Page](https://res.cloudinary.com/areeba/image/upload/v1561033434/screencapture-chablie-herokuapp-2019-06-20-17_22_48.png)
@@ -14,9 +14,9 @@ Chablie is a social networking website created with ruby on rails. The live vers
 + Following/Followers Users.
 + Hashtags.
 + Chable(posts) Likes.
++ Chable(posts) Comments.
 + Edit User Profiles.
 + Hashtag Searches.
-+ Comment On Chables.
 + Real Time Chat With Other Users.
 
 ## Gems I Have Used In Chablie So Far:
@@ -27,4 +27,3 @@ Chablie is a social networking website created with ruby on rails. The live vers
 + Rmagick.
 + Carrierwave.
 + Redis.
-+ Fog.

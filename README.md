@@ -6,7 +6,7 @@ Chablie is a social networking website created with ruby on rails. The live vers
 ![Chablie Main Page](https://res.cloudinary.com/areeba/image/upload/v1570274623/scrnli_10_5_2019_4-16-29_PM.png)
 **Chat Page:**
 ![Chablie Messages Page](https://res.cloudinary.com/areeba/image/upload/v1570274623/scrnli_10_5_2019_4-22-30_PM.png)
-**Profile Page**
+**Profile Page:**
 ![Chablie Profile Page](https://res.cloudinary.com/areeba/image/upload/v1570274623/scrnli_10_5_2019_4-14-45_PM.png)
 
 ## Current Chablie Features:

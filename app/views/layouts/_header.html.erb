@@ -8,10 +8,11 @@
        <%= link_to 'Profile', current_user, class: "navbar-item" %>
        <%= link_to 'Messages', '/messages', class: "navbar-item" %>
        <%= link_to 'Settings', edit_user_path(current_user), class: 'navbar-item' %>
-        <hr>
-      <%= link_to "Log out", logout_path, method: :delete, class: "navbar-item" %>
+       <hr>
+       <%= link_to "Log out", logout_path, method: :delete, class: "navbar-item" %>
     </div>
   </div>
+  <!-- Search bar form -->
   <%= form_with url: search_path, method: :get, local: true, class: 'form-inline search-form' do |form| %>
         <%= form.text_field :query, value: params[:query], class: 'form-control mr-sm-2 search-field', placeholder: 'search chablie' %>
         <span class="search-icon"><i class="fas fa-search"></i></span>

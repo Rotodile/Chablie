@@ -1,1405 +1,1362 @@
 Kdhtml {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 body {
-    height: 100% !important;
-    font-family: 'Cabin', cursive !important;
+  height: 100% !important;
+  font-family: "Cabin", cursive !important;
 }
 
 .chat-index {
+  display: flex;
+
+  .chat-all-users {
+    height: 100%;
+    position: fixed;
+    background-color: salmon;
+    padding: 10px;
+    z-index: 1;
+    overflow-y: auto;
+    li {
+      height: 35px;
+      padding: 10px;
+      margin-left: -10px;
+      a {
+        color: white;
+        font-size: 18px;
+      }
+      a:hover {
+        color: whitesmoke;
+      }
+    }
+    #userSearch {
+      border: none;
+      width: 300px;
+      height: 40px;
+      padding: 10px;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: bold;
+      color: white;
+      padding-bottom: 10px;
+    }
+
+    @media screen and (max-width: 550px) {
+      height: auto;
+      position: relative;
+    }
+  }
+
+  .chat-users {
+    margin-left: 330px;
+    margin-top: 10px;
+    h1 {
+      font-size: 28px;
+      font-weight: bold;
+    }
+    p {
+      height: 35px;
+      padding: 10px;
+      margin-left: -10px;
+      a {
+        color: black;
+        font-size: 18px;
+      }
+      a:hover {
+        color: salmon;
+      }
+    }
+
+    @media screen and (max-width: 550px) {
+      margin-left: 10px;
+    }
+  }
+
+  .hide-bar {
+    display: none;
+  }
+
+  .hide-bar-users-div {
+    margin-left: 50px;
+
+    @media screen and (max-width: 550px) {
+      margin-left: 10px;
+    }
+  }
+
+  .hide-bar-messages-div {
+    margin-left: 0;
+  }
+
+  @media screen and (max-width: 550px) {
     display: flex;
-    ul.chat-all-users {
-        width: 300px;
-        height: 100%;
-        position: fixed;
-        background-color: salmon;
-        padding: 10px;
-        z-index: 1;
-        overflow-y: auto;
-        padding-bottom: 110px;
-        li {
-            height: 35px;
-            padding: 10px;
-            margin-left: -10px;
-            a {
-                color: white;
-                font-size: 18px;
-            }
-            a:hover {
-                color: whitesmoke;
-            }
-        }
-        #userSearch {
-            border: none;
-            width: 300px;
-            margin-left: -10px;
-            height: 40px;
-            padding: 10px;
-        }
-        h1 {
-            font-size: 28px;
-            font-weight: bold;
-            color: white;
-        }
-    }
-    .chat-users {
-        margin-left: 330px;
-        margin-top: 10px;
-        h1 {
-            font-size: 28px;
-            font-weight: bold;
-        }
-        p {
-            height: 35px;
-            padding: 10px;
-            margin-left: -10px;
-            a {
-                color: black;
-                font-size: 18px;
-            }
-            a:hover {
-                color: salmon;
-            }
-        }
-    }
+    flex-direction: column;
+  }
 }
 
 .message-img {
-    img {
-        border-radius: 100%;
-        width: 50px;
-        height: 50px;
-        margin-left: 10px;
-        margin-top: 10px;
-    }
+  img {
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
 }
 
 .message-content {
-    position: relative;
-    margin: 2px;
-    bottom: 20px;
-    display: inline-block;
-    margin-left: 10px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    padding: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 5px;
+  position: relative;
+  margin: 2px;
+  bottom: 20px;
+  display: inline-block;
+  margin-left: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+}
+
+.message-container {
+  margin-left: 320px;
+  margin-bottom: 100px;
+
+  @media screen and (max-width: 550px) {
+    margin-left: 0;
+  }
 }
 
 .messages {
-    margin-top: 25px;
-    margin-bottom: 30px;
-    margin-left: 300px;
+  margin-top: 25px;
+  margin-bottom: 30px;
 }
 
 .message-header {
-    font-size: 25px;
-    justify-content: center !important;
-    background-color: salmon !important;
-    padding: .45em 1em !important;
-    box-shadow: 0px 1px 10px #999;
-    transition: 0.25;
-    margin-top: 51px;
-    z-index: 2;
+  font-size: 25px;
+  background-color: salmon !important;
+  box-shadow: 0px 1px 10px #999;
+  transition: 0.25;
+  margin-top: 60px;
+  padding: 15px 5px !important;
+  z-index: 2;
+
+  .openbtn {
+    background-color: salmon;
+    border: salmon;
+    position: absolute;
+
+    img {
+      width: 20px;
+      margin-left: 10px;
+    }
+  }
+
+  .title {
+    color: whitesmoke;
+    display: flex;
+    flex-grow: 2;
+    justify-content: center;
+
+    @media screen and (max-width: 550px) {
+        font-size: 25px;
+      padding-left: 50px;
+    }
+  }
 }
 
 .message-text {
-    width: 100%;
-    bottom: 0;
-    position: fixed;
-    resize: none;
-    height: 60px;
-    padding: 10px;
-    border: none;
-    border-top: 1px solid salmon;
-    background-color: whitesmoke;
-    font-size: 15px;
-    margin-left: 300px;
-    &:focus {
-        box-shadow: none;
-        outline: none;
-        border-top: 2px solid salmon;
-        transition-duration: 500ms;
-    }
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+  resize: none;
+  height: 60px;
+  padding: 10px;
+  border: none;
+  border-top: 1px solid salmon;
+  background-color: whitesmoke;
+  font-size: 15px;
+  &:focus {
+    box-shadow: none;
+    outline: none;
+    border-top: 2px solid salmon;
+    transition-duration: 500ms;
+  }
 }
 
 #messages {
-    margin-top: 150px !important;
+  margin-top: 50px;
 }
 
 .container .home-create-chable .chable-creator .chable-field {
-    width: 450px !important;
+  width: 450px !important;
 }
 
 .search-page .user-images .wrapper .chables-feed {
-    margin-left: auto !important; 
-    margin-right: auto !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .userguide {
-    background-color: white;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    width: 350px;
-    height: 100px;
-    margin-top: 10px;
-    padding: 10px;
-    h1 {
-        a {
-            color: salmon;
-            font-weight: bold;
-            &:hover {
-                text-decoration: underline;
-            }
-        }
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  width: 350px;
+  height: 100px;
+  margin-top: 10px;
+  padding: 10px;
+  h1 {
+    a {
+      color: salmon;
+      font-weight: bold;
+      &:hover {
+        text-decoration: underline;
+      }
     }
-    span {
-        width: 100px;
-        a {
-            color: salmon;
-            font-weight: bold;
-            font-size: 18px;
-            &:hover {
-                text-decoration: underline;
-            }
-        }
+  }
+  span {
+    width: 100px;
+    a {
+      color: salmon;
+      font-weight: bold;
+      font-size: 18px;
+      &:hover {
+        text-decoration: underline;
+      }
     }
+  }
 }
 
- 
 .alert.alert-notice {
-    display: flex !important;
-    justify-content: center;
-    padding: 10px;
-    border-bottom: 1px solid lightgray;
-    width: 100%;
-    background-color: white;
-    position: relative;
-    top: 55px;
+  display: flex !important;
+  justify-content: center;
+  padding: 10px;
+  border-bottom: 1px solid lightgray;
+  width: 100%;
+  background-color: white;
+  position: relative;
+  top: 55px;
 }
-
 
 div#error_explanation {
-    color: red;
-    ul {
-        list-style: disc !important;
-        margin-left: 20px;
-        font-size: 14px;
-        margin-top: -30px;
-    }
+  color: red;
+  ul {
+    list-style: disc !important;
+    margin-left: 20px;
+    font-size: 14px;
+    margin-top: -30px;
+  }
 }
 
 .show-area {
-    position: relative;
-    margin-top: 60px;
-    height: 40em;
+  position: relative;
+  margin-top: 60px;
+  height: 40em;
 }
 
 #image-browse {
-    height: 0;
-    overflow: hidden;
-    width: 0;
-  }
+  height: 0;
+  overflow: hidden;
+  width: 0;
+}
 
-  .act {
-      .user-area {
-          margin-top: 3% !important;
-      }
+.act {
+  .user-area {
+    margin-top: 3% !important;
   }
-  
+}
+
 #cover-image-browse {
-    height: 0;
+  height: 0;
+  overflow: hidden;
+  width: 0;
+}
+
+.label {
+  border: none;
+  border-radius: 5px;
+  color: #fff !important;
+  cursor: pointer;
+  display: inline-block !important;
+  font-family: "Poppins", sans-serif;
+  font-size: inherit;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-left: 10px;
+  outline: none;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-left: 30px;
+  padding-right: 20px;
+  position: relative;
+  transition: all 0.3s;
+  vertical-align: middle;
+  &.btn-2 {
+    background-color: #00c4a7;
+    border-radius: 50px;
     overflow: hidden;
-    width: 0;
-} 
-  
-  .label {
-    border: none;
-    border-radius: 5px;
-    color: #fff !important;
-    cursor: pointer;
-    display: inline-block !important;
-    font-family: 'Poppins', sans-serif;
-    font-size: inherit;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    margin-left: 10px;
-    outline: none;
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
-    padding-left: 30px;
-    padding-right: 20px;
-    position: relative;
-    transition: all 0.3s;
-    vertical-align: middle;
-    &.btn-2 {
-      background-color: #00c4a7;
-      border-radius: 50px;
-      overflow: hidden;   
-      &::before {
-        color: #fff;
-        content: "\f093";
-        font-family: "FontAwesome";
-        font-size: 95%;
-        height: 100%;
-        right: 75%;
-        line-height: 3.3;
-        position: absolute;
-        top: -9px;
-        transition: all 0.3s;
-      }
-      &:hover {
-        background-color: darken(#00c4a7, 10%);          
-      }
-    }
-  } 
-
-  .edit-label {
-      left: 32%;
-      width: 38%;
-      padding-left: 15%;
-  }
-
-  .imagu {
-      margin-left: 15% !important;
-      position: relative;
-      top: 3.5%;
-  }
-
-  .new-upload {
-      width: 100%;
-      margin-left: 5px !important;
-      margin-top: -8px !important;
-      padding-left: 45%;
-      &.btn-2 {
-        &::before {
-             right: 58%;
-        }
-    }
-  }
-
-  .new-h1 {
-      margin-left: 10px !important;
-  }
-
-  .sub-user {
-      width: 295px;
-      height: 280px;
-      display: inline-block;
-      background-color: white;
-      margin-top: -10px !important;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-      transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-      .img {
-        width: 100px;
-        height: 100px;
-        position: relative;
-        border-radius: 10%;
-        bottom: 15%;
-        left: 32.5%;
-        background-color: salmon;
-      }
-      .sub-user-cover {
-          width: 295px;
-          height: 120px;
-      }
-      .sub-user-name {
-          color: black;
-          font-size: 22px;
-          display: block;
-          margin-left: auto !important;
-          width: max-content !important;
-          margin-right: auto !important;
-      }
-      .sub-user-username {
-        color: rgb(119, 119, 119);
-        display: block;
-        margin-left: auto !important;
-        width: max-content !important;
-        margin-right: auto !important;
-        a {
-            color: rgb(119, 119, 119);
-            width: 250px;
-        }
-      }
-      .sub-user-bio {
-          position: relative;
-          top: 1%;
-          margin-left: auto !important;
-          width: max-content !important;
-          margin-right: auto !important;
-      }
-      .sub-user-infodiv {
-          bottom: 15%;
-          position: relative;
-      }
-  }
-
-  .like-button::before {
-      content: "\f004";
+    &::before {
+      color: #fff;
+      content: "\f093";
       font-family: "FontAwesome";
       font-size: 95%;
+      height: 100%;
+      right: 75%;
+      line-height: 3.3;
       position: absolute;
+      top: -9px;
       transition: all 0.3s;
-      color: gray;
+    }
+    &:hover {
+      background-color: darken(#00c4a7, 10%);
+    }
   }
+}
 
-  .like-button {
-    left: 30%;
-    bottom: 4%;
+.edit-label {
+  left: 32%;
+  width: 38%;
+  padding-left: 15%;
+}
+
+.imagu {
+  margin-left: 15% !important;
+  position: relative;
+  top: 3.5%;
+}
+
+.new-upload {
+  width: 100%;
+  margin-left: 5px !important;
+  margin-top: -8px !important;
+  padding-left: 45%;
+  &.btn-2 {
+    &::before {
+      right: 58%;
+    }
   }
+}
 
-  .unlike-button {
-      left: 10%;
-      bottom: 4%;   
+.new-h1 {
+  margin-left: 10px !important;
+}
+
+.sub-user {
+  width: 295px;
+  height: 280px;
+  display: inline-block;
+  background-color: white;
+  margin-top: -10px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  .img {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    border-radius: 10%;
+    bottom: 15%;
+    left: 32.5%;
+    background-color: salmon;
   }
-
-  .like-count {
-     position: relative;
-     width: 50px;
-     margin-right: 10px;
+  .sub-user-cover {
+    width: 295px;
+    height: 120px;
   }
-
-  .comment-count {
-      margin-left: 10px;
-      margin-bottom: 3px;
+  .sub-user-name {
+    color: black;
+    font-size: 22px;
+    display: block;
+    margin-left: auto !important;
+    width: max-content !important;
+    margin-right: auto !important;
   }
-
-  .like-area {
-      p {
-          left: 25px;
-      }
+  .sub-user-username {
+    color: rgb(119, 119, 119);
+    display: block;
+    margin-left: auto !important;
+    width: max-content !important;
+    margin-right: auto !important;
+    a {
+      color: rgb(119, 119, 119);
+      width: 250px;
+    }
   }
+  .sub-user-bio {
+    position: relative;
+    top: 1%;
+    margin-left: auto !important;
+    width: max-content !important;
+    margin-right: auto !important;
+  }
+  .sub-user-infodiv {
+    bottom: 15%;
+    position: relative;
+  }
+}
 
-  .unlike-button::before {
-    content: "\f004";
-    font-family: "FontAwesome";
-    font-size: 95%;
-    position: absolute;
-    transition: all 0.3s;
-    color: palevioletred;
+.like-button::before {
+  content: "\f004";
+  font-family: "FontAwesome";
+  font-size: 95%;
+  position: absolute;
+  transition: all 0.3s;
+  color: gray;
+}
+
+.like-button {
+  left: 30%;
+  bottom: 4%;
+}
+
+.unlike-button {
+  left: 10%;
+  bottom: 4%;
+}
+
+.like-count {
+  position: relative;
+  width: 50px;
+  margin-right: 10px;
+}
+
+.comment-count {
+  margin-left: 10px;
+  margin-bottom: 3px;
+}
+
+.like-area {
+  p {
+    left: 25px;
+  }
+}
+
+.unlike-button::before {
+  content: "\f004";
+  font-family: "FontAwesome";
+  font-size: 95%;
+  position: absolute;
+  transition: all 0.3s;
+  color: palevioletred;
 }
 
 .social-area {
-    margin-left: 60px;
-    display: flex;
-    margin-bottom: 20px;
+  margin-left: 60px;
+  display: flex;
+  margin-bottom: 20px;
 }
 
-  .comment-popup {
-    &::before {
-      content: "\f075";
-      font-family: "FontAwesome";
-      color: gray; 
-      margin-left: 20px;
+.comment-popup {
+  &::before {
+    content: "\f075";
+    font-family: "FontAwesome";
+    color: gray;
+    margin-left: 20px;
   }
 }
-  
-  .comment-text {
-      resize: none;
-      width: 500px;
-      height: 80px;
-      border-radius: 5px;
-      padding: 10px;
-      padding-left: 10px;
-      background-color: whitesmoke;
-      border: none;
-      &:focus {
-          outline: none !important;
-          border: 2px solid salmon;
-          transition-duration: 500ms;
-      }
-  }
 
-  .comment-btn {
-      color: white;
-      background-color: salmon;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-weight: bold;
-      position: relative;
-      left: 82%;
+.comment-text {
+  resize: none;
+  width: 500px;
+  height: 80px;
+  border-radius: 5px;
+  padding: 10px;
+  padding-left: 10px;
+  background-color: whitesmoke;
+  border: none;
+  &:focus {
+    outline: none !important;
+    border: 2px solid salmon;
+    transition-duration: 500ms;
+  }
+}
+
+.comment-btn {
+  color: white;
+  background-color: salmon;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  position: relative;
+  left: 82%;
 }
 
 .comment {
-    width: 450px;
-    display: flex;
+  width: 450px;
+  display: flex;
 }
 
 #new_comment {
-    margin-left: 45px;
-    width: 450px;
+  margin-left: 45px;
+  width: 450px;
 }
 
 .sub-comment-body {
-    margin-left: 15px;
+  margin-left: 15px;
 }
-  
-  .comment-container {  
-    margin-left: 40px;
-    .comment-photo {
-        width: 40px !important;
-        height: 40px !important;
-        margin-left: 15px;
-        margin-bottom: 5px;
-    }
-    .feed-name {
-        font-size: 14px;
-    }
-    .feed-username {
-        font-size: 14px;
-    }
-    .feed-content {
-        margin-top: -5px;
-        a {
-        color: salmon !important;
-        &:hover {
-            text-decoration: underline !important;
-        }
-        }
-    }
-  }
 
-  .search-field {
-      box-sizing: border-box;
-      border-radius: 20px;
-      border: 1px solid #e6ecf0;
-      margin-top: 10px;
-      padding: 5px;
-      padding-left: 10px;
-      color: black;
-      background-color: #f5f8fa;
-      transition-duration: 500ms;
-      width: 221px;
-      height: 30px;
-      padding-right: 37px;
+.comment-container {
+  margin-left: 40px;
+  .comment-photo {
+    width: 40px !important;
+    height: 40px !important;
+    margin-left: 15px;
+    margin-bottom: 5px;
   }
-
-  .search-field:focus {
-      border: 2px solid salmon;  
-      color: #14171a;
-      transition-duration: 500ms;
+  .feed-name {
+    font-size: 14px;
   }
-
-  .search-icon {
-      position: relative;
-      color: gray;
-      right: 15%;
-      .fa-search {
-         width: 14px !important;
+  .feed-username {
+    font-size: 14px;
+  }
+  .feed-content {
+    margin-top: -5px;
+    a {
+      color: salmon !important;
+      &:hover {
+        text-decoration: underline !important;
       }
+    }
   }
+}
 
-  .header-avatar {
-    border-radius: 100%;
-    width: 40px;
-    height: 40px;
-    margin-top: 5px;
+.search-field {
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: 1px solid #e6ecf0;
+  padding: 5px;
+  padding-left: 10px;
+  color: black;
+  background-color: #f5f8fa;
+  transition-duration: 500ms;
+  width: 221px;
+  height: 30px;
+  padding-right: 37px;
+}
+
+.search-field:focus {
+  border: 2px solid salmon;
+  color: #14171a;
+  transition-duration: 500ms;
+}
+
+.search-icon {
+  position: relative;
+  color: gray;
+  right: 15%;
+  .fa-search {
+    width: 14px !important;
+  }
+}
+
+.header-avatar {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  margin-top: 5px;
 }
 
 .user-area {
-    width: 40em;
-    margin-top: 4% !important;
+  width: 40em;
+  margin-top: 4% !important;
 }
 
 .user-area > * {
-    float: left;  
-    width: 295px !important;
-    margin: 5px;
-  }
+  float: left;
+  width: 295px !important;
+  margin: 5px;
+}
 
-  .modal-content {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      .title {
-          text-align: center;
-      }
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  .title {
+    text-align: center;
   }
-
+}
 
 // Navbar Styling Start //
 
 .header-img {
-    height: 80px !important;
-    position: relative;
-    bottom: 22px;
-    margin-left: 12px;
+  height: 80px !important;
+  position: relative;
+  bottom: 22px;
+  margin-left: 12px;
 }
-  
-  .nav {
-    padding-left: 5px;
-    padding-top: 8px;
-    padding-right: 5px;
-    background-color: white;
-    width: 100%;
+
+.nav {
+  display: flex;
+  padding: 8px 5px;
+  background-color: white;
+  width: 100%;
+  height: 60px;
+  top: 0;
+  left: 0;
+  position: fixed;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 1;
+
+  a {
+    flex-grow: 1;
     height: 50px;
-    top: 0;
-    left: 0;
-    position: fixed;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    z-index: 1;
   }
-  
-  .dropbtn {
-    position: relative;
-    left: 1250px;
-    top: -10px;
-    color: white;
+}
+
+.dropbtn {
+  margin: 0 20px;
+  color: white;
+  border-radius: 100%;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  background-color: salmon;
+}
+
+.dropbtn {
+  img {
+    margin-bottom: -2px;
     border-radius: 100%;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
     width: 40px;
     height: 40px;
-    padding: 0;
-    margin: 0;
+    object-fit: cover;
     background-color: salmon;
   }
-  
-  .dropbtn{
-        img {
-            margin-bottom: -2px;
-            border-radius: 100%;
-            width: 40px;
-            height: 40px;
-            object-fit: cover;
-            background-color: salmon;
-        }
-    }
-  
-  .dropbtn:focus {
-    outline: none;
-    box-shadow: none;
-    img {
-        border: 1px solid salmon;
-    }
-  }
-
-  a.navbar-item:hover {
-    background-color: white !important;
-    color: salmon !important;
 }
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-    margin-top: 7px;
+
+.dropbtn:focus {
+  outline: none;
+  box-shadow: none;
+  img {
+    border: 1px solid salmon;
   }
-  
+}
+
+a.navbar-item:hover {
+  background-color: white !important;
+  color: salmon !important;
+}
+
+.something2 {
+  display: none;
+  border-bottom: 16px solid #657786;
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  height: auto;
+  left: 1255px;
+  top: 30px;
+  position: absolute;
+  width: auto;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin: 0.5rem 0 !important;
+}
+
+.log {
+  margin-top: -5px;
+}
+
+.something {
+  display: none;
+  position: absolute;
+  top: 31px;
+  left: 1256px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid #fff;
+  border-bottom-color: #fff;
+  z-index: 2;
+}
+
+.myDropdown {
+  top: 35px;
+  border-radius: 2px;
+  display: none;
+  margin-top: 14px;
+  position: absolute;
+  background-color: #fff;
+  min-width: 120px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  right: 15px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 1;
+}
+
+.myDropdown a {
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+
+.myDropdown a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+
+@media screen and (max-width: 1400px) {
   .something2 {
-      display: none;
-      border-bottom: 16px solid #657786;
-      border-bottom-color: rgba(0,0,0,0.1);
-      border-left: 16px solid transparent;
-      border-right: 16px solid transparent;
-      height: auto;
-      left: 1255px;
-      top: 30px;
-      position: absolute;
-      width: auto;
+    left: 1205px;
   }
-  hr {
-    border: 1px solid #f1f1f1;
-    margin: 0.5rem 0 !important;
-  }
-  
-  .log {
-    margin-top: -5px;
-  }
-  
   .something {
-      display: none;
-      position: absolute;
-      top: 31px;
-      left: 1256px;
-      border-left: 15px solid transparent;
-      border-right: 15px solid transparent;
-      border-bottom: 15px solid #fff;
-      border-bottom-color: #fff;
-      z-index: 2;
+    left: 1206px;
   }
-  
-  .myDropdown {
-    left: 1175px;
-    top: 30px;
-    border-radius: 2px;
+  .dropbtn {
+    left: 1200px;
+  }
+  .home-side-profile {
+    width: 300px !important;
+    .home-cover-photo {
+      width: 298px !important;
+    }
+    .home-user-info {
+      width: 298px !important;
+    }
+  }
+  .home-create-chable {
+    width: 750px;
+  }
+  .container-end {
+    width: 320px;
+    .userguide {
+      width: 300px;
+    }
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .something2 {
+    left: 1155px;
+  }
+  .something {
+    left: 1156px;
+  }
+  .dropbtn {
+    left: 1150px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .something2 {
+    left: 1105px;
+  }
+  .something {
+    left: 1106px;
+  }
+  .dropbtn {
+    left: 1100px;
+  }
+  .container-end {
     display: none;
-    margin-top: 14px;
-    position: absolute;
-    background-color: #fff;
-    min-width: 120px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    z-index: 1;
   }
-  
-  .myDropdown a {
-    color: black;
-    text-decoration: none;
-    display: block;
+  .home-side-profile {
+    width: 350px !important;
+    .home-cover-photo {
+      width: 348px !important;
+    }
+    .home-user-info {
+      width: 348px !important;
+    }
   }
-  
-  .myDropdown a:hover {
-    background-color: #ddd
+  .home-create-chable {
+    width: 700px !important;
+    .chable-field {
+      width: 655px !important;
+      height: 80px !important;
+    }
+    .chable-submit-field {
+      left: 262px !important;
+      width: 90px !important;
+    }
   }
-  
-  .show {
-    display:block
+  .flex-chable {
+    width: 700px !important;
   }
-  
+}
 
-  @media screen and (max-width: 1400px) {
-    .something2 {
-        left: 1205px;
-    }
-    .something {
-        left: 1206px;   
-    }
-    .myDropdown {
-        left: 1125px;
-      }
-      .dropbtn {
-        left: 1200px;
-      }
-      .home-side-profile {
-          width: 300px !important;
-          .home-cover-photo {
-              width: 298px !important;
-          }
-          .home-user-info {
-              width: 298px !important;
-          }
-      }
-      .home-create-chable {
-          width: 750px;
-      }
-      .container-end {
-          width: 320px;
-          .userguide {
-              width: 300px;
-          }
-      }
+@media screen and (max-width: 1250px) {
+  .something2 {
+    left: 1055px;
   }
-  
-  @media screen and (max-width: 1350px) {
-    .something2 {
-        left: 1155px;
-    }
-    .something {
-        left: 1156px;   
-    }
-    .myDropdown {
-        left: 1075px;
-      }
-      .dropbtn {
-        left: 1150px;
-      }
-      
+  .something {
+    left: 1056px;
   }
-  
-    
-  
-  @media screen and (max-width: 1300px) {
-    .something2 {
-        left: 1105px;
-    }
-    .something {
-        left: 1106px;   
-    }
-    .myDropdown {
-        left: 1025px;
-      }
-      .dropbtn {
-        left: 1100px;
-      }
-      .container-end {
-          display: none;
-      }
-      .home-side-profile {
-        width: 350px !important;
-        .home-cover-photo {
-            width: 348px !important;
-        }
-        .home-user-info {
-            width: 348px !important;
-        }
-    }
-    .home-create-chable {
-        width: 700px !important;
-        .chable-field {
-            width: 655px !important;
-            height: 80px !important;
-        }
-        .chable-submit-field {
-            left: 262px !important;
-            width: 90px !important;
-        }
-    }
-    .flex-chable {
-        width: 700px !important;
-    }
+  .dropbtn {
+    left: 1050px;
   }
- 
-   
-  @media screen and (max-width: 1250px) {
-    .something2 {
-        left: 1055px;
-    }
-    .something {
-        left: 1056px;   
-    }
-    .myDropdown {
-        left: 975px;
-      }
-      .dropbtn {
-        left: 1050px;
-      }
-      
-  }
+}
 
-    
-  @media screen and (max-width: 1200px) {
-    .something2 {
-        left: 1005px;
-    }
-    .something {
-        left: 1006px;   
-    }
-    .myDropdown {
-        left: 925px;
-      }
-      .dropbtn {
-        left: 1000px;
-      }
-      
+@media screen and (max-width: 1200px) {
+  .something2 {
+    left: 1005px;
   }
- 
-     
-  @media screen and (max-width: 1150px) {
-    .something2 {
-        left: 955px;
-    }
-    .something {
-        left: 956px;   
-    }
-    .myDropdown {
-        left: 875px;
-      }
-      .dropbtn {
-        left: 950px;
-      }
-      
+  .something {
+    left: 1006px;
   }
- 
-      
-  @media screen and (max-width: 1100px) {
-    .something2 {
-        left: 905px;
-    }
-    .something {
-        left: 906px;   
-    }
-    .myDropdown {
-        left: 825px;
-      }
-      .dropbtn {
-        left: 900px;
-      }
-      .home-side-profile {
-        width: 300px !important;
-        .home-cover-photo {
-            width: 298px !important;
-        }
-        .home-profile-photo {
-            left: 80px !important;
-        }
-        .home-name, .home-user-name {
-            width: max-content;
-            display: flex !important;
-            margin-left: auto !important;
-            margin-right: auto !important;
-        }
-        .home-user-info {
-            width: 298px !important;
-        }
-    }
+  .dropbtn {
+    left: 1000px;
   }
- 
-      
-  @media screen and (max-width: 1050px) {
-    .something2 {
-        left: 855px;
-    }
-    .something {
-        left: 856px;   
-    }
-    .myDropdown {
-        left: 775px;
-      }
-      .dropbtn {
-        left: 850px;
-      }
-      .home-create-chable {
-        width: 650px !important;
-        .chable-field {
-            width: 605px !important;
-            height: 70px !important;
-        }
-        .chable-submit-field {
-            left: 232px !important;
-            width: 70px !important;
-        }
-    }
-    .flex-chable {
-        width: 650px !important;
-    }
-  }
- 
-      
-  @media screen and (max-width: 1000px) {
-    .something2 {
-        left: 805px;
-    }
-    .something {
-        left: 806px;   
-    }
-    .myDropdown {
-        left: 725px;
-      }
-      .dropbtn {
-        left: 800px;
-      }
-      .home-side-profile {
-          display: none;
-      }
-      .home-create-chable {
-        width: 700px !important;
-        .chable-field {
-            width: 655px !important;
-            height: 70px !important;
-        }
-        .chable-submit-field {
-            left: 262px !important;
-            width: 90px !important;
-        }
-    }
-    .flex-chable {
-        width: 700px !important;
-    }
-  }
- 
-  
-      
-  @media screen and (max-width: 950px) {
-    .something2 {
-        left: 755px;
-    }
-    .something {
-        left: 756px;   
-    }
-    .myDropdown {
-        left: 675px;
-      }
-      .dropbtn {
-        left: 750px;
-      }
-      
-  }
+}
 
-  
-      
-  @media screen and (max-width: 900px) {
-    .something2 {
-        left: 705px;
-    }
-    .something {
-        left: 706px;   
-    }
-    .myDropdown {
-        left: 625px;
-      }
-      .dropbtn {
-        left: 700px;
-      }
-      
+@media screen and (max-width: 1150px) {
+  .something2 {
+    left: 955px;
   }
- 
-  
-      
-  @media screen and (max-width: 850px) {
-    .something2 {
-        left: 655px;
-    }
-    .something {
-        left: 656px;   
-    }
-    .myDropdown {
-        left: 575px;
-      }
-      .dropbtn {
-        left: 650px;
-      }
-      
+  .something {
+    left: 956px;
   }
- 
-  
-      
-  @media screen and (max-width: 800px) {
-    .something2 {
-        left: 605px;
-    }
-    .something {
-        left: 606px;   
-    }
-    .myDropdown {
-        left: 525px;
-      }
-      .dropbtn {
-        left: 600px;
-      }
-      
+  .dropbtn {
+    left: 950px;
   }
-      
-  @media screen and (max-width: 750px) {
-    .something2 {
-        left: 555px;
-    }
-    .something {
-        left: 556px;   
-    }
-    .myDropdown {
-        left: 475px;
-      }
-      .dropbtn {
-        left: 550px;
-      }
-      .home-create-chable {
-        width: 650px !important;
-        .chable-field {
-            width: 605px !important;
-            height: 70px !important;
-        }
-        .chable-submit-field {
-            left: 222px !important;
-            width: 80px !important;
-        }
-    }
-    .flex-chable {
-        width: 650px !important;
-    }
-    .home-container .home-create-chable .chables-feed {
-        margin-left: 20px !important;
-    }
-  }
-    
-  @media screen and (max-width: 700px) {
-    .something2 {
-        left: 505px;
-    }
-    .something {
-        left: 506px;   
-    }
-    .myDropdown {
-        left: 425px;
-      }
-      .dropbtn {
-        left: 500px;
-      }  
-      .home-create-chable {
-        width: 600px !important;
-        .chable-field {
-            width: 555px !important;
-            height: 70px !important;
-        }
-        .chable-submit-field {
-            left: 182px !important;
-            width: 70px !important;
-        }
-    }
-    .flex-chable {
-        width: 600px !important;
-    }
-    .home-container .home-create-chable .chables-feed {
-        margin-left: 10px !important;
-    }   
-  }
+}
 
-  @media screen and (max-width: 650px) {
-    .something2 {
-        left: 455px;
-    }
-    .something {
-        left: 456px;   
-    }
-    .myDropdown {
-        left: 375px;
-      }
-      .dropbtn {
-        left: 450px;
-      } 
-      .feed-delete-area {     
-        margin-right: 30px !important; 
-   }    
+@media screen and (max-width: 1100px) {
+  .something2 {
+    left: 905px;
   }
-
-  @media screen and (max-width: 600px) {
-      .info-box {
-            .profile-photo {
-                left: 50px !important;
-            }
-            .profile-bio {
-                width: 300px !important;
-            } 
-            .profile-location {
-                width: 300px !important;
-            }
-        }
-        .act-tab {
-            width: 35em !important;
-            margin-top: 7% !important;
-            margin-left: 3% !important;
-            .show-likes {
-                width: 35em !important;
-                .feed-img img {
-                    width: 400px !important;
-                    height: 300px !important;
-                }
-                .feed-content {
-                    width: 400px !important;
-                }
-            }
-        }
-        .follow-tab {
-            margin-left: 0% !important;
-            margin-top: 8% !important;
-            width: 37em !important;
-            padding: 0 !important;
-            padding-left: 10px !important;
-            .sub-user {
-                height: 260px !important;
-                width: 275px !important;
-                .sub-user-cover {
-                    width: 275px !important;
-                }
-                .img {
-                    bottom: 22% !important;
-                }
-                .sub-user-infodiv {
-                    bottom: 22% !important;
-                }
-            }
-        }
-      .desp-box {
-          .profile-name {
-              margin-left: 270px !important;
-              width: 300px !important;
-          }
-          .profile-username {
-              margin-left: 270px !important;
-              width: 300px !important;
-          }
-      }
-      .show-chable {
-          margin-top: 7% !important;
-          margin-left: 3% !important;
-          width: 35em !important;
-          .flex-chable {         
-            .feed-delete-area {
-                 margin-top: 10px !important;
-            }
-          }
-      }
-    .home-container .home-create-chable .chables-feed .feed-img img {
-        width: 450px !important;
+  .something {
+    left: 906px;
+  }
+  .dropbtn {
+    left: 900px;
+  }
+  .home-side-profile {
+    width: 300px !important;
+    .home-cover-photo {
+      width: 298px !important;
     }
-    .something2 {
-        left: 405px;
+    .home-profile-photo {
+      left: 80px !important;
     }
-    .something {
-        left: 406px;   
+    .home-name,
+    .home-user-name {
+      width: max-content;
+      display: flex !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
     }
-    .myDropdown {
-        left: 325px;
-      }
-      .dropbtn {
-        left: 400px;
-      } 
-      .home-create-chable {
-        width: 550px !important;
-        .chable-field {
-            width: 505px !important;
-            height: 70px !important;
-        }
-        .chable-submit-field {
-            left: 132px !important;
-            width: 70px !important;
-        }
-    }
-    .flex-chable {
-        width: 550px !important;
-    }
-
-    .home-container .home-create-chable .chables-feed {
-        margin-left: 10px !important;
-    }   
-    .feed-delete-area {     
-         margin-right: 30px !important; 
+    .home-user-info {
+      width: 298px !important;
     }
   }
+}
 
-  @media screen and (max-width: 550px) {
-    .home-container .home-create-chable .chables-feed .feed-img img {
+@media screen and (max-width: 1050px) {
+  .something2 {
+    left: 855px;
+  }
+  .something {
+    left: 856px;
+  }
+  .dropbtn {
+    left: 850px;
+  }
+  .home-create-chable {
+    width: 650px !important;
+    .chable-field {
+      width: 605px !important;
+      height: 70px !important;
+    }
+    .chable-submit-field {
+      left: 232px !important;
+      width: 70px !important;
+    }
+  }
+  .flex-chable {
+    width: 650px !important;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .something2 {
+    left: 805px;
+  }
+  .something {
+    left: 806px;
+  }
+  .dropbtn {
+    left: 800px;
+  }
+  .home-side-profile {
+    display: none;
+  }
+  .home-create-chable {
+    width: 700px !important;
+    .chable-field {
+      width: 655px !important;
+      height: 70px !important;
+    }
+    .chable-submit-field {
+      left: 262px !important;
+      width: 90px !important;
+    }
+  }
+  .flex-chable {
+    width: 700px !important;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .something2 {
+    left: 755px;
+  }
+  .something {
+    left: 756px;
+  }
+  .dropbtn {
+    left: 750px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .something2 {
+    left: 705px;
+  }
+  .something {
+    left: 706px;
+  }
+  .dropbtn {
+    left: 700px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .something2 {
+    left: 655px;
+  }
+  .something {
+    left: 656px;
+  }
+  .dropbtn {
+    left: 650px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .something2 {
+    left: 605px;
+  }
+  .something {
+    left: 606px;
+  }
+  .dropbtn {
+    left: 600px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .something2 {
+    left: 555px;
+  }
+  .something {
+    left: 556px;
+  }
+  .dropbtn {
+    left: 550px;
+  }
+  .home-create-chable {
+    width: 650px !important;
+    .chable-field {
+      width: 605px !important;
+      height: 70px !important;
+    }
+    .chable-submit-field {
+      left: 222px !important;
+      width: 80px !important;
+    }
+  }
+  .flex-chable {
+    width: 650px !important;
+  }
+  .home-container .home-create-chable .chables-feed {
+    margin-left: 20px !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .something2 {
+    left: 505px;
+  }
+  .something {
+    left: 506px;
+  }
+  .dropbtn {
+    left: 500px;
+  }
+  .home-create-chable {
+    width: 600px !important;
+    .chable-field {
+      width: 555px !important;
+      height: 70px !important;
+    }
+    .chable-submit-field {
+      left: 182px !important;
+      width: 70px !important;
+    }
+  }
+  .flex-chable {
+    width: 600px !important;
+  }
+  .home-container .home-create-chable .chables-feed {
+    margin-left: 10px !important;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .something2 {
+    left: 455px;
+  }
+  .something {
+    left: 456px;
+  }
+  .dropbtn {
+    left: 450px;
+  }
+  .feed-delete-area {
+    margin-right: 30px !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .info-box {
+    .profile-photo {
+      left: 50px !important;
+    }
+    .profile-bio {
+      width: 300px !important;
+    }
+    .profile-location {
+      width: 300px !important;
+    }
+  }
+  .act-tab {
+    width: 35em !important;
+    margin-top: 7% !important;
+    margin-left: 3% !important;
+    .show-likes {
+      width: 35em !important;
+      .feed-img img {
         width: 400px !important;
-    }
-    .something2 {
-        left: 355px;
-    }
-    .something {
-        left: 356px;   
-    }
-    .myDropdown {
-        left: 275px;
+        height: 300px !important;
       }
-      .dropbtn {
-        left: 350px;
-      }   
-      .home-create-chable {
-        width: 500px !important;
-        .chable-field {
-            width: 455px !important;
-            height: 70px !important;
-        }
-        .chable-submit-field {
-            left: 92px !important;
-            width: 60px !important;
-        }
-    }
-    .flex-chable {
-        width: 500px !important;
-    }
-    .home-container .home-create-chable .chables-feed {
-        margin-left: 10px !important;
-    }   
-    .feed-delete-area {     
-         margin-right: 30px !important; 
-    }  
-  }
-
-  
-  @media screen and (max-width: 500px) {
-    .home-container .home-create-chable .chables-feed .feed-img img {
-        width: 350px !important;
-    }
-    .something2 {
-        left: 305px;
-    }
-    .something {
-        left: 306px;   
-    }
-    .myDropdown {
-        left: 225px;
-      }
-      .dropbtn {
-        left: 300px;
-      } 
-      .home-create-chable {
-        width: 450px !important;
-        .chable-field {
-            width: 405px !important;
-            height: 70px !important;
-        }
-        .chable-submit-field {
-            left: 42px !important;
-            width: 60px !important;
-        }
-    }
-    .flex-chable {
-        width: 450px !important;
-    }    
-  }
-
-  
-  @media screen and (max-width: 450px) {
-    .home-container .home-create-chable .chables-feed .feed-img img {
-        width: 300px !important;
-    }
-
-    .something2 {
-        left: 255px;
-    }
-    .something {
-        left: 256px;   
-    }
-    .myDropdown {
-        left: 175px;
-      }
-      .dropbtn {
-        left: 250px;
-      }     
-      .home-create-chable {
+      .feed-content {
         width: 400px !important;
-        .chable-field {
-            width: 355px !important;
-            height: 70px !important;
-        }
-        .chable-submit-field {
-            left: -7px !important;
-            width: 60px !important;
-        }
+      }
     }
+  }
+  .follow-tab {
+    margin-left: 0% !important;
+    margin-top: 8% !important;
+    width: 37em !important;
+    padding: 0 !important;
+    padding-left: 10px !important;
+    .sub-user {
+      height: 260px !important;
+      width: 275px !important;
+      .sub-user-cover {
+        width: 275px !important;
+      }
+      .img {
+        bottom: 22% !important;
+      }
+      .sub-user-infodiv {
+        bottom: 22% !important;
+      }
+    }
+  }
+  .desp-box {
+    .profile-name {
+      margin-left: 270px !important;
+      width: 300px !important;
+    }
+    .profile-username {
+      margin-left: 270px !important;
+      width: 300px !important;
+    }
+  }
+  .show-chable {
+    margin-top: 7% !important;
+    margin-left: 3% !important;
+    width: 35em !important;
     .flex-chable {
-        width: 400px !important;
-    }     
+      .feed-delete-area {
+        margin-top: 10px !important;
+      }
+    }
+  }
+  .home-container .home-create-chable .chables-feed .feed-img img {
+    width: 450px !important;
+  }
+  .something2 {
+    left: 405px;
+  }
+  .something {
+    left: 406px;
+  }
+  .dropbtn {
+    left: 400px;
+  }
+  .home-create-chable {
+    width: 550px !important;
+    .chable-field {
+      width: 505px !important;
+      height: 70px !important;
+    }
+    .chable-submit-field {
+      left: 132px !important;
+      width: 70px !important;
+    }
+  }
+  .flex-chable {
+    width: 550px !important;
   }
 
-  @media screen and (max-width: 400px) {
-    .new_connection .connection {
-        position: absolute !important;
-        left: 108% !important;
-        top: 5% !important;
-        padding-left: 25px !important;
-        padding-right: 25px !important;
-        border-radius: 10px !important;
-        padding-top: 3px !important;
-        padding-bottom: 3px !important;
-        font-weight: 500 !important;
-        font-size: 1.1rem !important;
-    }
-    .edit_connection .connection {
-        position: absolute !important;
-        left: 105% !important;
-        top: 5% !important;
-        padding-left: 25px !important;
-        padding-right: 25px !important;
-        border-radius: 10px !important;
-        padding-top: 3px !important;
-        padding-bottom: 3px !important;
-        font-weight: 500 !important;
-        font-size: 1.1rem !important;
-    }
+  .home-container .home-create-chable .chables-feed {
+    margin-left: 10px !important;
+  }
+  .feed-delete-area {
+    margin-right: 30px !important;
+  }
+}
 
-    .user-area {
-        width: 20em !important;
-        margin-left: 5% !important;
-        .show-likes {
-            width: 20em !important;
-            .feed-content {
-                width: 200px !important;
-            }
-            .feed-img img {
-                width: 250px !important;
-                height: 250px !important;
-            }
-        }
+@media screen and (max-width: 550px) {
+  .home-container .home-create-chable .chables-feed .feed-img img {
+    width: 400px !important;
+  }
+  .something2 {
+    left: 355px;
+  }
+  .something {
+    left: 356px;
+  }
+  .dropbtn {
+    left: 350px;
+  }
+  .home-create-chable {
+    width: 500px !important;
+    .chable-field {
+      width: 455px !important;
+      height: 70px !important;
     }
-
-      .follow-tab {
-          margin-left: 4% !important;
-          width: 20em !important;
-      }
-      .show-chable .flex-chable .feed-delete-area {
-          margin-top: 10px !important;
-      }
-      .profile-location {
-          width: 120px !important;
-      }
-      .profile-bio {
-          width: 120px !important;
-      }
-      .second-nav .tablinks {
-        padding-left: 2px !important;
-        padding-right: 2px !important;
-      }
-
-      .info-box {
-          .profile-photo {
-              left: 20px !important;
-          }
-      }
-
-      .desp-box .profile-name {
-        margin-left: 240px !important;
-        width: 120px !important;
-      }
-
-      .desp-box .profile-username {
-        margin-left: 240px !important;
-        width: 120px !important;
-      }
-    .something2 {
-        left: 205px;
+    .chable-submit-field {
+      left: 92px !important;
+      width: 60px !important;
     }
-    .something {
-        left: 206px;   
-    }
-    .myDropdown {
-        left: 125px;
-      }
-      .dropbtn {
-        left: 200px;
-      }     
-      .home-create-chable {
-        width: 350px !important;
-        .chable-field {
-            width: 305px !important;
-            height: 70px !important;
-        }
-        .chable-submit-field {
-            left: 1px !important;
-            width: 60px !important;
-        }
-    }
+  }
+  .flex-chable {
+    width: 500px !important;
+  }
+  .home-container .home-create-chable .chables-feed {
+    margin-left: 10px !important;
+  }
+  .feed-delete-area {
+    margin-right: 30px !important;
+  }
+}
 
-    .show-chable {
-        margin-left: 4px !important;
-        width: 22em !important;
+@media screen and (max-width: 500px) {
+  .home-container .home-create-chable .chables-feed .feed-img img {
+    width: 350px !important;
+  }
+  .something2 {
+    left: 305px;
+  }
+  .something {
+    left: 306px;
+  }
+  .dropbtn {
+    left: 300px;
+  }
+  .home-create-chable {
+    width: 450px !important;
+    .chable-field {
+      width: 405px !important;
+      height: 70px !important;
     }
-    .flex-chable {
-        width: 320px !important;
-    } 
-    .home-container .home-create-chable .chable-creator .file-field {
-        width: 240px !important;
-    }    
+    .chable-submit-field {
+      left: 42px !important;
+      width: 60px !important;
+    }
+  }
+  .flex-chable {
+    width: 450px !important;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .home-container .home-create-chable .chables-feed .feed-img img {
+    width: 300px !important;
   }
 
-  
-  @media screen and (max-width: 350px) {
-    .home-container .home-create-chable .chables-feed .feed-img img {
+  .something2 {
+    left: 255px;
+  }
+  .something {
+    left: 256px;
+  }
+  .dropbtn {
+    left: 250px;
+  }
+  .home-create-chable {
+    width: 400px !important;
+    .chable-field {
+      width: 355px !important;
+      height: 70px !important;
+    }
+    .chable-submit-field {
+      left: -7px !important;
+      width: 60px !important;
+    }
+  }
+  .flex-chable {
+    width: 400px !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .new_connection .connection {
+    position: absolute !important;
+    left: 108% !important;
+    top: 5% !important;
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+    border-radius: 10px !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    font-weight: 500 !important;
+    font-size: 1.1rem !important;
+  }
+  .edit_connection .connection {
+    position: absolute !important;
+    left: 105% !important;
+    top: 5% !important;
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+    border-radius: 10px !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    font-weight: 500 !important;
+    font-size: 1.1rem !important;
+  }
+
+  .user-area {
+    width: 20em !important;
+    margin-left: 5% !important;
+    .show-likes {
+      width: 20em !important;
+      .feed-content {
+        width: 200px !important;
+      }
+      .feed-img img {
         width: 250px !important;
         height: 250px !important;
-    }
-    .something2 {
-        left: 155px;
-    }
-    .something {
-        left: 156px;   
-    }
-    .myDropdown {
-        left: 75px;
       }
-      .dropbtn {
-        left: 150px;
-      }     
-      .home-create-chable {
-        width: 300px !important;
-        .chable-field {
-            width: 255px !important;
-            height: 70px !important;
-        }
-        .chable-submit-field {
-            left: 1px !important;
-            width: 60px !important;
-        }
     }
-    .flex-chable {
-        width: 300px !important;
-    } 
-    .home-container .home-create-chable .chable-creator .file-field {
-        width: 190px !important;
-    }    
   }
+
+  .follow-tab {
+    margin-left: 4% !important;
+    width: 20em !important;
+  }
+  .show-chable .flex-chable .feed-delete-area {
+    margin-top: 10px !important;
+  }
+  .profile-location {
+    width: 120px !important;
+  }
+  .profile-bio {
+    width: 120px !important;
+  }
+  .second-nav .tablinks {
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+  }
+
+  .info-box {
+    .profile-photo {
+      left: 20px !important;
+    }
+  }
+
+  .desp-box .profile-name {
+    margin-left: 240px !important;
+    width: 120px !important;
+  }
+
+  .desp-box .profile-username {
+    margin-left: 240px !important;
+    width: 120px !important;
+  }
+  .something2 {
+    left: 205px;
+  }
+  .something {
+    left: 206px;
+  }
+  .dropbtn {
+    left: 200px;
+  }
+  .home-create-chable {
+    width: 350px !important;
+    .chable-field {
+      width: 305px !important;
+      height: 70px !important;
+    }
+    .chable-submit-field {
+      left: 1px !important;
+      width: 60px !important;
+    }
+  }
+
+  .show-chable {
+    margin-left: 4px !important;
+    width: 22em !important;
+  }
+  .flex-chable {
+    width: 320px !important;
+  }
+  .home-container .home-create-chable .chable-creator .file-field {
+    width: 240px !important;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .home-container .home-create-chable .chables-feed .feed-img img {
+    width: 250px !important;
+    height: 250px !important;
+  }
+  .something2 {
+    left: 155px;
+  }
+  .something {
+    left: 156px;
+  }
+  .dropbtn {
+    left: 150px;
+  }
+  .home-create-chable {
+    width: 300px !important;
+    .chable-field {
+      width: 255px !important;
+      height: 70px !important;
+    }
+    .chable-submit-field {
+      left: 1px !important;
+      width: 60px !important;
+    }
+  }
+  .flex-chable {
+    width: 300px !important;
+  }
+  .home-container .home-create-chable .chable-creator .file-field {
+    width: 190px !important;
+  }
+}

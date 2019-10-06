@@ -1,5 +1,10 @@
 <div class='nav'>
   <a href='/'><img src="https://res.cloudinary.com/areeba/image/upload/v1560941566/3f77b86f-4168-4e3e-82da-a767565b33e7_200x200.png" width="80px" class="header-img"></a>
+  <!-- Search bar form -->
+  <%= form_with url: search_path, method: :get, local: true, class: 'form-inline search-form' do |form| %>
+        <%= form.text_field :query, value: params[:query], class: 'form-control mr-sm-2 search-field', placeholder: 'search chablie' %>
+        <span class="search-icon"><i class="fas fa-search"></i></span>
+  <% end %>
   <div class="dropdown">
     <button onclick="dropFunc()" class="dropbtn"><%= image_tag current_user.picture.url if current_user.picture? %></button>
     <span class='something2' id='something2'></span>
@@ -12,11 +17,6 @@
        <%= link_to "Log out", logout_path, method: :delete, class: "navbar-item" %>
     </div>
   </div>
-  <!-- Search bar form -->
-  <%= form_with url: search_path, method: :get, local: true, class: 'form-inline search-form' do |form| %>
-        <%= form.text_field :query, value: params[:query], class: 'form-control mr-sm-2 search-field', placeholder: 'search chablie' %>
-        <span class="search-icon"><i class="fas fa-search"></i></span>
-  <% end %>
 </div>
 
 <script>

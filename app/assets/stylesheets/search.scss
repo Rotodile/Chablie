@@ -1,7 +1,7 @@
 .search-form {
+    align-items: center;
+    display: flex;
     position: relative;
-    top: -95px;
-    left: 76%;
     width: 230px;
     .search-field {
         width: 230px !important;
@@ -13,7 +13,6 @@
     .search-icon {
         right: 5% !important;
         color: salmon;
-        top: 35%;
         position: absolute !important;
     }
 }

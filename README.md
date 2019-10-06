@@ -32,7 +32,7 @@ Chablie is a social networking website created with ruby on rails. The live vers
 
 ## **Contributing**
 
-Pull requests are welcome but please first discuss the change you wish to make via issue or any other method with the owner of this repository before making a change.
+Pull requests are welcome but please first discuss the change you wish to make via issue or any other method with the owner of this repository.
 
 Please make a issue if you found a bug or if you want to give a suggestion on any feature.
 

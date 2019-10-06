@@ -1,4 +1,4 @@
-Kdhtml {
+html {
   scroll-behavior: smooth;
 }
 body {
@@ -590,7 +590,7 @@ div#error_explanation {
   padding: 8px 5px;
   background-color: white;
   width: 100%;
-  height: 60px;
+  height: 50px;
   top: 0;
   left: 0;
   position: fixed;
@@ -605,7 +605,7 @@ div#error_explanation {
 }
 
 .dropbtn {
-  margin: 0 20px;
+  margin: -3px 20px 0px 20px;
   color: white;
   border-radius: 100%;
   font-size: 16px;

@@ -4,14 +4,14 @@ html {
 }
 </style>
 <div class='edit-container'>
-<div class="sidenav">
-  <button class="sidelinks" onclick="openSide(event, 'Edit')" id='defaultOpen'>Edit Profile</button>
-  <button class="sidelinks" onclick="openSide(event, 'Avatars')">Change Your Avatar</button>
-  <button class="sidelinks" onclick="openSide(event, 'Password')">Change Your Password</button>
-  <button class="sidelinks" onclick="openSide(event, 'Settings')">Account Settings</button>
-</div>
+  <div class="sidenav">
+    <button class="sidelinks" onclick="openSide(event, 'Edit')" id='defaultOpen'>Edit Profile</button>
+    <button class="sidelinks" onclick="openSide(event, 'Avatars')">Change Your Avatar</button>
+    <button class="sidelinks" onclick="openSide(event, 'Password')">Change Your Password</button>
+    <button class="sidelinks" onclick="openSide(event, 'Settings')">Account Settings</button>
+  </div>
 
-<div id="Edit" class="sidecontent">
+  <div id="Edit" class="sidecontent">
     <h1 class="title">Edit Your Profile</h1>
     <p class='desp'>Below are the info that will be displayed publicly on your profile.</p>
     <%= form_for(@user) do |f| %>
@@ -27,9 +27,9 @@ html {
             <%= f.text_field :bio, class: "input is-primary form-control bio" %>
             <%= f.submit "Save changes", class: "button is-primary update-btn" %>
     <% end %>
-</div>
+  </div>
 
-<div id="Settings" class="sidecontent">
+  <div id="Settings" class="sidecontent">
       <h1 class="title">Account Settings</h1>
       <p class='desp'>Below are the settings that will not displayed publicly.</p>
       <%= form_for(@user) do |f| %>
@@ -49,9 +49,9 @@ html {
                                             data: { confirm: "are you sure?"}, class: "button is-danger" %></p>
             <% end %>
       <% end %> 
-</div>
+  </div>
 
-<div id="Password" class="sidecontent">
+  <div id="Password" class="sidecontent">
       <h1 class="title">Change Your Password</h1>
       <p class='desp'>You can change your account password below.</p>
       <%= form_for(@user) do |f| %>
@@ -64,9 +64,9 @@ html {
             <%= f.password_field :password_confirmation, class: 'input is-primary' %>
             <%= f.submit "Save changes", class: "button is-primary update-btn" %>
       <% end %>
-</div>
+  </div>
 
-<div id="Avatars" class="sidecontent">
+  <div id="Avatars" class="sidecontent">
       <h1 class="title">Change Your Avatars</h1>
       <p class='desp'>Below you can add your profile picture and cover photo.</p>
       <%= form_for(@user) do |f| %>
@@ -79,44 +79,8 @@ html {
         <%= f.file_field :cover_picture, accept: 'image/jpeg,image/gif,image/png', class: 'file-field cover-edit' %>
         <%= f.submit "Save changes", class: "button is-primary update-btn" %>
       <% end %>
+  </div>
 </div>
-</div>
-<!--
-<div class="edit-container">
-    <h1 class="title">Edit Your Profile</h1>
-    <%= form_for(@user) do |f| %>
-        <%= render 'shared/error_messages', object: f.object %>
-            <%= f.label :name %>       
-            <%= f.text_field :name, class: 'input is-primary' %>
-            <%= f.label :email %>
-            <%= f.email_field :email, class: 'input is-primary' %>
-            <%= f.label :phone_number %>
-            <%= f.text_field :phone_number, class: "input is-primary form-control" %>
-            <%= f.label :location %>
-            <%= f.text_field :location, class: "input is-primary form-control" %>
-            <%= f.label :birthday %>
-            <%= f.date_field :birthday, class: "input is-primary form-control" %>
-            <%= f.label :bio %>
-            <%= f.text_field :bio, class: "input is-primary form-control bio" %>
-            <%= f.label :password %>
-            <%= f.password_field :password, class: 'input is-primary' %>
-            <%= f.label :password_confirmation %>
-            <%= f.password_field :password_confirmation, class: 'input is-primary' %>
-        <h1 class="imagu">Profile Picture</h1>
-        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', id: "image-browse" %>
-        <label for="image-browse" class="btn-2 label edit-label">upload</label><br>
-        <h1 class="imagu">Cover Picture</h1>
-        <%= f.file_field :cover_picture, accept: 'image/jpeg,image/gif,image/png', id: "cover-image-browse" %>
-        <label for="cover-image-browse" class="btn-2 label edit-label">upload</label>
-        <div class="button-field">
-            <%= f.submit "Save changes", class: "button is-primary update-btn" %>
-    <% end %>
-            <% if current_user %>
-               <p class="delete-button"> <%= link_to "Delete Account", @user, method: :delete,
-                                            data: { confirm: "are you sure?"}, class: "button is-danger" %></p>
-            <% end %>
-        </div>
-</div>-->
 
 <script type="text/javascript">
   function openSide(evt, sideName) {

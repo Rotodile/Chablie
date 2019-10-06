@@ -29,3 +29,19 @@ Chablie is a social networking website created with ruby on rails. The live vers
 + Rmagick.
 + Carrierwave.
 + Redis.
+
+## **Contributing**
+
+Pull requests are welcome but please first discuss the change you wish to make via issue or any other method with the owner of this repository before making a change.
+
+Please make a issue if you found a bug or if you want to give a suggestion on any feature.
+
+Please note we have a [code of conduct](https://github.com/ribaishtiaq/Chablie/blob/master/CODE_OF_CONDUCT.md), please follow it in all your interactions with the project.
+
+### **Issue**
+
+Ensure the bug was not already reported by searching on GitHub under issues. If you're unable to find an open issue addressing the bug, open a new issue and write detailed imformation about the issue.
+
+### **Pull Request**
+
+Ensure the PR description clearly describes the problem and solution.

@@ -31,3 +31,9 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore public assets
+/public/
+
+# Ignore rubymine project files
+.idea/

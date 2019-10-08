@@ -34,7 +34,7 @@ Chablie is a social networking website created with ruby on rails. The live vers
 
 Pull requests are welcome but please first discuss the change you wish to make via issue or any other method with the owner of this repository.
 
-Please make a issue if you found a bug or if you want to give a suggestion on any feature.
+Please make a issue if you found a bug or if you want to give a suggestion on any feature or if you want to give any feedback on this project.
 
 Please note we have a [code of conduct](https://github.com/ribaishtiaq/Chablie/blob/master/CODE_OF_CONDUCT.md), please follow it in all your interactions with the project.
 

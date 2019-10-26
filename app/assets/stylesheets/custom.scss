@@ -520,6 +520,35 @@ div#error_explanation {
   }
 }
 
+.search-field {
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: 1px solid #e6ecf0;
+  padding: 5px;
+  padding-left: 10px;
+  color: black;
+  background-color: #f5f8fa;
+  transition-duration: 500ms;
+  width: 221px;
+  height: 30px;
+  padding-right: 37px;
+}
+
+.search-field:focus {
+  border: 2px solid salmon;
+  color: #14171a;
+  transition-duration: 500ms;
+}
+
+.search-icon {
+  position: relative;
+  color: gray;
+  right: 15%;
+  .fa-search {
+    width: 14px !important;
+  }
+}
+
 .header-avatar {
   border-radius: 100%;
   width: 40px;

@@ -112,7 +112,9 @@ GEM
     mime-types (3.2.2)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.0331)
-    mimemagic (0.3.3)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_magick (4.9.4)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
@@ -124,7 +126,8 @@ GEM
     pg (1.1.4)
     popper_js (1.14.5)
     public_suffix (3.1.1)
-    puma (3.12.4)
+    puma (4.3.11)
+      nio4r (~> 2.0)
     rack (2.2.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -232,7 +235,7 @@ DEPENDENCIES
   mini_magick (~> 4.8)
   pg (>= 0.18, < 2.0)
   popper_js
-  puma (~> 3.12)
+  puma (~> 4.3)
   rails (~> 5.2.2)
   rails-controller-testing
   redcarpet
